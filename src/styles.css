@@ -1,0 +1,126 @@
+:root {
+    --grisClaro: #cbcbcb;
+    --grisMedio: rgb(164, 164, 164);
+    --letraBlanca:rgb(158, 158, 158);
+    --red: #ff0000;
+    --black: #171717;
+    --grisOscuro: #3f3f3f;
+    --border: .1rem solid rgba(0, , 0, .1);
+    --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    min-zoom: 25px;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+    display: inline;
+}
+
+button {
+    border-style: none;
+    cursor: pointer;
+}
+
+input {
+    border-style: none;
+}
+
+body {
+    background-color: rgb(51, 51, 51);
+    overflow-x: hidden;
+}
+
+section {
+    overflow-x: hidden;
+    height: 800px;
+    width: 100%;
+}
+/*====BOTONES ESTILO START===========*/
+
+.btn{
+    display: inline-block;
+    transition: .3s;
+    background: hsl(0, 100%, 50%);
+    color: white;
+}
+.btn:hover{
+ background-color: azure;
+ color: red;
+ transition: .5s ease-in-out;
+}
+.contenedorBotones {
+    margin-left: 100px;
+}
+
+.btnIniciarSesion {
+    font-size: 14px;
+    margin-right: 30px;
+    padding: 10px 50px;
+    border-radius: 2px;
+}
+.btnBuscarProductos{
+    font-size: 12px;
+    margin: 1px;
+    padding: 10px 20px;
+    border-radius: 2px;
+    justify-content: center;
+}
+
+.btnRegistrarse {
+    font-size: 12px;
+    margin: 15px;
+    padding: 10px;
+    width: 150px;
+    border-radius: 2px;
+    background: hsl(0, 0%, 70%);
+    color: rgb(255, 0, 0);
+}
+ /* ================================*/
+/* oculta la barra de scroll*/
+::-webkit-scrollbar {
+    width: 0;
+}
+/* forma del scroll*/
+.barra_progreso {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 3px;
+    border-bottom: .5rem solid red;
+    border-radius: 10px;
+    background: rgb(253, 0, 0);
+    z-index: 9999;
+}
+
+
+/*=====MEDIA QUERIES======*/
+
+@media (max-width: 991px){
+    .btnIniciarSesion {
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 768px){
+    .btnIniciarSesion{
+        display: none;
+    }
+}
+@media (max-width: 450px){
+   
+}
+/*====BOTONES ESTILO END===========*/

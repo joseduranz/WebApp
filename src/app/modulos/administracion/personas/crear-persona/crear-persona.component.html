@@ -1,0 +1,130 @@
+<section class="sesion__registro">
+<!--este div contiene la codificacion que guarda en la base de datos-->
+<!--div>
+    <form class="formulario" id="registro" method="post">
+      <label for="txtNombres" >nombres</label>
+      <input type="text" class="txtNombres" id="txtNombres" value="fulanito" required>
+
+      <label for="txtApellidos" >apellidos</label>
+      <input type="text" class="txtApellidos" id="txtApellidos" value="fulanito" required>
+
+      <label for="txtRol" >rol</label>
+      <input type="text" class="txtCorreo" id="txtRol" value="Admin" required>
+
+      <label for="txtDireccion" >Direccion</label>
+      <input type="text" class="txtCorreo" id="txtDireccion" value="calle99" required>
+
+      <label for="txtCorreo" >correo</label>
+      <input type="email" class="txtCorreo" id="txtCorreo" value="josedrn5@gmail.com" required>
+
+      <label for="txtCelular" >celular</label>
+      <input type="text" class="txtCelular" id="txtCelular" value="fulanito" required>
+
+      <button type="submit">enviar</button>
+    </form>
+  </div-->
+    
+  <div class="formulario__registro-contenedor">
+    <h1>Registrate</h1>
+    <form action="" class="formulario" id="formulario">      
+        <!--====GRUPO USUARIO===-->
+        <div class="formulario__grupo" id="grupo__usuario">
+            <label for="usuario" class="formulario__label">Nombres</label>
+            <div class="formulario__grupo-input">                    
+                <div class="formulario__inputyicono-contenedor">                        
+                    <i class="formulario__icon fas fa-user"></i>
+                    <input type="text" class="formulario__input" name="usuario" id="usuario"
+                    placeholder="autoluxury123">                    
+                    <i id="icono_error-true" class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+            </div>
+            <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 digitos y solo puede contener numeros, letras y guion bajo</p>                
+        </div>
+        <!--====GRUPO NOMBRE===-->
+        <div class="formulario__grupo" id="grupo__nombre">
+            <label for="nombre" class="formulario__label">Apellidos</label>
+            <div class="formulario__grupo-input">
+                <div class="formulario__inputyicono-contenedor">
+                    <i class="formulario__icon fas fa-user"></i>
+                    <input type="text" class="formulario__input" name="nombre" id="nombre"
+                    placeholder="auto luxury">                    
+                    <i id="icono_error-true" class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+            </div>
+            <p class="formulario__input-error">El Nombre tiene que ser de 4 a 16 digitos y solo puede contener numeros, letras y guion bajo</p>                
+        </div>          
+        <!--====GRUPO CORREO ELECTRONICO===-->
+        <div class="formulario__grupo" id="grupo__correo">
+            <label for="correo" class="formulario__label">Correo Electrónico</label>
+            <div class="formulario__grupo-input">
+                <div class="formulario__inputyicono-contenedor">
+                    <i class="formulario__icon fas fa-envelope-open-text"></i>
+                    <input type="email" class="formulario__input" name="correo" id="correo"
+                        placeholder="autoluxury@gmail.com">
+                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+            </div>
+            <p id="icono_error-true" class="formulario__input-error">No parece ser un correo valido</p>                
+        </div>
+        <!--====GRUPO TELEFONO===-->
+        <div class="formulario__grupo" id="grupo__telefono">
+            <label for="telefono" class="formulario__label">Telefono</label>
+            <div class="formulario__grupo-input">
+                <div class="formulario__inputyicono-contenedor">
+                    <i class="formulario__icon fas fa-mobile-alt"></i>
+                    <input type="text" class="formulario__input" name="telefono" id="telefono"
+                        placeholder="0000000000">
+                    <i id="icono_error-true" class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+            </div>
+            <p class="formulario__input-error">El telefono  solo puede contener numeros y el maximo es de 14 digitos</p>                
+        </div>
+        <!--====GRUPO contraseña ===-->
+        <div class="formulario__grupo " id="grupo__password">
+            <label for="password" class="formulario__label">Admin o cliente?</label>
+            <div class="formulario__grupo-input">
+                <div class="formulario__inputyicono-contenedor">
+                    <i class="formulario__icon fas fa-key"></i>
+                    <input type="password" class="formulario__input" name="password" id="password" placeholder="*****">                        
+                    <i id="icono_error-true"class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>                    
+            </div>
+            <p class="formulario__input-error">Las contraseñas no coinciden</p>                
+        </div>
+        <!--====GRUPO contraseña 2===-->
+        <div class="formulario__grupo" id="grupo__password2">
+            <label for="password2" class="formulario__label">Dirección</label>
+            <div class="formulario__grupo-input">
+                <div class="formulario__inputyicono-contenedor">
+                    <i class="formulario__icon fas fa-key"></i>
+                    <input type="password" class="formulario__input" name="password2" id="password2" placeholder="*****">                        
+                    <i id="icono_error-true" class="formulario__validacion-estado fas fa-times-circle"></i>
+                </div>
+            </div>
+            <p class="formulario__input-error">La contraseña tiene que ser de 4 a 12 digitos</p>                
+        </div>  
+        <!--====GRUPO terminos y condiciones===-->
+        <div class="formulario__grupo formulario__grupo-terminos" id="grupo__terminos">
+            <label class="formulario__label" >
+                <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                Acepto los Términos y Condiciones
+            </label>
+        </div>
+         <!--======================-->
+        <div class="formulario__mensaje" id="formulario__mensaje">
+            <p><i class="fas fa-exclamation-triangle"></i><b> Error: </b> Por favor rellene el formulario correctamente</p>
+        </div>
+        <!--======================-->
+        <div class="formulario__grupo formulario__grupo-btn-enviar">
+            <button (click)="prueba()" class="formulario__btn">Enviar</button>
+            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Se ha registrado exitosamente</p>
+        </div>
+    </form>
+    <p>ya tienes cuenta, entonces <a routerLink="/seguridad/login"> inicia sesión</a></p>
+</div>
+<!--LO ARCHIVOS JAVAS AUN NO IMPLEMENTADOS-->
+<!--script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+<script src="js/formulario.js"></script-->
+
+    
+</section>

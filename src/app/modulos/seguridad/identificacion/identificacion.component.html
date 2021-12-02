@@ -1,0 +1,23 @@
+    <section class="containerLogin">
+        <form action="" class="formLogin" [formGroup]=fgValidador  (ngSubmit)="IdentificarUsuario()">
+            <h3>Login</h3>
+            <div class="login">
+                <input formControlName="usuario" type="email" placeholder="Email" class="boxInput" required>
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="login">
+                <input formControlName="clave" type="password" placeholder="Contraseña" class="boxInput" required> 
+                <i class="fas fa-key"></i>
+            </div>           
+            <p> ¿olvidaste tu contraseña? <a routerLink="/administracion/buscar"> click aquí</a> </p>
+            <!--=======CAPTCHA VALIDACION START==========-->
+            <div class="container__reCaptcha">
+                <ngx-recaptcha2 #captchaElem
+                [siteKey]="siteKey" formControlName="captcha" class="reCaptcha"></ngx-recaptcha2>
+            </div>
+            <!--=======CAPTCHA VALIDACION END==========-->
+            <button [disabled]="!fgValidador.valid" type="submit" class="botonInicio" >CONTINUAR</button>
+            <p> ¿no tienes cuenta? <a  routerLink="/administracion/registrar"> registrarse</a> </p>
+        </form>
+    </section>
+

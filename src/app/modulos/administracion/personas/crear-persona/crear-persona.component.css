@@ -1,0 +1,200 @@
+.sesion__registro{
+    height: 100vh;
+    padding-top: 100px;
+}
+.sesion__registro p{
+    color: rgb(184, 184, 184);
+    font-size: 1rem;
+    margin-top: -40px;
+    margin-left: 35%;
+    transition: .3s ease all;
+}
+.sesion__registro p a{
+    *color: rgb(184, 184, 184);
+    font-size: 1rem;
+    transition: .3s ease ;
+}
+.sesion__registro p a:hover{
+    color: rgb(255, 0, 0);
+    border-bottom: 1px solid red;
+}
+
+.formulario__registro-contenedor h1{
+    font-size: 2.5rem;
+    margin-bottom: -70px;
+    color: rgb(22, 22, 22);
+    z-index: 999;
+}
+.formulario__registro-contenedor{
+    height: 100vh;
+    display: flex;
+    padding-top: 100px;
+    flex-direction: column;
+    align-items: center;
+}
+.formulario{/*contiene tod el formulario*/
+    padding: 100px 30px 70px 30px;
+    border-radius: 9px;
+    background-color:white;
+    width: 60%;
+    display: grid; /*convertir el espacio en una tabla*/
+    grid-template-columns: 1fr 1fr;/*dos columnas*/
+    gap: 20px; /*espacio entre las las filas*/
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
+}
+.formulario__label{/* label encima del input*/
+    display: block;/*tenga el widht de 100%*/
+    font-weight: 700;
+    padding: 10px;
+    cursor: pointer;
+}
+.formulario__grupo-input{ /*grupo label / div "input y iconos" / mensaje de error*/
+    position: relative;
+}
+.formulario__inputyicono-contenedor{/*contiene el input con sus dos iconos*/
+    position: relative;
+    display: flex;
+    border-radius: 9px;
+    align-items: center;
+    background-color:rgb(241, 241, 241);
+    width: 100%;
+    height: 100%;
+}
+.formulario__input{/* input y iconos */
+    width: 100%;
+    background-color: transparent;
+    border: .5px solid transparent ;
+    border-radius: 9px 2px 2px 0;
+    height: 40px;
+    font-size: 1.6rem;
+    line-height: 20px;
+    padding: 0 0 0 5px; /*arriba derecha  abajo izquierda*/
+    transition: .5s ease all;
+}
+.formulario__input:hover{
+    background-color: rgb(255, 255, 255);
+    border: .5px solid transparent ;
+}
+.formulario__input:focus{
+    border: .5px solid #0075ff;
+    outline: none;
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, .4);
+}
+.formulario__input-error{/*oculto texto de error si no introduce bien los campos*/
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+.formulario__input-error-activo{/* mostrarse texto de error si no introduce bien los campos*/
+    display: block;
+    padding: 12px;
+    font-size: 10px;
+    text-align: center;
+    color: rgb(153, 153, 153);
+}
+.formulario__validacion-estado{/*icono "x* oculto del input */
+    position: absolute;
+    right: 0;
+    margin-right: 5px;
+    z-index: 10;
+    font-size: 12px;
+    opacity: 0;
+}
+.formulario__icon{  /*icono del input */  
+    margin-left:12px ;
+    color: rgb(92, 92, 92);
+    width: 30px;
+    z-index: 10;
+    font-size: 2rem;
+    transition: .3s ease all;
+}
+.formulario__checkbox{ /*CHECK BOX DE ACEPTAR TERMINOS Y CONDICIONES*/
+    margin-right: 10px;
+}
+.formulario__grupo-terminos,
+.formulario__mensaje,
+.formulario__grupo-btn-enviar{/*GRUPO DE /TERMINOS Y CONDICIONES/ MENSAJE ERROR / GRUPO DE BOTON ENVIAR Y MENSAJE ENVIDO CON EXITO*/
+    grid-column: span 2;
+}
+.formulario__mensaje{/*GRUPO DE MENSAJE ERROR OCULTO SI NO HAY ERRORES*/
+    height: 20px;
+    line-height: 20px;
+    color: red;
+    padding: 0 15px;
+    opacity: 0;
+}
+.formulario__mensaje-activo{/*GRUPO DE MENSAJE ERROR APARECE SI ES INCORRECTO*/
+    *background-color: violet;
+    opacity: 1;
+}
+.formulario__grupo-btn-enviar{/*GRUPO DE EL BOTON Y EL MENSAJE ENVIADO EXITOSAMENTE*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formulario__btn{ /*BOTON ENVIAR*/
+    font-size: 1.3rem;
+    height: 35px;
+    line-height: 35px;
+    width: 30%;
+    background-color: #ff0000;
+    color: rgb(212, 212, 212);
+    border: none;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+.formulario__btn:hover{
+    box-shadow: 0px 0px 10px #ff000042;
+    background-color: white;
+    color: red;
+    transform: scale(1.03);
+}
+.formulario__mensaje-exito{/*MESNAJE ENVIADO CORRECTAMENTE OCULTO*/
+    padding: 12px 0 0 0;
+    font-size: 10px;
+    color: #219427; 
+    display: none;
+}
+.formulario__mensaje-exito-activo{/*MESNAJE ENVIADO APARECE SI TODO ES CORRECTO*/
+    display: block;
+}
+/*===ESTILOS PARA VALIDACIÓN======*/
+.formulario__grupo-correcto 
+.formulario__validacion-estado{/*SI ES CORRECTO EL ICONO "X" SE VE VERDE*/
+    color: #1ed12d;
+    opacity: 1;
+}
+.formulario__grupo-incorrecto
+.formulario__label{/*SI ES INCORRECTO EL LABEL SE VE ROJO*/
+    color: #ff0000;
+}
+.formulario__grupo-incorrecto
+.formulario__validacion-estado{/*SI ES INCORRECTO EL ICONO "X" SE VE ROJO*/
+    color: #ff0000;
+    opacity: 1;
+}
+.formulario__grupo-incorrecto
+.formulario__icon{/*SI ES INCORRECTO EL ICONO DERECHO SE VE ROJO*/
+    color: #ff0000;
+    opacity: 1;
+}
+.formulario__grupo-incorrecto
+.formulario__input{/*SI ES INCORRECTO EL BORDER DEL INPUT SE VE ROJO*/
+    border: .5px solid #ff0000;
+}
+/*===MEDIAS QUERYS======*/
+@media screen and (max-width: 800px){
+    .formulario{
+        grid-template-columns: 1fr;
+    }
+    .formulario__grupo-terminos,
+    .formulario__mensaje,
+    .formulario__grupo-btn-enviar{
+        grid-column: 1;
+    }
+    .formulario__btn{
+        width: 100%;
+    }
+}
+   

@@ -1,0 +1,848 @@
+/*===============SESION "0" STAR======================*/
+
+.sesion0 {
+    /*==== 1 ====*/
+    background: var(--black);
+    margin-top: -80px;
+    *clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    *overflow: hidden;
+}
+.tituloEscoje {
+    position: absolute;
+    top: 18vw;
+    margin-left: 100px;
+    *color: var(--grisClaro);
+    font-size: 5em;
+    font-weight: 700;
+    background: linear-gradient(to bottom, rgb(137, 137, 137), rgba(255, 0, 0, 0));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.divisorsesion1{
+background: linear-gradient(to top, #171717 70%, transparent);
+*background-color: blue;
+position: absolute;
+top: calc(100vh - 60px);
+width: 100%;
+height: 30rem;
+z-index: 0;
+}
+/*===============background start======================*/
+.containerImg {
+    /*======2=======*/
+    *background-color: blue;
+    position: relative;
+    width: 100vw;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.imgPiso {
+    *background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 1500px;
+    background-position-y: 0;
+    transform-origin: bottom;
+    z-index: 3;
+
+}
+.lamparas {
+    position: absolute;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+.lamparas img {
+    *background-color: rgba(137, 43, 226, 0.274);
+    position: absolute;
+    width: 1500px;
+}
+/*===============background end======================*/
+/******************************************************************/
+/*===============iconos bajar páguina start======================*/
+.cotenedor-icono {
+    *background-color: rgb(255, 0, 0);
+    position: absolute;
+    padding: 20px;
+    z-index: 10;
+    top: 550px;
+    left: 48%;
+    font-size: 25px;
+    cursor: pointer;
+    animation: bajar-subir 1s ease infinite;
+    transition: .3s;
+}
+@keyframes bajar-subir {
+    0% {
+        transform: translateY(30px) scale(.8);
+    }
+
+    20% {
+        transform: translateY(0px) scale(1);
+    }
+
+    100% {
+        transform: translateY(30px) scale(.8);
+    }
+}
+.fa-chevron-down {
+    color: var(--grisClaro);
+}
+.cotenedor-icono:hover .fa-chevron-down {
+    color: rgb(255, 255, 255);
+}
+/*===============iconos bajar páguina end======================*/
+/******************************************************************/
+/*===============iconos logos start======================*/
+@keyframes loop {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-16.66vw * 6));
+    }
+}
+.sliderLogo {
+    *background-color: brown;
+    position: absolute;
+    *height: 15px;
+    margin: auto;
+    overflow: hidden;
+    width: 100vw;
+}
+.sliderLogo .slideTrackLogo {
+    position: relative;
+    *background-color: chartreuse;
+    animation: loop 28s linear infinite;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 200vw;
+    z-index: 3;
+}
+.sliderLogo .slideLogos {
+    *background: rgb(99, 31, 31);
+    display: flex;
+    flex-direction: row;
+    *justify-content: space-between;
+    height: 25px;
+    width: calc(16.66vw * 12);
+}
+.slideLogos img {
+    opacity: .2;
+}
+/*===============iconos logos end======================*/
+/******************************************************************/
+/*===============slider vehiculos start======================*/
+.sectionPrueba {
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    *background: rgba(66, 32, 8, 0.295);
+    *padding: 30px;
+    width: 100vw;
+    height: 800px;
+}
+.carousel__contenedor {
+    *background-color: rgba(51, 71, 11, 0.384);
+    position: relative;
+    *width: 100vw;
+    *height: 100vh;
+    *margin: 0 30px 0 30px;
+}
+.carousel__anterior2,
+.carousel__siguiente2 {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border: none;
+    top: calc(50% - 55px);
+    cursor: pointer;
+    line-height: 50px;
+    text-align: center;
+    background: none;
+    color: rgb(255, 217, 0);
+    opacity: 20%;
+}
+.carousel__anterior2:hover,
+.carousel__siguiente2:hover {
+    opacity: 100%;
+}
+.carousel__anterior2 {
+    left: -30px;
+}
+.carousel__siguiente2 {
+    right: -30px;
+}
+.carousel__lista {
+    overflow: hidden;
+}
+.carousel__elemento {
+    *background-color: blue;
+    width: 100vw;
+    height: 800px;
+    position: relative;
+    text-align: center;
+}
+.s0imgCar {
+    *background-color: blueviolet;
+    position: absolute;
+    width: 410px;
+    left: calc(50% - 200px);
+    top: calc(50% - 125px);
+    z-index: -2;
+}
+.s0ContCar {
+    *position: absolute;
+    width: 100vw;
+    z-index: -1;
+}
+.carousel__indicadores2 .slick-dots {
+    /*no implementado */
+    background-color: blueviolet;
+    color: black;
+    display: block;
+    width: 30px;
+    height: 4px;
+    opacity: .6;
+}
+.carousel__indicadores .glider-dot:hover {
+    opacity: .8;
+}
+.carousel__indicadores .glider-dot.active {
+    opacity: 1;
+}
+/*===============contenido del texto en vehiculos  end======================*/
+/******************************************************************/
+/*===============contenido del boton aber mas start=====================*/
+.btnCarousel {
+    background-color: red;
+    padding: 1rem 2rem;
+    border-radius: 2px;
+    color: white;
+    font-size: 1rem;
+    position: absolute;
+    left: calc(50% - 65px);
+    bottom: 200px;
+    transition: .3s ease-in-out;
+}
+.btnCarousel:hover {
+    background-color: rgb(255, 255, 255);
+    color: var(--red);
+    transform: scale(1.1);
+}
+/*===============contenido del boton aber mas end=====================*/
+@media (max-width: 991px) {}
+/*==============================SESION "0" END===========================*/
+/***********************************************************************/
+
+
+
+
+
+/***********************************************************************/
+/*==============================SESION "1" START===========================*/
+.sesion1{
+    *margin-top: 280px;
+    background: linear-gradient(to bottom, var(--black)  ,#202020);
+    display: flex;
+    flex-wrap: wrap;
+    *justify-content: space-between;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    overflow: hidden;
+    height: 900px;
+}
+.sesion1 .tituloVenta{/* titulo vehiculos disponibles*/
+    position:relative;
+    margin-left: 20vw;
+    font-size: 5em;
+    z-index: 1;
+    font-weight: 700;
+    background: linear-gradient(to bottom, rgb(137, 137, 137), rgba(255, 0, 0, 0));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.sesion1 .tituloVenta span{/* titulo vehiculos disponibles*/
+    position: absolute;
+    bottom: -20px;
+    right: 0px;
+    color: red;
+    font-size: 3.5rem;
+}
+.vehiculos-disponibles{
+    height: 900px;
+  *background-color: blue;
+}
+.vehiculos-disponibles h1{
+  *background-color: blue;
+  margin: 50px 190px 0 90px;
+  color: var(--letraBlanca);
+  font-weight: 100;
+  font-size: 1.2rem;
+
+}
+.contenedor__sesion-ventas{/*contenedor de contenido de la sesion de ventas*/
+  *background-color: green;
+  margin-top: 30px;
+  width: 100%;
+  height: 700px;      
+  display: flex;
+  flex-direction: row;
+
+}
+/*edicion del menu de filtro start*/
+.contenedor__menu-buscar{/*contenedor del menu de busqueda*/
+  *background-color: rgb(252, 252, 252);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px  0 0;
+  width: 20%;
+  height: 800px;
+  color: rgb(158, 158, 158);
+  *box-shadow: 5px 5px 15px rgb(216, 216, 216);
+  border-right: .5px solid rgb(83, 83, 83);
+}    
+.contenedor__filtros{
+    width: 80%;
+    height: 120px;
+    *background-color: turquoise;
+}
+.contenedor__vista{
+    width: 80%;
+    *background-color: thistle;
+    margin-bottom: 10px;
+}
+.contenedor__ordenarPor{
+    display: flex;
+    flex-direction: column;
+    line-height: 70px;
+    *background-color: tomato;
+    width: 80%;
+}
+.contenedor__marca,
+.contenedor__modelo,
+.contenedor__fechaVeh,
+.contenedor__tipoCarro{
+    position: relative;
+    *background-color: turquoise;
+    height: 45px;
+    border-bottom: 1px solid rgb(190, 190, 190);
+}
+.contenedor__ordenarPor i{
+    position: absolute;
+    color: rgb(158, 158, 158);
+}
+.contenedor__marca i,
+.contenedor__modelo i,
+.contenedor__fechaVeh i,
+.contenedor__tipoCarro i{
+    *color: red;
+    bottom: 5px;
+    right: 0;
+}
+/*edicion del menu de filtro end*/
+
+.contenedor__venta-vehiculos{/*contenedor de los frames de los vehiculos ofertados*/
+  *background-color: rgb(255, 255, 255);
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+.frame-blanco-vehiculo{/*contenedor de imagen veiculo y texto venta*/
+    margin: 0 35px 0 0;
+    width: 230px;
+    height: 270px;
+    background-color: transparent;
+    box-shadow: 4px 8px 10px #00000050;
+    border-radius: 5px;
+    transition: .3s ease-in-out;
+}
+.frame-blanco-vehiculo:hover {/*contenedor de imagen veiculo y texto venta*/
+    transform: scale(1.01);
+}
+.contenedor__img-carro-venta{/*contenedor de la imagen de vehiculo a la venta*/
+    background-color: rgb(255, 0, 0);
+    height: 55%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border-radius: 5px 5px 0 0;
+}
+.frame-blanco-vehiculo img{/*imagen de vehiculo a la venta*/
+    width: 100%;
+    *object-fit: cover;
+    transition: .3s ease-in-out;
+}
+.frame-blanco-vehiculo img:hover{/*imagen de vehiculo a la venta*/
+    transform: scale(1.05);
+    
+}
+.contenedor__contenido-carro-venta{/*contenedor del contenido de la venta*/
+    *background-color: blue;
+    padding: 15px;
+    color: var(--letraBlanca);
+    font-size: 1.3rem;
+    line-height: 25px; 
+    font-weight: 100;  
+}
+.contenedor__contenido-carro-venta .precio{/*precio de vehiculo*/     
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+.contenedor__contenido-carro-venta h4{/*precio de vehiculo*/     
+    font-weight: 100;
+    font-size: 1.2rem;
+}
+/*==============================SESION "1" END===========================*/
+/***********************************************************************/
+/*===============SISION 2 MISION START======================*/
+    .sesion__mision, .sesion__vision{/*sesion*/
+        padding-top: 80px;
+        background-color: #202020;
+        position: relative;
+        align-items: center;
+        height: 800px;
+        z-index: -1;
+    }
+    .box{
+        *background-color: blue;
+        *display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100vw;
+        height: 800px;
+    }
+    .sesion__mision h2{/* titulo h2*/
+        margin: 0 0 20px 15vw;/*arriba derecha abajo izquierda*/
+        font-size: 5em;
+        z-index: 1;
+        font-weight: 700;
+        background: linear-gradient(to bottom, rgb(137, 137, 137), rgba(255, 0, 0, 0));
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    .sesion__vision h2{/* titulo h2*/
+        margin: 0 15vw 20px 0;/*arriba derecha abajo izquierda*/
+        text-align: right;
+        font-size: 5em;
+        z-index: 1;
+        font-weight: 700;
+        background: linear-gradient(to bottom, rgb(77, 66, 66), rgba(255, 0, 0, 0));
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+    }
+    .sesion__mision .container, 
+    .sesion__vision .container{/* contenedor de el contenedor de la imagen y el contenedor del contenido del texto*/
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        z-index: -1;
+    }
+    .sesion__mision .container .imgBx, 
+    .sesion__vision .container .imgBx{/* contenedor de la imagen*/
+        *margin: -500px ;
+        *position: absolute;
+        width: 100%;
+        height: 500px;
+        overflow: hidden;
+        *margin-left: 45vw;
+        *box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.336);
+    }
+    .sesion__mision .container .imgBx img, 
+    .sesion__vision .container .imgBx img{/* imagen*/
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 500px;
+        opacity: 30%;
+        object-fit: cover;/*centra la imagen **lo estaba buscando** */
+    }
+    .sesion__mision .content{/* contenedor del contenido del texto*/ 
+        position: absolute;   
+        padding: 20px;
+        max-width: 370px;
+        left: 10vw;
+        top: 10px;
+        font-size: 16px;
+        line-height: 25px;        
+        color: var(--letraBlanca);
+        *box-shadow: 0 25px 35px rgba(0, 0, 0, 1);
+        border-left: 1px solid red;
+    }
+    .sesion__vision .content{/* contenedor del contenido del texto*/    
+        position: absolute;   
+        padding: 20px;
+        max-width: 370px;
+        right: 10vw;
+        top: 10px;
+        font-size: 16px;
+        line-height: 25px;
+        color: var(--letraBlanca);
+        *box-shadow: 0 25px 35px rgba(0, 0, 0, 1);
+        border-right: 1px solid red;
+    }
+        /*===============SISION 2 MISION END======================*/
+        /******************************************************************/
+
+
+
+
+/***********************************************************************/
+/*==============================SESION "2" START===========================*/
+.sesion2{
+    *margin-top: 280px;
+    background: linear-gradient(to bottom, #202020,#252525);
+    display: flex;
+    flex-wrap: wrap;
+    *justify-content: space-between;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    overflow: hidden;
+}
+.conS2{
+    *background-color: darkgray;
+    *position: absolute;
+    width: 100%;
+    margin-top: -10%;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+.s2-text {
+    *background-color: thistle;
+    right: 450px;
+    position: relative;
+    font-size: 16px;
+    top: -100px;
+    width: 350px;
+    color: rgb(156, 156, 156);
+}
+.s2-text h1{
+    margin-bottom: 25px;
+    font-size: 5em;
+    font-weight: 700;
+    background: linear-gradient(to bottom, rgb(137, 137, 137), rgba(255, 0, 0, 0));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.s2-text h1 span{
+    position: absolute;
+    color: red;
+    top: 45px;
+    left: 70px;
+    font-size: 40px;
+    *margin-bottom: 25px;
+}
+.s2-img2 img{
+    *position: absolute;
+    margin-top: 200px;
+    *background-color: rosybrown;
+    width: 400px;
+    z-index: -9999;
+    *margin-left: 45%;
+}
+/*==============================SESION "2" END===========================*/
+/***********************************************************************/
+
+
+
+
+
+/***********************************************************************/
+/*==============================SESION "3" START==========================*/
+.sesion3{
+    background: linear-gradient(to bottom, #252525, #292929);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    overflow: hidden;
+}
+.conS3{
+    position: absolute;
+    width: 100%;
+    margin-top: -40%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.s3-text {
+    *background-color: thistle;
+    position: relative;
+    font-size: 16px;
+    top: 100px;
+    right: 70px;
+    width: 600px;
+    color: rgb(156, 156, 156);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.s3-text h1{
+    position: absolute;
+    left: 0;
+    top:-50px;
+    font-size: 5em;
+    font-weight: 700;
+    background: linear-gradient(to bottom, rgb(137, 137, 137), rgba(255, 0, 0, 0));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.s3-text p a{
+    color: rgb(156, 156, 156);
+    position: absolute;
+    font-size: 8px;
+    left: 0;
+    bottom:-250px;
+    z-index: 3;
+}
+.s3-text p{
+    margin-top: 15px;
+    font-size: 9px;
+}
+.s3-text div{
+    *background-color: rgb(143, 36, 36);
+    border: 5px solid rgb(223, 223, 223);
+    border-radius: 25px;
+    margin-right: 10px; margin-top: 50px;
+    padding: 30px;
+    font-size: 14px;
+}
+.s3-text div h3{
+    font-size: 20px;
+}
+.s3-img1 img{
+    position: relative;
+    top: 250px;
+    *background-color: rgb(143, 36, 36);
+    width: 350px;
+    *margin-left: 190%;
+    left: 55%;
+    z-index: 1;
+}
+.s3-img2 img{
+    position: absolute;
+    top: 340px;
+    *background-color: rosybrown;
+    width: 280px;
+    *margin-left: 30%;
+    left: 0;
+    z-index: 2;
+}
+/*==============================SESION "3" END===========================*/
+/***********************************************************************/
+
+
+
+
+
+/***********************************************************************/
+/*==============================SESION "4" START==========================*/
+.sesion4{
+    background: linear-gradient(to bottom, #292929,rgb(39, 39, 39));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+    *clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    *overflow: hidden;
+}
+.s4-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.s4-cont .heading{
+    margin-top: 70px;
+    color: rgb(255, 255, 255);
+    font-size: 5em;
+    font-weight: 700;
+    background: linear-gradient(to bottom, rgb(137, 137, 137), rgba(255, 0, 0, 0));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.s4-cont .row{
+    position: relative;
+    width: 100vw;
+    height: 600px;
+    *background-color: tomato;
+}
+/*
+.imagenConcecionario{
+    position: relative;
+    opacity: 40%;
+    width: 100%;
+    margin-bottom: -30%;
+    *margin-top: 10px;
+    *padding:1rem; 
+    *box-shadow: var(--box-shadow);
+    *border:var(--border);
+    *border-radius: .5rem;
+}*/
+.containerFormaulario{
+    position: absolute;
+    top: 60px;
+    right: 180px;
+    height: 500px;
+    width: 400px;
+    padding:1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    border:var(--border);
+    border-radius: .5rem;
+    background: rgb(39, 39, 39);
+    box-shadow: -5px 5px 10px rgba(26, 26, 26, 0.699);
+}
+.containerFormaulario .box{
+    width:95%;
+    border-radius: .5rem;
+    padding:1.5rem ;
+    font-size: 1rem;
+    height: 1px;
+    text-transform: none;
+    border:var(--border);
+    margin:.7rem ;
+}
+.containerFormaulario textarea{
+    min-height:20rem;
+    resize: none;
+}
+.containerFormaulario input{
+    width: 90%;
+}
+.btnContactenos{
+    min-width: 95%;
+    margin-top: 10px;
+    height: 40px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+.row img{
+    width: 580px;
+    margin-left: 190px;
+}
+/*==============================SESION "4" END===========================*/
+/***********************************************************************/
+
+
+
+
+
+
+/***********************************************************************/
+/*==============================SESION "5" START==========================*/
+.sesion5{
+    background: linear-gradient(to bottom, rgb(39, 39, 39),rgba(80, 80, 80, 0));
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    *padding-bottom: 90px;
+    margin-bottom: 30vh;
+    overflow-x: hidden;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+.conS5{
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+.s5-img1 img{
+    position: absolute;
+    top: 450px;
+    *background-color: rgb(143, 36, 36);
+    width: 300px;
+    *margin-left: 190%;
+    left: 55%;
+}
+.s5-text {
+    *background-color: thistle;
+    position: relative;
+    font-size: 16px;
+    top: -100px;
+    width: 550px;
+    color: rgb(156, 156, 156);
+}
+.s5-text h1{
+    position: relative;
+    margin-bottom: 25px;
+    font-size: 5em;
+    font-weight: 700;
+    background: linear-gradient(to bottom, rgb(137, 137, 137), rgba(255, 0, 0, 0));
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.s5-text h1 span{
+    position: absolute;
+    color: red;
+    top: 45px;
+    left: 70px;
+    font-size: 40px;
+    *margin-bottom: 25px;
+}
+.map{
+    position: relative;
+    margin: 3rem;
+    margin-bottom: -20%;
+    height: 340px;
+    width: 500px;
+    padding:1rem;
+    box-shadow: var(--box-shadow);
+    border:var(--border);
+    border-radius: .5rem;
+    background: rgba(255, 255, 255, 0.1);
+}
+.s5-img2 img{
+    position: absolute;
+    top: 280px;
+    *background-color: rosybrown;
+    width: 700px;
+    *margin-left: 30%;
+    left: 15%;
+    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+}
+/*==============================SESION "5" END===========================*/
+/***********************************************************************/

@@ -1,0 +1,23 @@
+<div class="barra_progreso" id="barra-progreso"></div>
+<!-- ==========================================HEADER START=============================-->
+<header class="containerHeader">
+        <div class="containerHamburgesa " id="menuOpen">
+            <i  (click)="aparecerMenu()" id="menu-btn" class="fas fa-bars"></i>
+        </div>
+        <a routerLink="/inicio"><img class="logoHeader logo" loading="lazy" src="./assets/img/fordLogoLr.png" alt="logo"></a>
+        <nav class="navbar">
+            <a href="http://localhost:4200/inicio#inicio"> Inicio</a>
+            <a href="http://localhost:4200/inicio#vehiculos"> Vehículos</a>
+            <a href="http://localhost:4200/inicio#pruebaManejo"> Prueba de Manjeo</a>
+            <a href="http://localhost:4200/inicio#servicio"> Servicios</a>
+            <a href="http://localhost:4200/inicio#contacto"> Contacto</a>
+            <a href="http://localhost:4200/inicio#mapaSitio"> Mapa del sitio</a>
+        </nav>
+        <div id="login-btn">
+            <a routerLink="/seguridad/login">
+                <button class="btnIniciarSesion btn" >Login</button>
+                <i class="far fa-user loginIcon"></i>
+            </a>
+            
+        </div>
+</header>

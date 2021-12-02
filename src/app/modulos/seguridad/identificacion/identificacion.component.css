@@ -1,0 +1,116 @@
+
+        /*=====VENTANA LOGIN START======*/
+        .containerLogin {
+            position: relative;
+            top: 0;
+            *right: -105%;/*si se abre desde inicio*/
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            *background: rgba(20, 20, 20, 0.1);
+            *backdrop-filter: blur(5px);
+            *z-index: 10000;
+            transition: 1.3s ease-in-out;
+
+        }
+
+        .containerLogin.active {
+            right: 0;
+        }
+        .login{
+            position: relative;
+            background-color: rgb(243, 243, 243);
+            border-radius: 5px;
+            margin: 10px 0 10px 0;
+        }
+        .login i{
+            position: absolute;
+            left: 10px;
+            top: 30%;
+            color: var(--grisOscuro);
+            font-size: 2rem;
+        }
+        .formLogin {
+            *position: absolute;
+            margin: 2rem;
+            text-align: center;
+            padding: 2rem;
+            width: 40rem;
+            border-radius: .5rem;
+            box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
+            background: #fff;
+        }
+        .container__reCaptcha{
+            *background-color: aqua;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .reCaptcha{
+            margin: 10px;
+        }
+        .botonInicio {
+            padding: 1rem;
+            display: block;
+            width: 100%;
+            margin: .5rem 0;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.205);
+        }
+        .boxInput {
+            background-color: transparent;
+            margin: 0 0 0 3rem;
+            width: 90%;
+            font-size: 1.6rem;
+            color: black;
+            text-transform: none;
+            *border: var(--border);
+            padding: 1rem 1.2rem;
+            border-radius: .5rem;
+        }
+
+        .containerLogin form p {
+            text-align: right;
+            padding: 1rem 0;
+            font-size: 1rem;
+            color: rgb(121, 121, 121);
+        }
+
+        .containerLogin form p a {
+            color: blue;
+            text-decoration: underline;
+        }
+
+        .containerLogin form h3 {
+            padding-bottom: 1rem;
+            font-size: 2.5rem;
+            color: black;
+        }       
+
+        @media (max-width: 770px) {
+            #close-login-form {
+                margin-top: -410px;
+                right: -5%;
+            }
+        }
+
+        @media (max-width: 573px) {
+            .formLogin {
+                width: 80%;
+            }
+
+            #close-login-form {
+                top: 94%;
+                right: -22px;
+            }
+        }
+
+        @media (max-width: 308px) {
+            #close-login-form {
+                top: 71%;
+
+            }
+        }
+
+        /*=====VENTANA LOGIN END======*/
