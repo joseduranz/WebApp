@@ -1,12 +1,12 @@
 .sesion__registro{
-    height: 100vh;
+    height: 1000px;
     padding-top: 100px;
 }
 .sesion__registro p{
     color: rgb(184, 184, 184);
     font-size: 1rem;
     margin-top: -40px;
-    margin-left: 35%;
+    margin-left: 20px;
     transition: .3s ease all;
 }
 .sesion__registro p a{
@@ -36,10 +36,10 @@
     padding: 100px 30px 70px 30px;
     border-radius: 9px;
     background-color:white;
-    width: 60%;
-    display: grid; /*convertir el espacio en una tabla*/
-    grid-template-columns: 1fr 1fr;/*dos columnas*/
-    gap: 20px; /*espacio entre las las filas*/
+    width: 40rem;
+    *display: grid; /*convertir el espacio en una tabla*/
+    *grid-template-columns: 1fr;/*dos columnas*/
+    *gap: 20px; /*espacio entre las las filas*/
     box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
 }
 .formulario__label{/* label encima del input*/
@@ -183,6 +183,21 @@
 .formulario__input{/*SI ES INCORRECTO EL BORDER DEL INPUT SE VE ROJO*/
     border: .5px solid #ff0000;
 }
+
+.botonInicio {
+    padding: 1rem;
+    display: block;
+    width: 100%;
+    margin: 4rem 0 0 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.205);
+    border-radius: 5px;
+}
+.btnDisabled{
+    background-color: rgb(189, 189, 189);
+}
+.btnDisabled:hover{
+    color: white;
+}
 /*===MEDIAS QUERYS======*/
 @media screen and (max-width: 800px){
     .formulario{
@@ -195,6 +210,11 @@
     }
     .formulario__btn{
         width: 100%;
+    }
+}
+@media (max-width: 573px) {
+    .formulario{
+        width: 80%;
     }
 }
    

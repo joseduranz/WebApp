@@ -8,6 +8,9 @@ import { HeaderComponent } from './plantilla/header/header.component';
 import { InicioComponent } from './plantilla/inicio/inicio.component';
 import { ErrorComponent } from './plantilla/error/error.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +24,8 @@ import { NgxCaptchaModule } from 'ngx-captcha';
     BrowserModule,
     AppRoutingModule,
     NgxCaptchaModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

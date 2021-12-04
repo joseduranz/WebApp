@@ -4,7 +4,7 @@
         <div class="containerHamburgesa " id="menuOpen">
             <i  (click)="aparecerMenu()" id="menu-btn" class="fas fa-bars"></i>
         </div>
-        <a routerLink="/inicio"><img class="logoHeader logo" loading="lazy" src="./assets/img/fordLogoLr.png" alt="logo"></a>
+        <a routerLink="/inicio"><img class="logoHeader logo" loading="lazy" src="./assets/img/logoAutoLuxuryColor.png" alt="logo"></a>
         <nav class="navbar">
             <a href="http://localhost:4200/inicio#inicio"> Inicio</a>
             <a href="http://localhost:4200/inicio#vehiculos"> Vehículos</a>
@@ -12,11 +12,18 @@
             <a href="http://localhost:4200/inicio#servicio"> Servicios</a>
             <a href="http://localhost:4200/inicio#contacto"> Contacto</a>
             <a href="http://localhost:4200/inicio#mapaSitio"> Mapa del sitio</a>
+            <a *ngIf="sesionIniciada" routerLink="/administracion/index-admin"> Administrador</a>
+            <a *ngIf="sesionIniciada" routerLink="/administracion/index-asesor"> Asesor</a>
+            <a *ngIf="sesionIniciada" routerLink="/administracion/index-cliente"> Cliente</a>
         </nav>
         <div id="login-btn">
-            <a routerLink="/seguridad/login">
+            <a *ngIf="!sesionIniciada" routerLink="/seguridad/login">
                 <button class="btnIniciarSesion btn" >Login</button>
                 <i class="far fa-user loginIcon"></i>
+            </a>
+            <a *ngIf="sesionIniciada" routerLink="/seguridad/cerrar-sesion">
+                <button class="btnIniciarSesion btn" >Logout</button>
+                <i class="fas fa-sign-out-alt loginIcon"></i>
             </a>
             
         </div>

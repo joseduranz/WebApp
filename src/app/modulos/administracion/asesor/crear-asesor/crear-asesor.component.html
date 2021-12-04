@@ -1,0 +1,28 @@
+<section class="Registro__asesor">
+    <div class="contenedor__toda-informacion">
+        <h1>Registrar Asesor</h1>
+        <form [formGroup]="formularioRegistro" action="" class="contenido__formulario">
+        
+            <label for="nombres">Nombres</label>
+            <input formControlName="nombres" [ngClass]="{'inputError':Nombres?.invalid && (Nombres?.dirty || Nombres?.touched)}" type="text" id="nombres"  required>
+            <div *ngIf="Nombres?.invalid && (Nombres?.dirty || Nombres?.touched)" class="error"> 
+                <p *ngIf="Nombres?.errors?.['required']">Error el campo es obligatorio </p>
+                <p *ngIf="Nombres?.errors?.['maxLength']">Error el tamaño es maximo de 10 caracteres</p>
+            </div>
+        
+            <label for="apellidos">Apellidos</label>
+            <input formControlName="apellidos" type="text" id="apellidos"  required>
+
+            <label for="email">Correo electrónico</label>
+            <input formControlName="email" type="email" id="email"  required>
+
+            <label for="telefono">Celular</label>
+            <input formControlName="celular" type="number" id="telefono" value="8888888" required>
+
+            <label for="direccion">Dirección</label>
+            <input formControlName="direccion" type="text" id="direccion" required>
+
+            <button [disabled]="!formularioRegistro.valid" [ngClass]="{'btnDisabled':!formularioRegistro.valid}" class="btn  btnIniciarSesion" (click)="Guardar()"  type="submit">Enviar</button>
+        </form>
+    </div>
+</section>

@@ -658,7 +658,7 @@ z-index: 0;
     *background-color: rosybrown;
     width: 280px;
     *margin-left: 30%;
-    left: 0;
+    left: 30%;
     z-index: 2;
 }
 /*==============================SESION "3" END===========================*/
@@ -702,18 +702,6 @@ z-index: 0;
     height: 600px;
     *background-color: tomato;
 }
-/*
-.imagenConcecionario{
-    position: relative;
-    opacity: 40%;
-    width: 100%;
-    margin-bottom: -30%;
-    *margin-top: 10px;
-    *padding:1rem; 
-    *box-shadow: var(--box-shadow);
-    *border:var(--border);
-    *border-radius: .5rem;
-}*/
 .containerFormaulario{
     position: absolute;
     top: 60px;
@@ -727,7 +715,7 @@ z-index: 0;
     box-shadow: var(--box-shadow);
     border:var(--border);
     border-radius: .5rem;
-    background: rgb(39, 39, 39);
+    background-color: rgb(255, 255, 255);
     box-shadow: -5px 5px 10px rgba(26, 26, 26, 0.699);
 }
 .containerFormaulario .box{
@@ -743,9 +731,11 @@ z-index: 0;
 .containerFormaulario textarea{
     min-height:20rem;
     resize: none;
+    background-color: rgb(230, 230, 230);
 }
 .containerFormaulario input{
     width: 90%;
+    background-color: rgb(230, 230, 230);
 }
 .btnContactenos{
     min-width: 95%;
@@ -757,6 +747,7 @@ z-index: 0;
 .row img{
     width: 580px;
     margin-left: 190px;
+    border-radius: 5px;
 }
 /*==============================SESION "4" END===========================*/
 /***********************************************************************/

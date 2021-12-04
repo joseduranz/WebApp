@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import * as cryptoJS from 'crypto-js';
+import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
 @Component({
   selector: 'app-identificacion',
@@ -17,7 +20,7 @@ export class IdentificacionComponent implements OnInit {
   siteKey:string;//llave de captcha
   
 
-  constructor(private fb: FormBuilder ) {
+  constructor(private fb: FormBuilder, private servicioSeguridad: SeguridadService, private router:Router ) {
     this.siteKey = '6LdwKGUdAAAAAMC0Y5gS7570bte16ti5WPCPalWJ';
    }
 
@@ -33,8 +36,22 @@ export class IdentificacionComponent implements OnInit {
   IdentificarUsuario(){
     let usuario = this.fgValidador.controls['usuario'].value;
     let clave = this.fgValidador.controls['clave'].value;
-    alert(usuario);
-    alert(clave);
+    let claveCifrada = cryptoJS.MD5(clave).toString();//codificar la clave   
+    this.servicioSeguridad.Identificar(usuario,claveCifrada).subscribe((datos:any)=>{
+      //si todo funciona correctamente
+        //alert("el usuario existe en la base de datos");
+      this.servicioSeguridad.AlmacenarSesion(datos);
+      ///implementar validacion de el rol
+      //------------------------------------------- 
+      //this.router.navigate(["/administracion/index-admin"]); //Admin
+      //this.router.navigate(["/administracion/index-asesor"]); //Asesor
+      this.router.navigate(["/administracion/index-cliente"]);// cliente//se inyecta en el constructor y aca se hace el llamado
+    },(error:any)=>{
+      //no funciona correctamente
+      alert("el usuario o contraseña incorrecta");
+    })
+    /*alert(usuario);
+    alert(clave);*/
   }
   
 

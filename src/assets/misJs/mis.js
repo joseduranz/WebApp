@@ -2,26 +2,27 @@
 function menudesplegable2(){
     alert("funcionando")
 }
-
+//==============APARECER EL MENU EN MODO CELULAR START===============================
 function menudesplegable(){
     document.querySelector("#menu-btn").classList.toggle("fa-times");
     document.querySelector(".navbar").classList.toggle("active1");
     document.querySelector("#menu-btn2").classList.toggle("active2");
   
 }
-
+//==============APARECER EL MENU EN MODO CELULAR END===============================
+//*****************************************************************************
 /*=========================pantalla completa, cambiar el scroll objeto START======================*/
-    $(window).scroll(function () {
+ $(window).scroll(function () {
         var scroll = $(window).scrollTop(),
             dh = $(document).height(),
             wh = $(window).height();
         scrollPercent = (scroll / (dh - wh)) * 100;
         $('#barra-progreso').css('height', scrollPercent + '%');
-    })
-    /*=========================pantalla completa, cambiar el scroll objeto END======================*/
-    //*****************************************************************************
-    /*=========================CONF DE CARRUSEL SECION 0 START====================*/
-    $(document).ready(function(){
+})
+/*=========================pantalla completa, cambiar el scroll objeto END======================*/
+ //*****************************************************************************
+/*=========================CONF DE CARRUSEL SECION 0 START====================*/
+$(document).ready(function(){
         $('.carousel__lista').slick({
             slidesToShow:1,
             slidesToScroll:1,
@@ -45,11 +46,11 @@ function menudesplegable(){
                 },
             ]
         });
-    })
-    /*=========================CONF DE CARRUSEL SECION 0 END======================*/ 
-    //*****************************************************************************
-    /*=========================CREACION DEL METODO POST START======================*/ 
-    function RegistrarPersona(){
+})
+/*=========================CONF DE CARRUSEL SECION 0 END======================*/ 
+//*****************************************************************************
+/*=========================CREACION DEL METODO POST START======================*/ 
+function RegistrarPersona(){
         let nombres = document.querySelector('#txtNombres').value;
         let apellidos = document.querySelector('#txtApellidos').value;
         let rol = document.querySelector('#txtRol').value;
@@ -77,15 +78,14 @@ function menudesplegable(){
         .then(mensaje =>{
           console.log(mensaje) //mostrar en la consola el mensaje
         })
-      }
-    /*=========================CREACION DEL METODO POST END======================*/ 
+}
+/*=========================CREACION DEL METODO POST END======================*/ 
     //*****************************************************************************
-    function validacion2(){        
-       alert("funcionando 2")
-      }
+function validacion2(){        
+    alert("funcionando 2")
+}
 
-
-    function validacion(){
+function validacion(){
         const formulario = document.getElementById('formulario');
         const inputs = document.querySelectorAll('#formulario input');
     

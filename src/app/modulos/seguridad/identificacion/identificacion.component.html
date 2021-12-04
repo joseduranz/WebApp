@@ -16,8 +16,8 @@
                 [siteKey]="siteKey" formControlName="captcha" class="reCaptcha"></ngx-recaptcha2>
             </div>
             <!--=======CAPTCHA VALIDACION END==========-->
-            <button [disabled]="!fgValidador.valid" type="submit" class="botonInicio" >CONTINUAR</button>
-            <p> ¿no tienes cuenta? <a  routerLink="/administracion/registrar"> registrarse</a> </p>
+            <button [disabled]="!fgValidador.valid" [ngClass]="{'btnDisabled':!fgValidador.valid}" type="submit" class="btn botonInicio" >CONTINUAR</button>
+            <p> ¿no tienes cuenta? <a  routerLink="/administracion/registrar-cliente"> registrarse</a> </p>
         </form>
     </section>
 
