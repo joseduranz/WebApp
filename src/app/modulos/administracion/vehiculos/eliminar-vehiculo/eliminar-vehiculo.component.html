@@ -1,1 +1,24 @@
-<p>eliminar-vehiculo works!</p>
+<section class="crear-vehiculo-sesion">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form action=""  [formGroup]="fgValidador" (ngSubmit)="EliminarVehiculo()">
+        <h1>Editar Vehículo</h1>
+        <div class="contenedor-inputs">
+            <input formControlName="id" type="text" readonly>
+        </div>
+        <button  [disabled]="!fgValidador" [ngClass]="{'btnDisabled':!fgValidador.valid}"  type="submit"  class="boton">Eliminar</button>
+    </form>
+</section>

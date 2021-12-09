@@ -41,7 +41,7 @@ export class VehiculosService {
    }
    /*eliminar un vehiculo  */
   EliminacionVehiculo(id:string):Observable<any>{
-    return this.http.delete("http://localhost:3000/vehiculos/{id}",{
+    return this.http.delete(`http://localhost:3000/vehiculos/${id}`,{
      headers: new HttpHeaders({
       'Authorization': `Bearer ${this.token}`
        })

@@ -99,7 +99,7 @@ const routes: Routes = [
     component:EditarVehiculoComponent
   },
   {//ELIMINAR vehiculo
-    path:"eliminar-vehiculo",
+    path:"eliminar-vehiculo/:id",
     component:EliminarVehiculoComponent
   },
   
