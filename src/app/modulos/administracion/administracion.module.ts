@@ -23,6 +23,7 @@ import { EliminarAdministradorComponent } from './administrador/eliminar-adminis
 import { IndexAdministradorComponent } from './administrador/index-administrador/index-administrador.component';
 import { IndexAsesorComponent } from './asesor/index-asesor/index-asesor.component';
 import { IndexPersonaComponent } from './personas/index-persona/index-persona.component';
+import { InformacionComponent } from './vehiculos/informacion/informacion.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { IndexPersonaComponent } from './personas/index-persona/index-persona.co
     EliminarAdministradorComponent,
     IndexAdministradorComponent,
     IndexAsesorComponent,
-    IndexPersonaComponent
+    IndexPersonaComponent,
+    InformacionComponent
   ],
   imports: [
     CommonModule,

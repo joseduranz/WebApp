@@ -1,10 +1,10 @@
 /*===============ADMIN START======================*/
 .admin{/*sesion admin*/
     width: 100vw;
-    height: 250vh;
-    padding: 150px 0px 0px 150px;
-    background-color: #e9e9e9;    
-    color: rgb(194, 194, 194);
+    height: 1800px;
+    padding: 150px 0px 0px 150px; 
+    background: linear-gradient(to bottom right, rgb(37, 37, 37), rgb(41, 41, 41));
+    color: rgb(80, 80, 80);
 }
 .contenedor__info-admin{/*contiene toda la informacion*/
     *background-color: blueviolet;
@@ -12,7 +12,11 @@
 .contenedor__info-admin .titulo{ /*titulo administracion*/
     font-size: 4rem;
     margin: 0 0 10px 0;
-    color: rgb(154, 154, 154);   
+    color: rgb(255, 22, 22);   
+}
+.titulos__cajones{/*link titulos a las listas principales*/
+    color: rgb(87, 80, 70);
+    transition: .3s ease;
 }
 .contenedor__info-admin .solicitudes,
 .contenedor__info-admin .clientes,
@@ -20,28 +24,35 @@
 .contenedor__info-admin .productos,
 .contenedor__info-admin .servicios{
     position: relative;
-    background-color: #e9e9e9;
-    height: 220px;
+    background-image: linear-gradient(to bottom right,rgb(45, 45, 45),rgb(32, 32, 32) );
+    height: 235px;
     width: 70vw;
-    padding: 20px;
-    margin: 20px 0;
+    padding: 20px 30px;
+    margin: 35px 0;
     border-radius: 25px;
     *display: flex;
     *flex-direction: column;
     *flex-wrap: wrap;
     overflow-y: auto;
-    box-shadow: -3px 3px 3px rgb(214, 214, 214);
-    border-top: 2px solid rgb(243, 243, 243);
-    border-right: 2px solid rgb(243, 243, 243);
+    box-shadow: 8px 8px 8px rgb(30, 30, 30),
+                -8px -8px 8px rgb(45, 45, 45);    
+    border-top: 1px solid rgb(52, 52, 52);
+    border-left: 1px solid rgb(52, 52, 52);
     
 }
 .contenedor__info-admin div h4{/*titulo del contenedor*/
     font-size: 3rem;
+    width: 190px;
+}
+
+.contenedor__info-admin div h4:hover{
+    color: rgb(129, 129, 129);
 }
 .contenedor__info-admin div p{/*informacion despues del titulo del contendor*/
-    padding: 5px 10px;
+    padding: 5px 10px;    
 }
 .acceso__metodo-crud{/*contenedor crud*/
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     *background-color: chocolate;
@@ -49,15 +60,50 @@
     height: 60px;
     padding: 5px 0px 0px 30px;
     line-height: 20px;
-    border-top: 1px solid rgb(211, 211, 211);
+    border-top: 1px solid rgb(37, 37, 37);
+}
+.acceso__metodo-crud::after{/*contenedor crud*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    width: 100%;
+    border-top: 1px solid rgb(52, 52, 52);
 }
 .acceso__metodo-crud a{/*crud*/
-    color: rgb(197, 197, 197); 
+    color: rgb(80, 80, 80);
     width: 100%;
     font-size: .85rem;   
 }
 .acceso__metodo-crud a:hover{ 
     color: rgb(150, 150, 150);    
+}
+.buscar{
+    position: absolute;
+    top: 40px;
+    right: 38px;
+    width: 200px;
+    height: 25px;
+    border-radius: 25px;
+    *background-color: chartreuse;
+    box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
+                inset -4px -4px 4px rgb(45, 45, 45);
+    border-bottom: 1px solid rgb(52, 52, 52);
+    border-right: 1px solid rgb(52, 52, 52); 
+}
+.buscar:hover{
+    background-color: rgb(44, 44, 44);
+}
+.buscar i{
+    padding: 5px;
+    margin-left: 7px;
+}
+.buscar input{
+    font-size: 1.4rem;
+    width: 78%;
+    padding: 2px 2px;
+    background: none;
+    color: white;
 }
 /*===============ADMIN END======================*/
 /******************************************************************/

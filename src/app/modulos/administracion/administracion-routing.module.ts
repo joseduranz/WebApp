@@ -19,6 +19,7 @@ import { BuscarVehiculoComponent } from './vehiculos/buscar-vehiculo/buscar-vehi
 import { CrearVehiculoComponent } from './vehiculos/crear-vehiculo/crear-vehiculo.component';
 import { EditarVehiculoComponent } from './vehiculos/editar-vehiculo/editar-vehiculo.component';
 import { EliminarVehiculoComponent } from './vehiculos/eliminar-vehiculo/eliminar-vehiculo.component';
+import { InformacionComponent } from './vehiculos/informacion/informacion.component';
 
 const routes: Routes = [  
   //=====PERSONAS========//
@@ -94,12 +95,17 @@ const routes: Routes = [
     component:CrearVehiculoComponent
   },  
   {//EDITAR vehiculo
-    path:"actualizar-vehiculo", 
+    path:"actualizar-vehiculo/:id", 
     component:EditarVehiculoComponent
   },
   {//ELIMINAR vehiculo
     path:"eliminar-vehiculo",
     component:EliminarVehiculoComponent
+  },
+  
+  {//INFORMACION vehiculo
+    path:"informacion-vehiculo/:id",
+    component:InformacionComponent
   }
 ];
 

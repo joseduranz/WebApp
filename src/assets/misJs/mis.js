@@ -1,3 +1,6 @@
+const { Container } = ("@angular/compiler/src/i18n/i18n_ast");
+const { snap } = ("gsap/all");
+
 //*****************************************************************************
 function menudesplegable2(){
     alert("funcionando")
@@ -198,3 +201,158 @@ function validacion(){
             }
         });
     }
+
+function gsapJava() {
+    gsap.to(".imgPiso", {
+        scrollTrigger: {
+            end: "center top",
+            scrub: 0
+        },
+        scaleY: -1.6,
+    });
+    /*------------*/
+    gsap.to(".carousel__elemento", {
+        scrollTrigger: {
+            end: "center top",
+            scrub: 0
+        },
+        translateY: 710,
+        scaleY:.8
+
+    });
+    gsap.to(".sliderLogo", {
+        scrollTrigger: {
+            end: "center top",
+            scrub: 0
+        },
+        translateY: 750
+    });
+    gsap.to(".cotenedor-icono i", {
+        scrollTrigger: {
+            end: "center top",
+            scrub: 0
+        },
+        translateY: 800
+    });
+    /*------------*/
+    gsap.to(".lamp1", {
+        scrollTrigger: {
+            end: "center top",
+            scrub: 0
+        },
+        translateY: 1450,
+    });
+    /*------------*/
+    gsap.to(".lamp2", {
+        scrollTrigger: {
+            end: "center top",
+            scrub: 0
+        },
+        translateY: 1430,
+    });
+    /*------------*/
+    gsap.to(".lamp3", {
+        scrollTrigger: {
+            end: "center top",
+            scrub: 0
+        },
+        translateY: 1400,
+    });
+    /*------------*/
+    gsap.to(".lamp4", {
+        scrollTrigger: {
+            end: "center top",
+            scrub: 0
+        },
+        translateY: 1370,
+    });
+    /*------------*/
+    gsap.to(".lamp5", {
+        scrollTrigger: {
+            end: "center top",
+            scrub: 0
+        },
+        translateY: 1340,
+    });
+    /*------------*/
+    gsap.to(".lamp6", {
+        scrollTrigger: {
+            end: "center top",
+            scrub: 0
+        },
+        translateY: 1310,
+    });
+    /*------------*/
+    gsap.to(".lamp7", {
+        scrollTrigger: {
+            end: "center top",
+            scrub: 0
+        },
+        translateY: 1280,
+    });
+    /*------------*/
+    gsap.to(".lamp8", {
+        scrollTrigger: {
+            end: "center top",
+            scrub: 0
+        },
+        translateY: 1200,
+    });
+    /*gsap.to(".jarallax-img", {
+        scrollTrigger: {
+            scrub: 0
+        },
+        translateY: 1000,
+    });*/
+
+    
+
+    //luinea de tiempo
+    
+   /*let tl = gsap.timeline({
+        scrollTrigger:{
+            trigger:"p",
+            pin: true,
+            start:"top top",
+            end: "+=0",
+            scrub: 5,
+            snap:{
+                snapTo:"labels",
+                duration:{min:0.2, max:3},
+                //delay:0.2,
+                ease:"power.inOut"
+            }
+        }
+    });    
+    tl.addLabel("start").from(".contenedor__garantia p", {translateY: -50, autoAlpha: 0});
+   */
+ 
+
+    /*
+    gsap.to(".s2-img2 img", {/*carro prueba de manejo*/
+      /*  scrollTrigger: {
+            start: "top top",
+            scrub: 3
+        },
+        translateX: -200,
+    });*/
+    
+
+    gsap.to(".s3-img2-animacion", {/*llanta y sombra rodar y mover */
+        scrollTrigger: {
+            start: "center bottom",
+            end: "bottom top",
+            scrub: 3
+        },
+        rotate: 260,
+    });
+    gsap.to(".s3-img2 img", {/*llanta y sombra rodar y mover */
+        scrollTrigger: {
+            start: "center bottom",
+            end: "bottom top",
+            scrub: 3
+        },
+        translateX: 500
+    });
+ 
+}

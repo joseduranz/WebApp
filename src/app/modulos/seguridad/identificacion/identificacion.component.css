@@ -2,45 +2,57 @@
         /*=====VENTANA LOGIN START======*/
         .containerLogin {
             position: relative;
-            top: 0;
-            *right: -105%;/*si se abre desde inicio*/
             height: 800px;
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
-            *background: rgba(20, 20, 20, 0.1);
-            *backdrop-filter: blur(5px);
-            *z-index: 10000;
+            background: linear-gradient(to bottom right, rgb(37, 37, 37), rgb(41, 41, 41));
+            color: rgb(80, 80, 80);
             transition: 1.3s ease-in-out;
 
         }
+        
+        .formLogin {
+            *position: absolute;
+            text-align: center;
+            padding: 3.5rem;
+            width: 40rem;
+            border-radius: 25px;
+            box-shadow: 8px 8px 8px rgb(30, 30, 30),
+                -8px -8px 8px rgb(45, 45, 45);    
+            border-top: 1px solid rgb(52, 52, 52);
+            border-left: 1px solid rgb(52, 52, 52);
+        }
+        
+        .containerLogin form h3 {
+            padding-bottom: 1rem;
+            font-size: 3rem;
+            margin: 30px 10px;
+            text-align: left;
+        }  
 
         .containerLogin.active {
             right: 0;
         }
         .login{
             position: relative;
-            background-color: rgb(243, 243, 243);
-            border-radius: 5px;
-            margin: 10px 0 10px 0;
+            border-radius: 25px;
+            margin: 40px 0 20px 0;
+            box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
+                        inset -4px -4px 4px rgb(45, 45, 45);
+            border-bottom: 1px solid rgb(52, 52, 52);
+            border-right: 1px solid rgb(52, 52, 52); 
         }
+        .login:hover{
+            background-color: rgb(41, 41, 41);
+          }
         .login i{
             position: absolute;
             left: 10px;
-            top: 30%;
+            top: 5px;
             color: var(--grisOscuro);
-            font-size: 2rem;
-        }
-        .formLogin {
-            *position: absolute;
-            margin: 2rem;
-            text-align: center;
-            padding: 2rem;
-            width: 40rem;
-            border-radius: .5rem;
-            box-shadow: 5px 5px 20px rgba(0, 0, 0, .5);
-            background: #fff;
+            font-size: 1.5rem;
         }
         .container__reCaptcha{
             *background-color: aqua;
@@ -51,25 +63,18 @@
         .reCaptcha{
             margin: 10px;
         }
-        .botonInicio {
-            padding: 1rem;
-            display: block;
-            width: 100%;
-            margin: .5rem 0;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.205);
-        }
         .boxInput {
-            background-color: transparent;
+            background: none;
             margin: 0 0 0 3rem;
             width: 90%;
+            height: 30px;
             font-size: 1.6rem;
-            color: black;
+            color: rgb(177, 177, 177);
             text-transform: none;
             *border: var(--border);
             padding: 1rem 1.2rem;
-            border-radius: .5rem;
+            border-radius: 25px;
         }
-
         .containerLogin form p {
             text-align: right;
             padding: 1rem 0;
@@ -77,31 +82,68 @@
             color: rgb(121, 121, 121);
         }
 
-        .containerLogin form p a {
-            color: blue;
-            text-decoration: underline;
-        }
 
-        .containerLogin form h3 {
-            padding-bottom: 1rem;
-            font-size: 2.5rem;
-            color: black;
-        }    
-        
-        .botonInicio {
-            padding: 1rem;
-            display: block;
+
+
+        .containerLogin form p a {
+            color: rgb(182, 182, 182);
+        }  
+        .containerLogin form p a:hover {
+            color: rgb(255, 255, 255);
+        }
+        .boton{
+            margin-top: 30px;
             width: 100%;
-            margin: 4rem 0 0 0;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.205);
-            border-radius: 5px;
+            height: 40px;
+            background-image:linear-gradient(to bottom right, rgb(255, 113, 113),  rgb(255, 72, 72));
+            color: white;
+            border-radius: 40px;
+            font-size: 13px;
+            box-shadow: 8px 8px 8px rgb(30, 30, 30),
+                        -8px -8px 8px rgb(65, 65, 65);   
+        }
+        .boton:hover{
+            background-image:linear-gradient(to bottom right,  rgb(255, 0, 128),  rgb(255, 0, 0));
+            color: white;
         }
         .btnDisabled{
-            background-color: rgb(189, 189, 189);
-        }
+            margin-top: 30px;
+            color: rgb(212, 212, 212);
+            background: none;   
+            box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
+                        inset -4px -4px 4px rgb(45, 45, 45);
+            border-bottom: 1px solid rgb(52, 52, 52);
+            border-right: 1px solid rgb(52, 52, 52);
+            
+        }        
         .btnDisabled:hover{
-            color: white;
-        }   
+            background: none; 
+            color: rgb(212, 212, 212);
+        }        
+        .formLogin .error{/*clase con los errores*/
+            color: red;
+            
+        }
+        .formLogin .error p{ /* contiene la informacion del error espacio en blanco y medida*/
+            font-size: .9rem;
+            text-align: center;
+            margin: -25px 0 0 0;
+        }
+        .inputError{/* si hay error mostrar rojo*/
+            border: 2.5px solid rgba(255, 0, 0, 0.26);
+            animation: borde-error 1s ease-in-out infinite;
+        }
+        @keyframes  borde-error {
+            0%{
+                border: 2.5px solid rgba(255, 0, 0, 0);
+            }
+            50%{
+                border: 2.5px solid rgba(255, 0, 0, 0.26);
+            }
+            100%{
+                border: 2.5px solid rgba(255, 0, 0, 0);
+            }
+        }
 
         @media (max-width: 770px) {
             #close-login-form {

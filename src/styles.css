@@ -7,6 +7,30 @@
     --grisOscuro: #3f3f3f;
     --border: .1rem solid rgba(0, , 0, .1);
     --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+   /* ----------------------------------------------------------------------------*/
+    --color-gris-principal:rgb(80, 80, 80);
+    --background-color-principal:rgb(37,37,37);
+    --background-degradado-principal :linear-gradient(to bottom right, rgb(37, 37, 37), rgb(41, 41, 41));
+    --background-cajon-negro:linear-gradient(to bottom right,rgb(45, 45, 45),rgb(32, 32, 32) );
+    --box-shadow-cajon-principal: 8px 8px 8px rgb(30, 30, 30), -8px -8px 8px rgb(45, 45, 45);    
+    --border-top-cajon-principal: 1px solid rgb(52, 52, 52);
+    --border-left-cajon-principal: 1px solid rgb(52, 52, 52);
+    /*------------------------------------------------------------------------------*/
+    --box-shadow-inputs: inset 4px 4px 4px rgb(30, 30, 30),
+                inset -4px -4px 4px rgb(45, 45, 45);
+    --border-bottom-inputs: 1px solid rgb(52, 52, 52);
+    --border-right-inputs: 1px solid rgb(52, 52, 52); 
+    /*---------------------------------------------------------------------------------*/    
+    --background-titulo-principal: linear-gradient(to bottom, rgb(137, 137, 137), rgba(255, 0, 0, 0));
+    --color-titulo-principal: transparent;
+    --bold-titulo-principal: 700;
+    --medida-titulo-principal: 5em;
+    /*---------------------------------------------------------------------------------*/
+    --background-titulo-secundario: linear-gradient(to top right, red 30% ,rgb(255, 0, 170));
+    --color-titulo-secundario: transparent;
+    --necesario-texto-secundario-1: text;/*-webkit-background-clip*/
+    --necesario-texto-secundario-2: text;/*background-clip*/
+    --medida-titulo-secundario: 3.5rem;
 }
 
 
@@ -17,11 +41,11 @@
     outline: none;
     border: none;
     text-decoration: none;
-    min-zoom: 25px;
+    min-zoom: 25px;    
+    scroll-behavior: smooth;
 }
 
 html {
-    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
@@ -88,6 +112,38 @@ section {
     border-radius: 2px;
     background: hsl(0, 0%, 70%);
     color: rgb(255, 0, 0);
+}
+
+/* boton nueva version*/
+.boton{
+    margin-top: 10px;
+    width: 100%;
+    height: 40px;
+    background-image:linear-gradient(to bottom right, rgb(255, 113, 113),  rgb(255, 72, 72));
+    color: white;
+    border-radius: 40px;
+    font-size: 13px;
+    box-shadow: 8px 8px 8px rgb(30, 30, 30),
+                -8px -8px 8px rgb(65, 65, 65);   
+}
+.boton:hover{
+    background-image:linear-gradient(to bottom right,  rgb(255, 0, 128),  rgb(255, 0, 0));
+    color: white;
+}
+.btnDisabled{
+    border-radius: 25px;
+    margin-top: 10px;
+    color: rgb(212, 212, 212);
+    background: none;   
+    box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
+                inset -4px -4px 4px rgb(45, 45, 45);
+    border-bottom: 1px solid rgb(52, 52, 52);
+    border-right: 1px solid rgb(52, 52, 52);
+    
+}
+.btnDisabled:hover{
+    background: none; 
+    color: rgb(212, 212, 212);
 }
  /* ================================*/
 /* oculta la barra de scroll*/

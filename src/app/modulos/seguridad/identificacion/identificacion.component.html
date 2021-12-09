@@ -1,23 +1,31 @@
     <section class="containerLogin">
         <form action="" class="formLogin" [formGroup]=fgValidador  (ngSubmit)="IdentificarUsuario()">
-            <h3>Login</h3>
-            <div class="login">
-                <input formControlName="usuario" type="email" placeholder="Email" class="boxInput" required>
-                <i class="fas fa-user"></i>
+            <h3>Iniciar Sesión</h3>
+            <div class="login" [ngClass]="{'inputError':Email()?.invalid && (Email()?.dirty || Email()?.touched)}">
+                <input formControlName="usuario" type="email" placeholder="Email" class="boxInput"  required>
+                <i class="fas fa-user"></i>                
             </div>
-            <div class="login">
-                <input formControlName="clave" type="password" placeholder="Contraseña" class="boxInput" required> 
-                <i class="fas fa-key"></i>
+            <div *ngIf="Email()?.invalid && (Email()?.dirty || Email()?.touched)" class="error"> 
+                <p  *ngIf="Email()?.errors?.['required']">Error: El campo es obligatorio</p>
+                <p  *ngIf="Email()?.errors?.['email']">Error: El email debe contener @ y terminar con un dominio ejm .com </p>
+            </div>
+            <div class="login" [ngClass]="{'inputError':Clave()?.invalid && (Clave()?.dirty || Clave()?.touched)}">
+                <input formControlName="clave" type="password" placeholder="Contraseña" class="boxInput"  required> 
+                <i class="fas fa-key"></i>                
+            </div>
+            <div *ngIf="Clave()?.invalid && (Clave()?.dirty || Clave()?.touched)" class="error"> 
+                <p  *ngIf="Clave()?.errors?.['required']">Error: El campo es obligatorio</p>
+                <p  *ngIf="!Clave()?.errors?.['required']">Error: verifique que este escribiendo correctamente su clave </p>
             </div>           
-            <p> ¿olvidaste tu contraseña? <a routerLink="/administracion/buscar"> click aquí</a> </p>
+            <p> ¿olvidaste tu contraseña? <a routerLink="/administracion/buscar"> Click Aquí</a> </p>
             <!--=======CAPTCHA VALIDACION START==========-->
             <div class="container__reCaptcha">
                 <ngx-recaptcha2 #captchaElem
                 [siteKey]="siteKey" formControlName="captcha" class="reCaptcha"></ngx-recaptcha2>
             </div>
             <!--=======CAPTCHA VALIDACION END==========-->
-            <button [disabled]="!fgValidador.valid" [ngClass]="{'btnDisabled':!fgValidador.valid}" type="submit" class="btn botonInicio" >CONTINUAR</button>
-            <p> ¿no tienes cuenta? <a  routerLink="/administracion/registrar-cliente"> registrarse</a> </p>
+            <button [disabled]="!fgValidador.valid" [ngClass]="{'btnDisabled':!fgValidador.valid}" type="submit" class="boton" >CONTINUAR</button>
+            <p> ¿no tienes cuenta? <a  routerLink="/administracion/registrar-cliente"> Regístrate</a> </p>
         </form>
     </section>
 

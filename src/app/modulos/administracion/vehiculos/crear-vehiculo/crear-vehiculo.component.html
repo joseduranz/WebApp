@@ -1,1 +1,34 @@
-<p>crear-vehiculo works!</p>
+<section class="crear-vehiculo-sesion">
+    <form action=""  [formGroup]="fgValidador" (ngSubmit)="GuardarVehiculo()">
+        <h1>Publicar Vehículo</h1>
+        <div class="contenedor-inputs">
+
+            <input formControlName="marca" type="text" placeholder="marca">
+
+            <input formControlName="precio" type="text" placeholder="precio">
+
+            <input formControlName="matricula" type="text" placeholder="matricula">
+
+            <input formControlName="modelo" type="text" placeholder="modelo">
+
+            <input formControlName="categoria" type="text" placeholder="categoria">
+
+            <input formControlName="tipoOferta"  type="text" placeholder="oferta">
+
+            <input formControlName="encargado" type="text" placeholder="encargado">
+
+            <input formControlName="contactoEncargado" type="text" placeholder="numero encargado">
+
+            <input formControlName="foto" type="text" placeholder="foto">
+
+            <input formControlName="video"  type="text" placeholder="video">
+
+            <input formControlName="estado" type="text" placeholder="estado">
+        </div>
+        <br>
+        <br>
+        <button [disabled]="!fgValidador" [ngClass]="{'btnDisabled':!fgValidador.valid}"  type="submit"  class="boton">Publicar</button>
+    </form>
+</section>
+
+

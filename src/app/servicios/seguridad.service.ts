@@ -67,7 +67,28 @@ export class SeguridadService {
     localStorage.removeItem("datosSesion");
     this.RefrescarDatosUsuarioSesion(new ModeloIdentificar());
   }
-
+  //OBTENER EL TOKEN PARA LA AUTENTICACION
+  ObtenerToken(){
+    let datosString = localStorage.getItem("datosSesion");
+    if(datosString){
+      let datos = JSON.parse(datosString);
+      return datos.tk;
+    }
+    else{
+      return "";
+    }
+  }
+  //OBTENER EL ROL PARA EL INICIO DE SESION
+  ObtenerRol(){
+    let datosString = localStorage.getItem("datosSesion");
+    if(datosString){
+      let datos = JSON.parse(datosString);
+      return datos.rol;
+    }
+    else{
+      return "";
+    }
+  }
 
 
 

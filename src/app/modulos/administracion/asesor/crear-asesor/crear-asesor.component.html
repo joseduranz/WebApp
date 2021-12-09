@@ -1,28 +1,66 @@
+
 <section class="Registro__asesor">
     <div class="contenedor__toda-informacion">
-        <h1>Registrar Asesor</h1>
-        <form [formGroup]="formularioRegistro" action="" class="contenido__formulario">
-        
-            <label for="nombres">Nombres</label>
-            <input formControlName="nombres" [ngClass]="{'inputError':Nombres?.invalid && (Nombres?.dirty || Nombres?.touched)}" type="text" id="nombres"  required>
-            <div *ngIf="Nombres?.invalid && (Nombres?.dirty || Nombres?.touched)" class="error"> 
-                <p *ngIf="Nombres?.errors?.['required']">Error el campo es obligatorio </p>
-                <p *ngIf="Nombres?.errors?.['maxLength']">Error el tamaño es maximo de 10 caracteres</p>
+        <h1 >Registrar Asesor</h1>
+        <form  [formGroup]=formularioRegistro (ngSubmit)="RegistrarUsuario()"  class="contenido__formulario" id="formulario">
+            <!--====GRUPO NOMBRES===-->
+            <div class="contenedor_inputs-iconos-mesajeEserror" [ngClass]="{'inputError':Nombres()?.invalid && (Nombres()?.dirty || Nombres()?.touched)}" >
+                <i class="icon fas fa-user" [ngClass]="{'error':Nombres()?.invalid && (Nombres()?.dirty || Nombres()?.touched)}"></i>
+                <input class="input"  formControlName='nombres' type="text"  name="usuario" id="usuario" placeholder="Nombres" required>
+                <div *ngIf="Nombres()?.invalid && (Nombres()?.dirty || Nombres()?.touched)" class="error"> 
+                    <p  *ngIf="Nombres()?.errors?.['required']">Error: El campo es obligatorio</p>
+                    <p  *ngIf="!Nombres()?.errors?.['required']">Error: El tamaño es de máximo 20 caracteres, y no puede contener símbolos o números</p>
+                </div>
             </div>
-        
-            <label for="apellidos">Apellidos</label>
-            <input formControlName="apellidos" type="text" id="apellidos"  required>
+            <!--====GRUPO APELLIDOS===-->
+            <div class="contenedor_inputs-iconos-mesajeEserror"  [ngClass]="{'inputError':Apellidos()?.invalid && (Apellidos()?.dirty || Apellidos()?.touched)}">
+                <i class="icon fas fa-user"  [ngClass]="{'error':Apellidos()?.invalid && (Apellidos()?.dirty || Apellidos()?.touched)}"></i>
+                <input class="input" formControlName='apellidos' type="text"  name="nombre" id="nombre"   placeholder="Apellidos" required>
+                <div *ngIf="Apellidos()?.invalid && (Apellidos()?.dirty || Apellidos()?.touched)" class="error"> 
+                    <p  *ngIf="Apellidos()?.errors?.['required']">Error: El campo es obligatorio</p>
+                    <p  *ngIf="!Apellidos()?.errors?.['required']">Error: El tamaño es de máximo 20 caracteres, y no puede contener símbolos o números</p>
+                </div>
+            </div>            
+            <!--====GRUPO CORREO ELECTRONICO===-->
+            <div class="contenedor_inputs-iconos-mesajeEserror" [ngClass]="{'inputError':Email()?.invalid && (Email()?.dirty || Email()?.touched)}">
+                <i class="icon fas fa-envelope-open-text" [ngClass]="{'error':Email()?.invalid && (Email()?.dirty || Email()?.touched)}"></i>
+                <input class="input" formControlName='email' type="email"  name="correo" id="correo" placeholder="Correo electrónico" required>
+                <div *ngIf="Email()?.invalid && (Email()?.dirty || Email()?.touched)" class="error"> 
+                    <p  *ngIf="Email()?.errors?.['required']">Error: El campo es obligatorio</p>
+                    <p  *ngIf="Email()?.errors?.['email']">Error: El email debe contener @ y terminar con un dominio ejm .com </p>
+                </div>
+            </div>  
+            <!--====GRUPO TELEFONO===-->
+            <div class="contenedor_inputs-iconos-mesajeEserror" [ngClass]="{'inputError':Celular()?.invalid && (Celular()?.dirty || Celular()?.touched)}">
+                <i class="icon fas fa-mobile-alt"  [ngClass]="{'error':Celular()?.invalid && (Celular()?.dirty || Celular()?.touched)}"></i>
+                <input class="input" formControlName='celular' type="text" name="telefono" id="telefono" placeholder="Celular" required>
+                <div *ngIf="Celular()?.invalid && (Celular()?.dirty || Celular()?.touched)" class="error"> 
+                    <p  *ngIf="Celular()?.errors?.['required']">Error: El campo es obligatorio y debe contener máximo 10 números</p>
+                </div>
+            </div>
+            <!--====GRUPO DIRECCIÓN===-->
+            <div class="contenedor_inputs-iconos-mesajeEserror" [ngClass]="{'inputError':Direccion()?.invalid && (Direccion()?.dirty || Direccion()?.touched)}">
+                <i class="icon fas fa-map-marker-alt" [ngClass]="{'error':Direccion()?.invalid && (Direccion()?.dirty || Direccion()?.touched)}"></i>
+                <input class="input" formControlName='direccion' type="text" name="direcion" id="direcion" placeholder="Dirección"  required>
+                <div *ngIf="Direccion()?.invalid && (Direccion()?.dirty || Direccion()?.touched)" class="error"> 
+                    <p  *ngIf="Direccion()?.errors?.['required']">Error: El campo es obligatorio y no puede estar vacido</p>
+                </div>
+            </div>
+            <!--====GRUPO terminos y condiciones===-->
+            <div class="terminos-condiciones" id="grupo__terminos">
+                <label class="formulario__label" >
+                    <input class="formulario__checkbox"  formControlName="terminoCondiciones" type="checkbox" name="terminos" id="terminos">
+                    Acepto los Términos y Condiciones
+                </label>
+            </div>
+            <!--====GRUPO captcha===-->
+            <div class="div-reCaptcha">
+                <ngx-recaptcha2 #captchaElem
+                [siteKey]="siteKey" formControlName="captcha"  class="reCaptcha"></ngx-recaptcha2>
+            </div> 
 
-            <label for="email">Correo electrónico</label>
-            <input formControlName="email" type="email" id="email"  required>
-
-            <label for="telefono">Celular</label>
-            <input formControlName="celular" type="number" id="telefono" value="8888888" required>
-
-            <label for="direccion">Dirección</label>
-            <input formControlName="direccion" type="text" id="direccion" required>
-
-            <button [disabled]="!formularioRegistro.valid" [ngClass]="{'btnDisabled':!formularioRegistro.valid}" class="btn  btnIniciarSesion" (click)="Guardar()"  type="submit">Enviar</button>
+            <button [disabled]="!formularioRegistro.valid" [ngClass]="{'btnDisabled':!formularioRegistro.valid}" class="boton"   type="submit">Enviar</button>
         </form>
+        <p class="iniciarsesionLink"> ¿ya tienes cuenta? <a  routerLink="/seguridad/login"> Iniciar Sesión</a> </p>
     </div>
 </section>

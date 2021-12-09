@@ -1,9 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+
+
+
+declare var  gsapJava : any;
+
 @Component({
   selector: 'app-inicio',
   templateUrl: './inicio.component.html',
   styleUrls: ['./inicio.component.css']
 })
+
+
 export class InicioComponent implements OnInit {
 
   siteKey:string;
@@ -13,6 +20,7 @@ export class InicioComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    gsapJava()
   }
 
   

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, MaxLengthValidator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as cryptoJS from 'crypto-js';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
@@ -12,8 +12,8 @@ import { SeguridadService } from 'src/app/servicios/seguridad.service';
 export class IdentificacionComponent implements OnInit {
 
   fgValidador: FormGroup =this.fb.group({ //comunicacion y request del backend y frontend
-    'usuario':['',[Validators.required, Validators.email]], //el campo valida si esta vacido , entonces lo pone requerido y si no lo estaentonces valida que sea de tipo email
-    'clave' :['',[Validators.required]],
+    'usuario':['',[Validators.required, Validators.email, Validators.maxLength(30)]], //el campo valida si esta vacido , entonces lo pone requerido y si no lo estaentonces valida que sea de tipo email
+    'clave' :['',[Validators.required, Validators.maxLength(10)]],
     'captcha':['', [Validators.required]]
   });
 
@@ -25,14 +25,15 @@ export class IdentificacionComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    /*
-    setInterval(() => {
-      //ESTA CODIFICACION SIRVE PARA GENERAR REACTIVIDAD, QUE LOS VALORES CAMBIEN AUTOMATICAMENTE//      
-      this.fgValidador.controls['usuario'].setValue(Math.random()*1000)
-      },2000)
-      this.fgValidador.controls['clave'].setValue('******');
-      */  
+    
   }
+  Email(){//el get lo que me permite es no darle parenesis al final del metodo
+    return this.fgValidador.get('usuario');
+  }
+  Clave(){//el get lo que me permite es no darle parenesis al final del metodo
+    return this.fgValidador.get('clave');
+  }
+
   IdentificarUsuario(){
     let usuario = this.fgValidador.controls['usuario'].value;
     let clave = this.fgValidador.controls['clave'].value;
@@ -45,7 +46,7 @@ export class IdentificacionComponent implements OnInit {
       //------------------------------------------- 
       //this.router.navigate(["/administracion/index-admin"]); //Admin
       //this.router.navigate(["/administracion/index-asesor"]); //Asesor
-      this.router.navigate(["/administracion/index-cliente"]);// cliente//se inyecta en el constructor y aca se hace el llamado
+      this.router.navigate(["/administracion/buscar-vehiculo"]);// cliente//se inyecta en el constructor y aca se hace el llamado
     },(error:any)=>{
       //no funciona correctamente
       alert("el usuario o contraseña incorrecta");

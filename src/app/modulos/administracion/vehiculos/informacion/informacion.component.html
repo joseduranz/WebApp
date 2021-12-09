@@ -1,0 +1,76 @@
+<section class="info-vehiculo">
+    <div class="info-contenido">
+        <div class="informacion-imagen-caracteristicas" *ngIf="informacionVehiculo">
+            <div class="precio-e-img">
+                <div class="imgcar">
+                    <img src="{{informacionVehiculo.foto}}" alt="">
+                </div>                
+                <div class="precio-encargado">
+                    <h2>{{informacionVehiculo.marca}}</h2><!--marco o titulo del vehiculo-->
+                    <h1><span>$: </span>{{informacionVehiculo.precio}}</h1>
+                    <p>{{informacionVehiculo.modelo}}</p><!--año-->
+                    <p>{{informacionVehiculo.encargado}}</p><!--asesor encargado-->
+                </div>
+            </div>
+            
+            <div class="botones">
+                <button class="boton">Preguntar</button>
+                <button class="boton"><i class="fab fa-whatsapp"></i>watsapp</button>
+            </div>
+            <div class="compartir">
+                <a href="#">                    
+                    <p><i class="fas fa-share-alt"></i>  compartir</p>
+                </a> 
+            </div>
+            <div class="caracteristicas">
+                <h1>Características principales</h1>
+                <div class="tabla">
+                    <div class="encabezado">
+                        <p>Marca</p>
+                        <p class="p1" >Modelo</p>
+                        <p>Precio</p>
+                        <p class="p1" >Categoría</p>
+                        <p>Estado</p>
+                    </div>
+                    <div class="resultado">
+                        <p>{{informacionVehiculo.marca}}</p>
+                        <p class="p1" >{{informacionVehiculo.modelo}}</p>
+                        <p>{{informacionVehiculo.precio}}</p>
+                        <p class="p1" >{{informacionVehiculo.categoria}}</p>
+                        <p>{{informacionVehiculo.estado}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="descripcion">
+                <h1>Descripción</h1>
+                <p>{{informacionVehiculo.video}}</p>
+            </div>
+            <div class="info-concecionario">
+                <div class="empresa">
+                    <img  src="./assets/img/logoAutoLuxuryColor.png" loading="lazy" alt="">
+                    <div>
+                        <h4><i class="far fa-building"></i>  Autoluxury</h4>
+                        <p>Empresa</p>
+                    </div>
+                </div>
+                <div class="horario">
+                    <h4><i class="far fa-calendar"></i>  Horario de atención</h4>
+                    <p>8:00am - 6:00pm</p>
+                </div>
+                <div class="ubicacion">
+                    <h4><i class="fas fa-map-marker-alt"></i>  Ubicacón</h4>
+                    <p>Centro-Colombia</p>
+                </div>
+                <div class="cont-button">
+                    <button class="boton">Llamar</button>              
+                </div>
+            </div>
+            <div class="preguntar">
+                <h1>Preguntar a un asesor</h1>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Escriba su pregunta aquí"></textarea>
+                <button class="boton">Preguntar</button>
+            </div>            
+        </div>
+    </div>
+
+</section>

@@ -1,1 +1,90 @@
-<p>buscar-vehiculo works!</p>
+
+<section class="sesion1" id="vehiculos">
+    <h1 class="tituloVenta">Vehículos<span>Disponibles</span> </h1>
+    
+    <a routerLink="/administracion/registrar-vehiculo" class="linkAddVehiculos"><p>+</p> <span class="textoAddVehiculo" >Publicar Vehiculo</span></a>
+    <div class="contenedor__sesion-ventas">
+        <!-- ====contenedores menu de filtro====-->
+        <a href="http://localhost:4200/administracion/buscar-vehiculo#filtro"><i class="fas fa-chevron-circle-right"></i></a>
+        <div class="contenedor__menu-buscar" id="filtro">
+            
+            <div class="contenedor__filtros">
+                <p>Filtros activos</p>
+            </div>
+            <div class="contenedor__vista">
+                <p>Vista</p>
+                <div>
+                    <i class="fas fa-bars"></i>
+                    <i class="fas fa-th-large"></i>    
+                </div>            
+            </div>
+            <div class="contenedor__ordenarPor">
+                <p >Ordenar por:</p>
+                <form action="#" class="contenedor__marca">
+                    <i class="fas fa-tag"></i>
+                    <select name="cars" id="marca" class="cmbColumn">
+                        <option value="null">Marca:</option>
+                        <option value="toyota">Toyota</option>
+                        <option value="hyundai">Hyundai</option>
+                        <option value="chevrolet">Chevrolet</option>
+                        <option value="audi">Audi</option>
+                        <option value="jeep">Jeep</option>
+                        <option value="renault">Renault</option>
+                        <option value="suzuki">Suzuki</option>
+                        <option value="bmw">Bmw</option>
+                        <option value="kia">Kia</option>
+                        <option value="mercedez">Mercedez</option>
+                    </select>
+                    <button type="submit" value="Submit"><i class="fas fa-search"></i></button>
+                </form>
+                <form action="#" class="contenedor__modelo">
+                    <i class="fas fa-car-side"></i>
+                    <select name="cars" id="modelo" class="cmbColumn">
+                        <option value="null">Condición:</option>
+                        <option value="2nuevo">Nuevo</option>
+                        <option value="usado">Usado</option>
+                    </select>
+                    <button type="submit" value="Submit"><i class="fas fa-search"></i></button>
+                </form>
+                <form action="#" class="contenedor__fechaVeh" >
+                    <i class="fas fa-calendar-alt"></i>
+                    <select name="cars" id="year" class="cmbColumn">
+                        <option value="null">Año:</option>
+                        <option value="2000-2005">2000 - 2005</option>
+                        <option value="2006-2010">2006 - 2010</option>
+                        <option value="2011-2015">2011 - 2015</option>
+                        <option value="2016+">2016 en adelante</option>
+                    </select>
+                    <button type="submit" value="Submit"><i class="fas fa-search"></i></button>
+                </form>
+                <form action="#" class="contenedor__tipoCarro" >
+                    <i class="fas fa-truck"></i>
+                    <select name="cars" id="year"class="cmbColumn" >
+                        <option value="null">Tipo de Vehículo:</option>
+                        <option value="automovil">Automovil</option>
+                        <option value="camioneta">Camioneta</option>
+                        <option value="vehiculoPesado">Vehículo pesado</option>
+                        <option value="taxi">Taxi</option>
+                    </select>
+                    <button type="submit" value="Submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+        <!-- ====contenedores vehiculos====-->
+        <div class="contenedor__venta-vehiculos">
+            <a routerLink="/administracion/informacion-vehiculo/{{p.id}}" class="frame-blanco-vehiculo" *ngFor="let p of listadoVehiculos">
+                <div class="contenedor__img-carro-venta">
+                    <img src="{{p.foto}}" loading="lazy" alt="imgCarSell">
+                </div>
+                <div class="contenedor__contenido-carro-venta">
+                    <h3 class="precio">{{p.precio}}</h3>
+                    <p>{{p.modelo}}</p>
+                    <!--p>{{p.categoria}}</p-->
+                    <h4 class="marca">{{p.marca}}</h4>
+                </div>
+                <a routerLink="/administracion/actualizar-vehiculo/{{p.id}}" class="linkPublicacion">Editar</a>
+                <a routerLink="/administracion/eliminar-vehiculo/{{p.id}}" class="linkPublicacion">Eliminar</a>
+            </a>
+        </div>
+    </div>
+</section>

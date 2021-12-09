@@ -1,99 +1,76 @@
-<section class="sesion__registro">    
-  <div class="formulario__registro-contenedor">
-    <h1>Registrate</h1>
-    <form action="" [formGroup]=fgValidadorRegistrar (ngSubmit)="RegistrarUsuario()" class="formulario" id="formulario">      
-        <!--====GRUPO Nombre===-->
-        <div class="formulario__grupo" id="grupo__usuario">
-            <label for="usuario" class="formulario__label">Nombres</label>
-            <div class="formulario__grupo-input">                    
-                <div class="formulario__inputyicono-contenedor">                        
-                    <i class="formulario__icon fas fa-user"></i>
-                    <input formControlName='nombres' type="text" class="formulario__input" name="usuario" id="usuario"
-                    placeholder="autoluxury123">                    
-                    <i id="icono_error-true" class="formulario__validacion-estado fas fa-times-circle"></i>
-                </div>
-            </div>
-            <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 digitos y solo puede contener numeros, letras y guion bajo</p>                
-        </div>
-        <!--====GRUPO Apellidos===-->
-        <div class="formulario__grupo" id="grupo__nombre">
-            <label for="nombre" class="formulario__label">Apellidos</label>
-            <div class="formulario__grupo-input">
-                <div class="formulario__inputyicono-contenedor">
-                    <i class="formulario__icon fas fa-user"></i>
-                    <input formControlName='apellidos' type="text" class="formulario__input" name="nombre" id="nombre"
-                    placeholder="auto luxury">                    
-                    <i id="icono_error-true" class="formulario__validacion-estado fas fa-times-circle"></i>
-                </div>
-            </div>
-            <p class="formulario__input-error">El Nombre tiene que ser de 4 a 16 digitos y solo puede contener numeros, letras y guion bajo</p>                
-        </div>          
-        <!--====GRUPO CORREO ELECTRONICO===-->
-        <div class="formulario__grupo" id="grupo__correo">
-            <label for="correo" class="formulario__label">Correo Electrónico</label>
-            <div class="formulario__grupo-input">
-                <div class="formulario__inputyicono-contenedor">
-                    <i class="formulario__icon fas fa-envelope-open-text"></i>
-                    <input formControlName='email' type="email" class="formulario__input" name="correo" id="correo"
-                        placeholder="autoluxury@gmail.com">
-                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                </div>
-            </div>
-            <p id="icono_error-true" class="formulario__input-error">No parece ser un correo valido</p>                
-        </div>
-        <!--====GRUPO TELEFONO===-->
-        <div class="formulario__grupo" id="grupo__telefono">
-            <label for="telefono" class="formulario__label">Telefono</label>
-            <div class="formulario__grupo-input">
-                <div class="formulario__inputyicono-contenedor">
-                    <i class="formulario__icon fas fa-mobile-alt"></i>
-                    <input formControlName='telefono' type="text" class="formulario__input" name="telefono" id="telefono"
-                        placeholder="0000000000">
-                    <i id="icono_error-true" class="formulario__validacion-estado fas fa-times-circle"></i>
-                </div>
-            </div>
-            <p class="formulario__input-error">El telefono  solo puede contener numeros y el maximo es de 14 digitos</p>                
-        </div>
-        <!--====GRUPO direccion ===-->
-        <div class="formulario__grupo " id="grupo__direcion">
-            <label for="direcion" class="formulario__label">Dirección</label>
-            <div class="formulario__grupo-input">
-                <div class="formulario__inputyicono-contenedor">
-                    <i class="formulario__icon fas fa-map-marker-alt"></i>
-                    <input formControlName='direccion' type="text" class="formulario__input" name="direcion" id="direcion" placeholder="carrera 88 calle 88-88">                        
-                    <i id="icono_error-true"class="formulario__validacion-estado fas fa-times-circle"></i>
-                </div>                    
-            </div>
-            <p class="formulario__input-error">Las contraseñas no coinciden</p>                
-        </div> 
-        <!--====GRUPO terminos y condiciones===-->
-        <div class="formulario__grupo formulario__grupo-terminos" id="grupo__terminos">
-            <label class="formulario__label" >
-                <input class="formulario__checkbox" formControlName="terminoCondiciones" type="checkbox" name="terminos" id="terminos">
-                Acepto los Términos y Condiciones
-            </label>
-        </div>
-        <!--====GRUPO captcha===-->
-        <div class="formulario__grupo">
-            <ngx-recaptcha2 #captchaElem
-            [siteKey]="siteKey" formControlName="captcha"  class="reCaptcha"></ngx-recaptcha2>
-        </div> 
-         <!--======================-->
-        <div class="formulario__mensaje" id="formulario__mensaje">
-            <p><i class="fas fa-exclamation-triangle"></i><b> Error: </b> Por favor rellene el formulario correctamente</p>
-        </div>
-        <!--======================-->
-        <div class="formulario__grupo formulario__grupo-btn-enviar">
-            <!--button (click)="prueba()" class="formulario__btn">Enviar</button-->
-            <button [disabled]="!fgValidadorRegistrar.valid" [ngClass]="{'btnDisabled':!fgValidadorRegistrar.valid}"  (click)="prueba()" type="submit" class="btn botonInicio" >CONTINUAR</button>
-            <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Se ha registrado exitosamente</p>
-        </div>
-    </form>
-    <p>ya tienes cuenta, entonces <a routerLink="/seguridad/login"> inicia sesión</a></p>
-</div>
-<!--LO ARCHIVOS JAVAS AUN NO IMPLEMENTADOS-->
-<!--script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
-<script src="js/formulario.js"></script-->
 
-    
+
+<section class="Registro__asesor">
+    <div class="contenedor__toda-informacion">
+        <h1 >Registrar Cliente</h1>
+        <form  [formGroup]=fgValidadorRegistrar (ngSubmit)="RegistrarUsuario()"  class="contenido__formulario" id="formulario">
+            <!--====GRUPO NOMBRES===-->
+            <div class="contenedor_inputs-iconos-mesajeEserror" [ngClass]="{'inputError':Nombres()?.invalid && (Nombres()?.dirty || Nombres()?.touched)}" >
+                <i class="icon fas fa-user" [ngClass]="{'error':Nombres()?.invalid && (Nombres()?.dirty || Nombres()?.touched)}"></i>
+                <input class="input"  formControlName='nombres' type="text"  name="usuario" id="usuario" placeholder="Nombres" required>
+                <div *ngIf="Nombres()?.invalid && (Nombres()?.dirty || Nombres()?.touched)" class="error"> 
+                    <p  *ngIf="Nombres()?.errors?.['required']">Error: El campo es obligatorio</p>
+                    <p  *ngIf="!Nombres()?.errors?.['required']">Error: El tamaño es de máximo 20 caracteres, y no puede contener símbolos o números</p>
+                </div>
+            </div>
+            <!--====GRUPO APELLIDOS===-->
+            <div class="contenedor_inputs-iconos-mesajeEserror"  [ngClass]="{'inputError':Apellidos()?.invalid && (Apellidos()?.dirty || Apellidos()?.touched)}">
+                <i class="icon fas fa-user"  [ngClass]="{'error':Apellidos()?.invalid && (Apellidos()?.dirty || Apellidos()?.touched)}"></i>
+                <input class="input" formControlName='apellidos' type="text"  name="nombre" id="nombre"   placeholder="Apellidos" required>
+                <div *ngIf="Apellidos()?.invalid && (Apellidos()?.dirty || Apellidos()?.touched)" class="error"> 
+                    <p  *ngIf="Apellidos()?.errors?.['required']">Error: El campo es obligatorio</p>
+                    <p  *ngIf="!Apellidos()?.errors?.['required']">Error: El tamaño es de máximo 20 caracteres, y no puede contener símbolos o números</p>
+                </div>
+            </div>  
+             <!--====GRUPO DOCUMENTO IDENTIDAD===-->
+             <!--div class="contenedor_inputs-iconos-mesajeEserror"  [ngClass]="{'inputError':DocumentoId()?.invalid && (DocumentoId()?.dirty || DocumentoId()?.touched)}">
+                <i class="icon fas fa-user"  [ngClass]="{'error':DocumentoId()?.invalid && (DocumentoId()?.dirty || DocumentoId()?.touched)}"></i>
+                <input class="input" formControlName='documentosId' type="text"  name="nombre" id="nombre"   placeholder="DocumentoId" required>
+                <div *ngIf="DocumentoId()?.invalid && (DocumentoId()?.dirty || DocumentoId()?.touched)" class="error"> 
+                    <p  *ngIf="DocumentoId()?.errors?.['required']">Error: El campo es obligatorio</p>
+                    <p  *ngIf="!DocumentoId()?.errors?.['required']">Error: El tamaño es de máximo 20 caracteres, y no puede contener símbolos o números</p>
+                </div>
+            </div-->           
+            <!--====GRUPO CORREO ELECTRONICO===-->
+            <div class="contenedor_inputs-iconos-mesajeEserror" [ngClass]="{'inputError':Email()?.invalid && (Email()?.dirty || Email()?.touched)}">
+                <i class="icon fas fa-envelope-open-text" [ngClass]="{'error':Email()?.invalid && (Email()?.dirty || Email()?.touched)}"></i>
+                <input class="input" formControlName='email' type="email"  name="correo" id="correo" placeholder="Correo electrónico" required>
+                <div *ngIf="Email()?.invalid && (Email()?.dirty || Email()?.touched)" class="error"> 
+                    <p  *ngIf="Email()?.errors?.['required']">Error: El campo es obligatorio</p>
+                    <p  *ngIf="Email()?.errors?.['email']">Error: El email debe contener @ y terminar con un dominio ejm .com </p>
+                </div>
+            </div>  
+            <!--====GRUPO TELEFONO===-->
+            <div class="contenedor_inputs-iconos-mesajeEserror" [ngClass]="{'inputError':Celular()?.invalid && (Celular()?.dirty || Celular()?.touched)}">
+                <i class="icon fas fa-mobile-alt"  [ngClass]="{'error':Celular()?.invalid && (Celular()?.dirty || Celular()?.touched)}"></i>
+                <input class="input" formControlName='telefono' type="text" name="telefono" id="telefono" placeholder="Celular" required>
+                <div *ngIf="Celular()?.invalid && (Celular()?.dirty || Celular()?.touched)" class="error"> 
+                    <p  *ngIf="Celular()?.errors?.['required']">Error: El campo es obligatorio y debe contener máximo 10 números</p>
+                </div>
+            </div>
+            <!--====GRUPO DIRECCIÓN===-->
+            <div class="contenedor_inputs-iconos-mesajeEserror" [ngClass]="{'inputError':Direccion()?.invalid && (Direccion()?.dirty || Direccion()?.touched)}">
+                <i class="icon fas fa-map-marker-alt" [ngClass]="{'error':Direccion()?.invalid && (Direccion()?.dirty || Direccion()?.touched)}"></i>
+                <input class="input" formControlName='direccion' type="text" name="direcion" id="direcion" placeholder="Dirección"  required>
+                <div *ngIf="Direccion()?.invalid && (Direccion()?.dirty || Direccion()?.touched)" class="error"> 
+                    <p  *ngIf="Direccion()?.errors?.['required']">Error: El campo es obligatorio y no puede estar vacido</p>
+                </div>
+            </div>
+            <!--====GRUPO terminos y condiciones===-->
+            <div class="terminos-condiciones" id="grupo__terminos">
+                <label class="formulario__label" >
+                    <input class="formulario__checkbox"  formControlName="terminoCondiciones" type="checkbox" name="terminos" id="terminos">
+                    Acepto los Términos y Condiciones
+                </label>
+            </div>
+            <!--====GRUPO captcha===-->
+            <div class="div-reCaptcha">
+                <ngx-recaptcha2 #captchaElem
+                [siteKey]="siteKey" formControlName="captcha"  class="reCaptcha"></ngx-recaptcha2>
+            </div> 
+
+            <button [disabled]="!fgValidadorRegistrar.valid" [ngClass]="{'btnDisabled':!fgValidadorRegistrar.valid}" class="boton"   type="submit">Enviar</button>
+        </form>
+        <p class="iniciarsesionLink"> ¿ya tienes cuenta? <a  routerLink="/seguridad/login"> Iniciar Sesión</a> </p>
+    </div>
 </section>

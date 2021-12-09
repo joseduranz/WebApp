@@ -8,13 +8,11 @@
         <nav class="navbar">
             <a href="http://localhost:4200/inicio#inicio"> Inicio</a>
             <a href="http://localhost:4200/inicio#vehiculos"> Vehículos</a>
-            <a href="http://localhost:4200/inicio#pruebaManejo"> Prueba de Manjeo</a>
-            <a href="http://localhost:4200/inicio#servicio"> Servicios</a>
-            <a href="http://localhost:4200/inicio#contacto"> Contacto</a>
-            <a href="http://localhost:4200/inicio#mapaSitio"> Mapa del sitio</a>
+            <a routerLink="/administracion/buscar-vehiculo"> listadoVehiculos</a>
             <a *ngIf="sesionIniciada" routerLink="/administracion/index-admin"> Administrador</a>
             <a *ngIf="sesionIniciada" routerLink="/administracion/index-asesor"> Asesor</a>
-            <a *ngIf="sesionIniciada" routerLink="/administracion/index-cliente"> Cliente</a>
+            <a routerLink="/administracion/registrar-asesor"> Asesor-registro</a>
+            <a routerLink="/administracion/registrar-cliente"> Cliente-registro</a>
         </nav>
         <div id="login-btn">
             <a *ngIf="!sesionIniciada" routerLink="/seguridad/login">
@@ -28,3 +26,4 @@
             
         </div>
 </header>
+

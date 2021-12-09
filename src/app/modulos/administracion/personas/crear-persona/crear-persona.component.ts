@@ -4,8 +4,6 @@ import { Router } from '@angular/router';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
 
-declare var validacion:any;//se declara primero la variable
-
 @Component({
   selector: 'app-crear-persona',
   templateUrl: './crear-persona.component.html',
@@ -14,31 +12,49 @@ declare var validacion:any;//se declara primero la variable
 export class CrearPersonaComponent implements OnInit {
 
 
-  fgValidadorRegistrar: FormGroup =this.fb.group({ //comunicacion y request del backend y frontend
+  fgValidadorRegistrar: FormGroup =this.fb.group({ 
     'nombres':['',[Validators.required]], //el campo valida si esta vacido , entonces lo pone requerido 
     'apellidos':['',[Validators.required]],
     'email':['',[Validators.required, Validators.email]], //el campo valida si esta vacido , entonces lo pone requerido y si no lo estaentonces valida que sea de tipo email
     'telefono' :['',[Validators.required]],
     'direccion' :['',[Validators.required]],
     'terminoCondiciones' :['',[Validators.required]],
-    'captcha':['', [Validators.required]]
+    'captcha':['', [Validators.required]],
+    'documentoId':['',[Validators.required]]// activar
   });
   
   siteKey:string;//llave de captcha
   
   
-  constructor(private fb: FormBuilder, private servicioSeguridad: SeguridadService, private router:Router) {
+  constructor(private fb: FormBuilder, private router:Router) {
     this.siteKey = '6LdwKGUdAAAAAMC0Y5gS7570bte16ti5WPCPalWJ';
 
    }
 
   ngOnInit(): void {
-  }
-  /*este metodo valida la informacion despues de dar clicl sobre el boton continuar */
-  prueba(){
-    validacion();
-  }
+    
+  } 
   
+  //con este metodo se obtiene en tiempo real el valor de formgroup nombre
+  Nombres(){//el get lo que me permite es no darle parenesis al final del metodo
+    return this.fgValidadorRegistrar.get('nombres');
+  }  
+  Apellidos(){//el get lo que me permite es no darle parenesis al final del metodo
+    return this.fgValidadorRegistrar.get('apellidos');
+  }
+  Email(){//el get lo que me permite es no darle parenesis al final del metodo
+    return this.fgValidadorRegistrar.get('email');
+  }
+  Celular(){//el get lo que me permite es no darle parenesis al final del metodo
+    return this.fgValidadorRegistrar.get('telefono');
+  }
+  Direccion(){//el get lo que me permite es no darle parenesis al final del metodo
+    return this.fgValidadorRegistrar.get('direccion');
+  }
+  //DocumentoId(){//el get lo que me permite es no darle parenesis al final del metodo
+   // return this.fgValidadorRegistrar.get('documentoId');
+  //}
+
   //registro usuario metodo
   RegistrarUsuario(){
     let nombres = this.fgValidadorRegistrar.controls['nombres'].value;
@@ -46,11 +62,8 @@ export class CrearPersonaComponent implements OnInit {
     let email = this.fgValidadorRegistrar.controls['email'].value;
     let telefono= this.fgValidadorRegistrar.controls['telefono'].value;
     let direccion = this.fgValidadorRegistrar.controls['direccion'].value;
-    /*alert(nombres);
-    alert(apellidos);
-    alert(email);
-    alert(telefono);
-    alert(direccion);*/
+    //let documentoId = this.fgValidadorRegistrar.controls['documentoId'].value;
+
     //si se guarda correctamente en la base de datos
     let url = `http://localhost:3000/personas`;
     
@@ -60,7 +73,8 @@ export class CrearPersonaComponent implements OnInit {
       rol:"cliente",
       direccion:direccion,
       correoElectronico:email,
-      celular:telefono
+      celular:telefono,
+      //documentoIdentidad:documentoId
     }
       /// a travez del metodo fecht se envian los datos a la url declarada anteriormente, en un archivo json
     fetch (url, {

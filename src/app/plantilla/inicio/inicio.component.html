@@ -2,18 +2,22 @@
 <!-- ==========================================SECTION 0 START=============================-->
 <section class="sesion0 client-area" id="inicio">
         <!--2-->
+        <div class="separador-negro"></div>
         <div class="containerImg container">
             <!--======imagenes lamparas=========-->
             <div class="lamparas">
-                <img class="lamp1" loading="lazy" src="./assets/img/garaje2.png" alt="lamparas">
-                <img class="lamp2" loading="lazy" src="./assets/img/garaje3.png" alt="lamparas">
-                <img class="lamp3" loading="lazy" src="./assets/img/garaje4.png" alt="lamparas">
-                <img class="lamp4" loading="lazy" src="./assets/img/garaje5.png" alt="lamparas">
-                <img class="lamp5" loading="lazy" src="./assets/img/garaje6.png" alt="lamparas">
-                <img class="lamp6" loading="lazy" src="./assets/img/garaje7.png" alt="lamparas">
+                <img class="lamp1" loading="lazy" src="./assets/img/ciudad/c8.png" alt="lamparas">
+                <img class="lamp2" loading="lazy" src="./assets/img/ciudad/c7.png" alt="lamparas">
+                <img class="lamp3" loading="lazy" src="./assets/img/ciudad/c6.png" alt="lamparas">
+                <img class="lamp4" loading="lazy" src="./assets/img/ciudad/c5.png" alt="lamparas">
+                <img class="lamp5" loading="lazy" src="./assets/img/ciudad/c4.png" alt="lamparas">
+                <img class="lamp6" loading="lazy" src="./assets/img/ciudad/c3.png" alt="lamparas">
+                <img class="lamp7" loading="lazy" src="./assets/img/ciudad/c2.png" alt="lamparas">
+                <img class="lamp8" loading="lazy" src="./assets/img/ciudad/c1.png" alt="lamparas">
+                <!--img class="lamp9" loading="lazy" src="./assets/img/ciudad/c1.png" alt="lamparas"-->
             </div>
             <!--======imagenes piso=========-->
-            <img method="ScrollTriger(.imgPiso)" class="imgPiso" loading="lazy" src="./assets/img/garaje1.png" alt="Garaje">
+            <img method="ScrollTriger(.imgPiso)" class="imgPiso" loading="lazy" src="./assets/img/ciudad/c0.png" alt="Garaje">
             <!--======logos carros=========-->
             <div class="sliderLogo">
                 <div class="slideTrackLogo">
@@ -101,7 +105,11 @@
                         <div class="carousel__lista">
                             <div class="carousel__elemento">
                                 <button class="btnCarousel">SABER MAS</button>
-                                <img class="s0ContCar" src="./assets/img/carros/car1cont.png" loading="lazy" alt="">
+                                <div class="contenedor__informacion-promocion">
+                                    <div class="nombreCar">
+                                        <h1>SPARK <span>GT</span></h1>
+                                    </div>
+                                  </div>
                                 <img class="s0imgCar" loading="lazy" src="./assets/img/carros/car1.png" alt="car1.1">
                             </div>
                             <div class="carousel__elemento">
@@ -122,8 +130,12 @@
                             </div>
                             <div class="carousel__elemento">
                                 <button class="btnCarousel">SABER MAS</button>
-                                <img class="s0ContCar" src="./assets/img/carros/car5cont.png" loading="lazy" alt="">
-                                <img class="s0imgCar" loading="lazy" src="./assets/img/carros/car5.png" alt="car1.1">
+                                <div class="contenedor__contenido-camionetas">
+                                    <h1>OFERTAS ESPECIALES TODOS LOS MESES</h1>
+                                    <h2>Apresurate Miles de vehículos están esperando por ti !...</h2>
+                                    <p>* Vehículos sujetos a disponibilidad para más información acercate a nuestras oficinas</p>
+                                </div>
+                                <img class="s0imgCar" loading="lazy" src="./assets/img/hyundai-ix35-car-2018-hyundai-tucson-general-motors-car-4ae7ece625f131bcda7fed7c484d3df2.png" alt="car1.1">
                             </div>
                         </div>
                         <button aria-label="Siguiente" class="carousel__siguiente2"><i
@@ -133,13 +145,34 @@
                 </div>
             </div>
         </div>
+        
 </section>
-<div class="divisorsesion1"></div>
 <!--icono bajar a otra pestana===============================-->
 <div class="cotenedor-icono">
         <p><a href="http://localhost:4200/inicio#vehiculos" class="texto-blanco"><i class="fas fa-chevron-down"></i></a></p>
 </div>
 <!-- ==========================================SECTION 0 END=============================-->
+<!-- **********************************************************************************-->
+<!-- ==========================================SECtion seguridad y garantia START=============================-->
+<section class="garantia-seguridad-asesoria">
+    <div class="contenedor__garantia">
+        <img src="./assets/img/garantia.png" loading="lazy" alt="garantia">
+        <h1>Garantía</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit deserunt non explicabo asperiores minus quod, beatae odit voluptates architecto delectus excepturi</p>
+    </div>
+    <div class="contenedor__garantia">
+        <img src="./assets/img/seguridad.png" loading="lazy" alt="garantia">
+        <h1>Seguridad</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit deserunt non explicabo asperiores minus quod, beatae odit voluptates architecto delectus excepturi</p>
+    </div>
+    <div class="contenedor__garantia">
+        <img src="./assets/img/atencion.png" loading="lazy" alt="garantia">
+        <h1>Asesoria</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit deserunt non explicabo asperiores minus quod, beatae odit voluptates architecto delectus excepturi</p>
+    </div>
+    <p>* Ofrecemos productos y servícios de calidad, si tienes incovenientes al navegar por favor infórmanos  para solucionar los inconvenientes lo mas pronto posible</p>
+</section>
+<!-- ==========================================SECtion seguridad y garantia END=============================-->
 <!-- **********************************************************************************-->
 <!-- ==========================================SECTION 1 START=============================-->
 <section class="sesion1" id="vehiculos">
@@ -241,6 +274,7 @@
             </a>
         </div>
     </div>
+    <p>* si deseas conocer mas vehiculos puedes ir a la busqueda o a travez de <a routerLink="/administracion/buscar-vehiculo">este link</a></p>
 </section>
 <!-- ==========================================SECTION 1 END=============================-->
 <!-- **********************************************************************************-->
@@ -276,6 +310,7 @@
             </div>
         </div>
     </div>
+    <p>* si deseas mas información sobre nuestra misión y visión, puedes ver los documentos completos a travez de <a href="">este link</a></p>
 </section>
 <!-- ==========================================SECTION 2 VISION END=============================-->
 <!--*****************************************************************************-->
@@ -290,7 +325,7 @@
                 deserunt numquam. </p>
         </div>
         <div class="s2-img2">
-            <img src="./assets/img/carDrift.png" loading="lazy" alt="BMW-M6-2">
+            <img src="./assets/img/Car_Clear.png" loading="lazy" alt="BMW-M6-2">
         </div>
     </div>
 </section>
@@ -309,7 +344,7 @@
             <div>
                 <h3>Taller</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed itaque facilis, repellendus
-                    quia vel iste quo officia perferendis accusamus harum </p>
+                     </p>
             </div>
             <div>
                 <h3>Accesorios</h3>
