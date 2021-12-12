@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { ModeloDatos } from '../modelos/datos.modelo';
 import { ModeloIdentificar } from '../modelos/identificar.modelo';
 
 @Injectable({
@@ -39,7 +40,7 @@ export class SeguridadService {
       this.RefrescarDatosUsuarioSesion(datos);
     }
   }
-  //VERIFICA QUE EN EL LOCALHOST DEL NAVEGADOR HAYAN DATOS GUARDADOS
+  //VERIFICA QUE EN EL LOCALHOST DEL NAVEGADOR HALLAN DATOS GUARDADOS
   SeHaIniciadoSesion(){
     let datosString = localStorage.getItem("datosSesion"); //en datosString guardame lo que hay en localStorage atraves de getitem que hay en datos sesion
     return datosString;//retorna la variable datosString en formato cadena
@@ -47,6 +48,13 @@ export class SeguridadService {
   //GUARDA LOS DATOS DEL INICIO DE SESION EN EL LOCALHOST DEL NAVEGADOR FORMATO JSON
   AlmacenarSesion(datos: ModeloIdentificar){//este metodo almacena en el navegador la informacion de iniciar sesion
     datos.estaIdentificado=true;
+    if(datos.datos?.rol=="Admin"){
+      datos.inicioAdmin=true;
+    }else if (datos.datos?.rol=="asesor"){
+      datos.inicioAsesor=true;
+    }else{
+      datos.inicioCliente=true;
+    }
     let datosString = JSON.stringify(datos);
     localStorage.setItem("datosSesion",datosString);
     this.RefrescarDatosUsuarioSesion(datos);
@@ -80,10 +88,11 @@ export class SeguridadService {
   }
   //OBTENER EL ROL PARA EL INICIO DE SESION
   ObtenerRol(){
+    //let datos=ModeloDatos
     let datosString = localStorage.getItem("datosSesion");
-    if(datosString){
+    if (datosString){
       let datos = JSON.parse(datosString);
-      return datos.rol;
+      return datos;
     }
     else{
       return "";

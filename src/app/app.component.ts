@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+
+declare var botonHome: any;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -26,6 +29,7 @@ export class AppComponent implements OnInit  {
   }
 
   ngOnInit(): void {
+    botonHome()
   }
 
 }

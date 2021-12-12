@@ -71,6 +71,11 @@
                 <button class="boton">Preguntar</button>
             </div>            
         </div>
+        <div class="idcliente" *ngIf="idCliente && sesionCliente">
+            <p>{{idCliente}}</p>
+            <p>{{informacionVehiculo.id}}</p>
+            <!--==XXXXXXXX  IMPLEMENTAR SOLICITUD XXXXXXXXXXXXXXXXXX-->
+        </div>
     </div>
 
 </section>

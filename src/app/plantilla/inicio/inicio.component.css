@@ -97,6 +97,8 @@ body{
     }
 }
 .fa-chevron-down {
+    *background-color: red;
+    padding: 30px;
     color: var(--grisClaro);
 }
 .cotenedor-icono:hover .fa-chevron-down {

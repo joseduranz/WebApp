@@ -15,7 +15,11 @@ declare var menudesplegable: any;
 export class HeaderComponent implements OnInit {
 
   sesionIniciada?:boolean = false; //crear una variable de tipo buleano y inicializada en falso
+  sesionAdmin?:boolean = false
+  sesionAsesor?:boolean = false
+  sesionCliente?:boolean = false
   subs: Subscription = new Subscription();
+  rol?:string;
 
   constructor(private servicioSeguridad : SeguridadService) { }
 
@@ -28,7 +32,15 @@ export class HeaderComponent implements OnInit {
         this.sesionIniciada = false;
       }*/
       //atraves de 
-      this.sesionIniciada = datos.estaIdentificado
+      this.sesionIniciada = datos.estaIdentificado;
+      this.sesionAdmin = datos.inicioAdmin;
+      
+      this.sesionAdmin = datos.inicioAdmin;
+      this.sesionAsesor = datos.inicioAsesor;
+      this.sesionCliente = datos.inicioCliente;
+
+      this.rol= this.servicioSeguridad.ObtenerRol().datos.rol;
+
     })
   }
 

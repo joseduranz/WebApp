@@ -1,0 +1,44 @@
+.crear-persona-sesion{
+    background-color: var(--background-color-principal);
+    height: 1300px;
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+    color: rgb(80, 80, 80);
+  }
+  .crear-persona-sesion h1{
+    font-size: 3rem;
+      margin-bottom: 20px;
+  }
+  .crear-persona-sesion form{
+    width: 550px;
+    padding: 45px;
+    height: 900px;
+    background-image: var(--background-cajon-negro);
+    box-shadow:var(--box-shadow-cajon-principal);
+    border-top: var(--border-top-cajon-principal);
+    border-left:var(--border-left-cajon-principal);
+    border-radius: 25px;  
+  }
+  .crear-persona-sesion form div{
+      *background-color: turquoise;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+  }
+  .crear-persona-sesion form div input{
+    font-size: 1.2rem;
+    color: var(--color-gris-principal);
+    background-color: transparent;
+    padding-left: 10px;
+    height: 30px;    
+    margin: 15px 0 ;
+    border-radius: 25px;
+    box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
+                inset -4px -4px 4px rgb(45, 45, 45);
+    border-bottom: 1px solid rgb(52, 52, 52);
+    border-right: 1px solid rgb(52, 52, 52); 
+  }
+  .crear-persona-sesion form div input:hover{
+    background-color: rgb(41, 41, 41);
+  }

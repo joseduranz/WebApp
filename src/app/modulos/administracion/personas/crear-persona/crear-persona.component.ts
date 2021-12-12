@@ -20,7 +20,7 @@ export class CrearPersonaComponent implements OnInit {
     'direccion' :['',[Validators.required]],
     'terminoCondiciones' :['',[Validators.required]],
     'captcha':['', [Validators.required]],
-    'documentoId':['',[Validators.required]]// activar
+    //'documentoId':['',[Validators.required]]// activar
   });
   
   siteKey:string;//llave de captcha

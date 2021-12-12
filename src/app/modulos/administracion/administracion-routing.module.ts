@@ -24,7 +24,7 @@ import { InformacionComponent } from './vehiculos/informacion/informacion.compon
 const routes: Routes = [  
   //=====PERSONAS========//
   {//INDEX PERSONA
-    path:"index-cliente",
+    path:"index-cliente/:id",
     component:IndexPersonaComponent
   },
   {//BUSCAR PERSONA
@@ -36,11 +36,11 @@ const routes: Routes = [
     component:CrearPersonaComponent
   },  
   {//EDITAR PERSONA
-    path:"actualizar-cliente", 
+    path:"actualizar-cliente/:id", 
     component:EditarPersonaComponent
   },
   {//ELIMINAR PERSONA
-    path:"eliminar-cliente",
+    path:"eliminar-cliente/:id",
     component:EliminarPersonaComponent
   },
   //=====ASESOR========//
@@ -57,11 +57,11 @@ const routes: Routes = [
     component:CrearAsesorComponent
   },  
   {//EDITAR ASESOR
-    path:"actualizar-asesor", 
+    path:"actualizar-asesor/:id", 
     component:EditarAsesorComponent
   },
   {//ELIMINAR ASESOR
-    path:"eliminar-asesor",
+    path:"eliminar-asesor/:id",
     component:EliminarAsesorComponent
   },
   //=====ADMINISTRADORES========//
@@ -78,11 +78,11 @@ const routes: Routes = [
     component:CrearAdministradorComponent
   },  
   {//EDITAR ADMINISTRADOR
-    path:"actualizar-admin", 
+    path:"actualizar-admin/:id", 
     component:EditarAdministradorComponent
   },
   {//ELIMINAR ADMINISTRADOR
-    path:"eliminar-admin",
+    path:"eliminar-admin/:id",
     component:EliminarAdministradorComponent
   },
   //=====VEHICULOS========//

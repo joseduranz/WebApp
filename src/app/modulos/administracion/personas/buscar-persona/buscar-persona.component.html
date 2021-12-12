@@ -1,1 +1,28 @@
-<p>buscar-persona works!</p>
+<section class="listadoPersonas">
+  <h1>Nuestros Clientes</h1>
+  <a routerLink="/administracion/registrar-cliente" class="boton">Registrar a un nuevo cliente</a>
+    <!--=============================-->
+    <div class="encabezado">
+      
+      <h4>Nombre</h4>
+      <h4>Apellido</h4>
+      <h4 style="width: 100px;">Rol</h4>
+      <h4>Email</h4>
+      <h4 style="width: 100px;"></h4>
+      <h4 style="width: 100px;"></h4>
+      <h4 style="width: 100px;"></h4>
+    </div>
+    <!--=============================-->
+    <div *ngFor="let p of listadoClientes">
+      <div class="contenido">
+        
+        <p>{{p.nombres}}</p>
+        <p>{{p.apellidos}}</p>
+        <p style="width: 100px;">{{p.rol}}</p>
+        <p>{{p.correoElectronico}}</p>
+        <p style="width: 100px;"><a routerLink="/administracion/index-cliente/{{p.id}}" class="ver">Ver</a></p>
+        <p style="width: 100px;"><a routerLink="/administracion/actualizar-cliente/{{p.id}}" class="editar">Editar</a></p>
+        <p style="width: 100px; "><a routerLink="/administracion/eliminar-cliente/{{p.id}}"  class="eliminar" >Eliminar</a></p>
+      </div>
+  </div>
+</section>

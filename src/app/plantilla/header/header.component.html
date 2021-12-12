@@ -1,6 +1,7 @@
 <div class="barra_progreso" id="barra-progreso"></div>
+<!------bara de scroll personalisada-->
 <!-- ==========================================HEADER START=============================-->
-<header class="containerHeader">
+<!--header class="containerHeader">
         <div class="containerHamburgesa " id="menuOpen">
             <i  (click)="aparecerMenu()" id="menu-btn" class="fas fa-bars"></i>
         </div>
@@ -8,11 +9,11 @@
         <nav class="navbar">
             <a href="http://localhost:4200/inicio#inicio"> Inicio</a>
             <a href="http://localhost:4200/inicio#vehiculos"> Vehículos</a>
-            <a routerLink="/administracion/buscar-vehiculo"> listadoVehiculos</a>
-            <a *ngIf="sesionIniciada" routerLink="/administracion/index-admin"> Administrador</a>
-            <a *ngIf="sesionIniciada" routerLink="/administracion/index-asesor"> Asesor</a>
-            <a routerLink="/administracion/registrar-asesor"> Asesor-registro</a>
-            <a routerLink="/administracion/registrar-cliente"> Cliente-registro</a>
+            <a routerLink="/administracion/buscar-vehiculo"> listado Vehiculos</a>
+            <a routerLink="/administracion/buscar-cliente"> listado Personas</a>
+            <a routerLink="/administracion/buscar-asesor"> listado asesores</a>
+            <a *ngIf="sesionAsesor || sesionAdmin" routerLink="/administracion/index-admin"> Administrador</a>
+            <a *ngIf="sesionAsesor || sesionAdmin" routerLink="/administracion/index-asesor"> Asesor</a>
         </nav>
         <div id="login-btn">
             <a *ngIf="!sesionIniciada" routerLink="/seguridad/login">
@@ -25,5 +26,240 @@
             </a>
             
         </div>
+</header-->
+<header>
+    <div class="headerLista">
+        <div class="contenedor-logo-header">
+            <a routerLink="/inicio"><img class="logoHeader logo" loading="lazy" src="./assets/img/logoAutoLuxuryColor.png" alt="logo"></a>
+        </div>
+        <!---------modo admin------------------------>
+        <ul class="nav" *ngIf="sesionAdmin">
+            <i class="fas fa-home iconos"></i>
+            <li><a href="http://localhost:4200/inicio#inicio"class="home-header menus-h">inicio</a>
+                <ul><li><a href="http://localhost:4200/inicio#vehiculos">Productos</a></li>
+                        <li><a href="http://localhost:4200/inicio#mision" >Misión</a></li>
+                        <li><a href="http://localhost:4200/inicio#vision">Visión</a></li>
+                        <li><a href="http://localhost:4200/inicio#pruebaManejo">Prueba de Manejo</a></li>
+                        <li><a href="http://localhost:4200/inicio#servicio">Servicios</a></li>
+                        <li><a href="http://localhost:4200/inicio#contacto">Contactos</a></li>
+                        <li><a href="http://localhost:4200/inicio#mapaSitio">Mapa del sitio</a></li>
+                        <li><a href="http://localhost:4200/inicio#footer">Acerca de Nosotros</a></li>
+                </ul>
+            </li>
+            
+            <i class="fas fa-car iconos"></i>
+            <li><a routerLink="/administracion/buscar-vehiculo" class="productos-header menus-h">Vehículos</a>
+                <ul>
+                    <li><a routerLink="/administracion/buscar-vehiculo">Ver Todo</a></li>
+                    <li><a routerLink="/administracion/registrar-vehiculo">Publicar</a></li>
+                </ul>
+            </li>
+            
+            <i class="fas fa-warehouse iconos"></i>
+            <li><a routerLink="/solicitud/generar-solicitud" class="servicios-header menus-h">Servicios</a>
+                <ul>
+                    <li><a href="">Ver Todo</a></li>
+                    <li><a href="">Buscar</a></li>
+                </ul>
+            </li>
+            
+            <i class="fas fa-user iconos"></i>
+            <li><a routerLink="/administracion/index-admin" class="usuario-header menus-h">Admin</a>
+                <ul>
+                <li><a routerLink="/administracion/index-admin">Administradores</a><i class="fas fa-angle-right"></i>
+                    <ul>
+                        <li><a routerLink="/solicitud/generar-solicitud">Solicitudes</a><i class="fas fa-angle-right"></i>
+                            <ul>
+                                <li><a routerLink="/administracion/buscar-solicitudes">Eliminar</a></li>
+                                <li><a routerLink="/administracion/buscar-solicitudes">Ver Todos</a></li>
+                            </ul>
+                        </li>
+                        <li><a routerLink="/administracion/buscar-cliente">Clientes</a><i class="fas fa-angle-right"></i>
+                            <ul>
+                                <li><a routerLink="/administracion/registrar-cliente">Registrar</a></li>
+                                <li><a routerLink="/administracion/buscar-cliente">Actualizar</a></li>
+                                <li><a routerLink="/administracion/buscar-cliente">Eliminar</a></li>
+                                <li><a routerLink="/administracion/buscar-cliente">Ver Todos</a></li>
+                            </ul>
+                        </li>
+                        <li><a routerLink="/administracion/buscar-asesor">Asesores</a><i class="fas fa-angle-right"></i>
+                            <ul>
+                                <li><a routerLink="/administracion/registrar-asesor">Registrar</a></li>
+                                <li><a routerLink="/administracion/buscar-asesor">Actualizar</a></li>
+                                <li><a routerLink="/administracion/buscar-asesor">Eliminar</a></li>
+                                <li><a routerLink="/administracion/buscar-asesor">Ver Todos</a></li>
+                            </ul>
+                        </li>
+                        <li><a routerLink="/administracion/index-admin">Mi cuenta</a><i class="fas fa-angle-right"></i>
+                            <ul>
+                                <li><a routerLink="/administracion/buscar-admin">Actualizar</a></li>
+                            </ul>
+                        </li>
+                        <li><a routerLink="/administracion/buscar-admin">Productos</a><i class="fas fa-angle-right"></i>
+                            <ul>
+                                <li><a routerLink="/administracion/registrar-vehiculo">Registrar</a></li>
+                                <li><a routerLink="/administracion/buscar-vehiculo">Actualizar</a></li>
+                                <li><a routerLink="/administracion/buscar-vehiculo">Eliminar</a></li>
+                                <li><a routerLink="/administracion/buscar-vehiculo">Ver Todos</a></li>
+                            </ul>
+                        </li>
+                        <li><a routerLink="/solicitud/generar-solicitud">Servicios</a><i class="fas fa-angle-right"></i>
+                            <ul>
+                                <li><a routerLink="/solicitud/generar-solicitud">Registrar</a></li>
+                                <li><a routerLink="/solicitud/generar-solicitud">Actualizar</a></li>
+                                <li><a routerLink="/solicitud/generar-solicitud">Eliminar</a></li>
+                                <li><a routerLink="/solicitud/generar-solicitud">Ver Todos</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            </li>
+           
+        </ul>
+         <!---------modo asesor------------------------>
+         <ul class="nav" *ngIf="sesionAsesor">
+            <i class="fas fa-home iconos"></i>
+            <li><a href="http://localhost:4200/inicio#inicio"class="home-header menus-h">inicio</a>
+                <ul><li><a href="http://localhost:4200/inicio#vehiculos">Productos</a></li>
+                        <li><a href="http://localhost:4200/inicio#mision" >Misión</a></li>
+                        <li><a href="http://localhost:4200/inicio#vision">Visión</a></li>
+                        <li><a href="http://localhost:4200/inicio#pruebaManejo">Prueba de Manejo</a></li>
+                        <li><a href="http://localhost:4200/inicio#servicio">Servicios</a></li>
+                        <li><a href="http://localhost:4200/inicio#contacto">Contactos</a></li>
+                        <li><a href="http://localhost:4200/inicio#mapaSitio">Mapa del sitio</a></li>
+                        <li><a href="http://localhost:4200/inicio#footer">Acerca de Nosotros</a></li>
+                </ul>
+            </li>
+            
+            <i class="fas fa-car iconos"></i>
+            <li><a routerLink="/administracion/buscar-vehiculo" class="productos-header menus-h">Vehículos</a>
+                <ul>
+                    <li><a routerLink="/administracion/buscar-vehiculo">Ver Todo</a></li>
+                </ul>
+            </li>
+            
+            <i class="fas fa-warehouse iconos"></i>
+            <li><a routerLink="/solicitud/generar-solicitud" class="servicios-header menus-h">Servicios</a>
+                <ul>
+                    <li><a href="">Ver Todo</a></li>
+                    <li><a href="">Buscar</a></li>
+                </ul>
+            </li>
+            
+            <i class="fas fa-user iconos"></i>
+            <li><a routerLink="/administracion/index-admin" class="usuario-header menus-h">Asesor</a>
+                <ul>
+                <li><a routerLink="/administracion/index-asesor">Asesores</a><i class="fas fa-angle-right"></i>
+                    <ul><li><a routerLink="/solicitud/generar-solicitud">Solicitudes</a><i class="fas fa-angle-right"></i>
+                            <ul><li><a routerLink="/administracion/buscar-solicitudes">Eliminar</a></li>
+                                <li><a routerLink="/administracion/buscar-solicitudes">Ver Todos</a></li>
+                            </ul>
+                        </li>
+                        <li><a routerLink="/administracion/buscar-cliente">Clientes</a><i class="fas fa-angle-right"></i>
+                            <ul>
+                                <li><a routerLink="/administracion/registrar-cliente">Registrar</a></li>
+                                <li><a routerLink="/administracion/buscar-cliente">Actualizar</a></li>
+                                <li><a routerLink="/administracion/buscar-cliente">Ver Todos</a></li>
+                            </ul>
+                        </li>
+                        <li><a routerLink="/administracion/index-asesor">Mi cuenta</a><i class="fas fa-angle-right"></i>
+                            <ul>
+                                <li><a routerLink="/seguridad/recuperar-pasword">Cambiar Contraseña</a></li>
+                                <li><a routerLink="/administracion/buscar-asesor">Actualizar</a></li>
+                                <li><a routerLink="/administracion/buscar-asesor">Eliminar</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            </li>
+           
+        </ul>
+         <!---------modo cliente------------------------>
+         <ul class="nav" *ngIf="sesionCliente">
+            <i class="fas fa-home iconos"></i>
+            <li><a href="http://localhost:4200/inicio#inicio"class="home-header menus-h">inicio</a>
+                <ul><li><a href="http://localhost:4200/inicio#vehiculos">Productos</a></li>
+                        <li><a href="http://localhost:4200/inicio#mision" >Misión</a></li>
+                        <li><a href="http://localhost:4200/inicio#vision">Visión</a></li>
+                        <li><a href="http://localhost:4200/inicio#pruebaManejo">Prueba de Manejo</a></li>
+                        <li><a href="http://localhost:4200/inicio#servicio">Servicios</a></li>
+                        <li><a href="http://localhost:4200/inicio#contacto">Contactos</a></li>
+                        <li><a href="http://localhost:4200/inicio#mapaSitio">Mapa del sitio</a></li>
+                        <li><a href="http://localhost:4200/inicio#footer">Acerca de Nosotros</a></li>
+                </ul>
+            </li>
+            
+            <i class="fas fa-car iconos"></i>
+            <li><a routerLink="/administracion/buscar-vehiculo" class="productos-header menus-h">Vehículos</a>
+                <ul>
+                    <li><a routerLink="/administracion/buscar-vehiculo">Ver Todo</a></li>
+                </ul>
+            </li>
+                        
+            <i class="fas fa-user iconos"></i>
+            <li><a routerLink="/administracion/index-admin" class="usuario-header menus-h">tu Cuenta</a>
+                <ul><li><a routerLink="/administracion/buscar-cliente">Clientes</a><i class="fas fa-angle-right"></i>
+                    <ul>
+                        <li><a routerLink="/seguridad/login">Iniciar Sesión</a></li>
+                        <li><a routerLink="/administracion/registrar-cliente">Registrarse</a></li>
+                        <li><a routerLink="">Mi Solicitud</a></li>
+                        <li><a routerLink="/seguridad/recuperar-pasword">Cambiar Contraseña</a></li>
+                        <li><a routerLink="/administracion/buscar-cliente">Actualizar Información</a></li>
+                        <li><a routerLink="/administracion/buscar-cliente">Eliminar mi Cuenta</a></li>
+                    </ul>
+                </li>
+            </ul>
+            </li>
+        </ul>
+         <!---------modo cliente------------------------>
+         <ul class="nav" *ngIf="!sesionIniciada">
+            <i class="fas fa-home iconos"></i>
+            <li><a href="http://localhost:4200/inicio#inicio"class="home-header menus-h">inicio</a>
+                <ul><li><a href="http://localhost:4200/inicio#vehiculos">Productos</a></li>
+                        <li><a href="http://localhost:4200/inicio#mision" >Misión</a></li>
+                        <li><a href="http://localhost:4200/inicio#vision">Visión</a></li>
+                        <li><a href="http://localhost:4200/inicio#pruebaManejo">Prueba de Manejo</a></li>
+                        <li><a href="http://localhost:4200/inicio#servicio">Servicios</a></li>
+                        <li><a href="http://localhost:4200/inicio#contacto">Contactos</a></li>
+                        <li><a href="http://localhost:4200/inicio#mapaSitio">Mapa del sitio</a></li>
+                        <li><a href="http://localhost:4200/inicio#footer">Acerca de Nosotros</a></li>
+                </ul>
+            </li>
+            
+            <i class="fas fa-car iconos"></i>
+            <li><a routerLink="/administracion/buscar-vehiculo" class="productos-header menus-h">Vehículos</a>
+                <ul>
+                    <li><a routerLink="/administracion/buscar-vehiculo">Ver Todo</a></li>
+                </ul>
+            </li>
+                        
+            <i class="fas fa-user iconos"></i>
+            <li><a routerLink="/administracion/index-admin" class="usuario-header menus-h">Registrarse</a>
+                <ul><li><a routerLink="/administracion/registrar-cliente">Registrarse</a>
+                    <li><a routerLink="/seguridad/login">Iniciar Sesión</a>
+                    <li><a routerLink="/seguridad/recuperar-pasword">Recuperar Contraseña</a>
+    
+                </li>
+            </ul>
+            </li>
+        </ul>
+
+        <div class="contenedor-info-sesion-header" id="login-btn">
+            <a *ngIf="!sesionIniciada" routerLink="/seguridad/login">
+                <button class="btnIniciarSesion btn" >Iniciar Sesion</button>
+                <i class="far fa-user loginIcon"></i>
+            </a>
+            <a *ngIf="sesionIniciada" routerLink="/seguridad/cerrar-sesion">
+                <button class="btnIniciarSesion btn" >Cerrar Sesion</button>
+                <i class="fas fa-sign-out-alt loginIcon"></i>
+            </a>
+        </div>
+    </div>
 </header>
 
+<button class="subirHome" id="subirHome">
+    <!------boton home aparece al hacer scroll-->
+    <i class="fas fa-chevron-up"></i>
+</button>

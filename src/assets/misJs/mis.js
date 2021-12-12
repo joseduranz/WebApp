@@ -2,8 +2,18 @@ const { Container } = ("@angular/compiler/src/i18n/i18n_ast");
 const { snap } = ("gsap/all");
 
 //*****************************************************************************
-function menudesplegable2(){
-    alert("funcionando")
+function botonHome(){
+    let btn_scroll=document.getElementById('subirHome');
+    btn_scroll.addEventListener('click', ()=>{
+        window.scrollTo(0,0)
+    });
+    window.onscroll = () =>{
+        if(window.scrollY < 300){
+            subirHome.classList.remove("subirHomeActivo");
+        }else{
+            subirHome.classList.add("subirHomeActivo");
+        }
+    }
 }
 //==============APARECER EL MENU EN MODO CELULAR START===============================
 function menudesplegable(){
@@ -298,18 +308,19 @@ function gsapJava() {
         },
         translateY: 1200,
     });
+    
     /*gsap.to(".jarallax-img", {
         scrollTrigger: {
             scrub: 0
         },
         translateY: 1000,
-    });*/
+    });
 
     
 
     //luinea de tiempo
     
-   /*let tl = gsap.timeline({
+   let tl = gsap.timeline({
         scrollTrigger:{
             trigger:"p",
             pin: true,
@@ -325,10 +336,8 @@ function gsapJava() {
         }
     });    
     tl.addLabel("start").from(".contenedor__garantia p", {translateY: -50, autoAlpha: 0});
-   */
- 
+   
 
-    /*
     gsap.to(".s2-img2 img", {/*carro prueba de manejo*/
       /*  scrollTrigger: {
             start: "top top",
@@ -354,5 +363,7 @@ function gsapJava() {
         },
         translateX: 500
     });
+
+
  
 }

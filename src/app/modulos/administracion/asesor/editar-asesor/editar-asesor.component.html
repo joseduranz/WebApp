@@ -1,1 +1,22 @@
-<p>editar-asesor works!</p>
+<section class="crear-persona-sesion">
+    <form action=""  [formGroup]="fgValidador" (ngSubmit)="EditarAsesor()">
+        <h1>Editar Información</h1>
+        <div class="contenedor-inputs">
+
+            <input formControlName="id" type="text" readonly>
+
+            <input formControlName="nombres" type="text" placeholder="Nombres">
+
+            <input formControlName="apellidos" type="text" placeholder="Apellidos">
+
+            <input formControlName="rol" type="text" placeholder="rol" readonly>
+
+            <input formControlName="direccion" type="text" placeholder="Dirección">
+
+            <input formControlName="correoElectronico" type="text" placeholder="Email">
+
+            <input formControlName="celular"  type="text" placeholder="celular">
+        </div>
+        <button  [disabled]="!fgValidador" [ngClass]="{'btnDisabled':!fgValidador.valid}"  type="submit"  class="boton">Actualizar</button>
+    </form>
+</section>

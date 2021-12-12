@@ -162,6 +162,28 @@ section {
     z-index: 9999;
 }
 
+/*boton subir*/
+.subirHome{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: red;
+    font-size: 2rem;
+    color: white;
+    border-radius: 100%;
+    transform: translateY(100px);
+    transition: .9s;
+    z-index: 99;
+}
+.subirHome:hover{
+    background-color: white;
+    color: red;
+}
+.subirHomeActivo{
+    transform: translateY(0);
+}
+
 
 /*=====MEDIA QUERIES======*/
 

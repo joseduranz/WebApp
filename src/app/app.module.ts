@@ -8,8 +8,12 @@ import { HeaderComponent } from './plantilla/header/header.component';
 import { InicioComponent } from './plantilla/inicio/inicio.component';
 import { ErrorComponent } from './plantilla/error/error.component';
 import { NgxCaptchaModule } from 'ngx-captcha';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SpinnerModule } from './shared/components/spinner/spinner.module';
+import { SpinnerInterceptor } from './shared/interceptor/spinner.interceptor';
+import { NgsRevealModule } from 'ngx-scrollreveal';
+
 
 
 @NgModule({
@@ -25,9 +29,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     NgxCaptchaModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SpinnerModule,
+    NgsRevealModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
