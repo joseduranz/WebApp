@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
   sesionCliente?:boolean = false
   subs: Subscription = new Subscription();
   rol?:string;
+  id?:string;
 
   constructor(private servicioSeguridad : SeguridadService) { }
 
@@ -40,6 +41,7 @@ export class HeaderComponent implements OnInit {
       this.sesionCliente = datos.inicioCliente;
 
       this.rol= this.servicioSeguridad.ObtenerRol().datos.rol;
+      this.id= this.servicioSeguridad.ObtenerRol().datos.id;
 
     })
   }

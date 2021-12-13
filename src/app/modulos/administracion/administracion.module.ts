@@ -24,6 +24,7 @@ import { IndexAdministradorComponent } from './administrador/index-administrador
 import { IndexAsesorComponent } from './asesor/index-asesor/index-asesor.component';
 import { IndexPersonaComponent } from './personas/index-persona/index-persona.component';
 import { InformacionComponent } from './vehiculos/informacion/informacion.component';
+import { NgsRevealModule } from 'ngx-scrollreveal';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { InformacionComponent } from './vehiculos/informacion/informacion.compon
     AdministracionRoutingModule,
     NgxCaptchaModule, //recaptcha
     FormsModule, //trser la informacion del formulario
-    ReactiveFormsModule//ejecutar tiempo real dentro del front end con cambios en el backend
+    ReactiveFormsModule,//ejecutar tiempo real dentro del front end con cambios en el backend
+    NgsRevealModule
     
   ]
 })

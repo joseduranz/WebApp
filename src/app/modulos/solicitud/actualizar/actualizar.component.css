@@ -13,7 +13,7 @@
   .crear-persona-sesion form{
     width: 550px;
     padding: 45px;
-    height: 700px;
+    height: 900px;
     background-image: var(--background-cajon-negro);
     box-shadow:var(--box-shadow-cajon-principal);
     border-top: var(--border-top-cajon-principal);

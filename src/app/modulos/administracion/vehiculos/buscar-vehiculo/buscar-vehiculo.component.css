@@ -11,7 +11,7 @@
 }
 .sesion1 .tituloVenta{/* titulo vehiculos disponibles*/
   position:relative;
-  margin: 40px 20vw;
+  margin: 30px 20vw;
   z-index: 1;
   font-size: var(--medida-titulo-principal);
   font-weight: var(--bold-titulo-principal);
@@ -56,8 +56,8 @@ flex-direction: row;
   position: relative;
   background-image:  linear-gradient(to top left, red 60% ,rgb(255, 0, 170));;
   padding-top: 200px 0;
-  margin-top: -200px;
-  margin-bottom: -200px;
+  margin-top: -900px;
+  margin-bottom: -600px;
   z-index: 1;
   width:300px ;
   margin-left: -280px;
@@ -79,7 +79,7 @@ flex-direction: row;
 .contenedor__menu-buscar{
   position: fixed;
   width: 240px;
-  padding:5% 10px;
+  padding:59% 10px;
 }
 
 .link-contenedorMenu:hover {
@@ -226,7 +226,7 @@ flex-wrap: wrap;
 }
 .frame-blanco-vehiculo{/*contenedor de imagen veiculo y texto venta*/
   position: relative;
-  margin: 40px 45px 0px 0px;
+  margin: 30px 25px 0px 0px;
   min-width: 180px;
   max-width: 180px;
   min-height: 250px;
@@ -279,7 +279,7 @@ flex-wrap: wrap;
 .linkAddVehiculos{
   position: fixed;
   right: 0;
-  top: 0;
+  top: 60px;
   border-radius: 50%;
   margin: 85px 15px;
   display: flex;

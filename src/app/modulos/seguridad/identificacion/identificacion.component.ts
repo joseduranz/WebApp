@@ -47,7 +47,7 @@ export class IdentificacionComponent implements OnInit {
       let validarRol = this.servicioSeguridad.ObtenerRol();
       if (validarRol.datos.rol == "Admin") {
         this.router.navigate(["/administracion/index-admin"]); //Admin}
-      }else if (validarRol.datos.rol == "asesor") {
+      }else if (validarRol.datos.rol == "cliente") {
         this.router.navigate(["/administracion/index-asesor"]); //Asesor
       }else {
         this.router.navigate(["/administracion/buscar-vehiculo"]);// cliente//se inyecta en el constructor y aca se hace el llamado

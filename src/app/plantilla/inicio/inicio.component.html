@@ -97,7 +97,7 @@
                 </div>
             </div>
             <!--======contenedor de carros=========-->
-            <div class="sectionPrueba">
+            <div class="sectionPrueba" [ngsReveal]="{reset:true}">
                 <div class="carousel">
                     <div class="carousel__contenedor">
                         <button aria-label="Anterior" class="carousel__anterior2"><i
@@ -148,13 +148,13 @@
         
 </section>
 <!--icono bajar a otra pestana===============================-->
-<div class="cotenedor-icono">
-        <p><a href="http://localhost:4200/inicio#vehiculos" class="texto-blanco"><i class="fas fa-chevron-down"></i></a></p>
+<div class="cotenedor-icono" >
+        <p><a href="http://localhost:4200/inicio#vehiculos" class="texto-blanco"><i [ngsReveal]="{reset:true}" class="fas fa-chevron-down"></i></a></p>
 </div>
 <!-- ==========================================SECTION 0 END=============================-->
 <!-- **********************************************************************************-->
 <!-- ==========================================SECtion seguridad y garantia START=============================-->
-<section class="garantia-seguridad-asesoria">
+<section class="garantia-seguridad-asesoria" >
     <div class="contenedor__garantia" >
         <img src="./assets/img/garantia.png" loading="lazy" alt="garantia">
         <h1 [ngsReveal]="{reset:true}">Garantía</h1>
@@ -176,8 +176,8 @@
 <!-- **********************************************************************************-->
 <!-- ==========================================SECTION 1 START=============================-->
 <section class="sesion1" id="vehiculos">
-    <h1 class="tituloVenta">Vehículos<span>Disponibles</span> </h1>
-    <div class="contenedor__sesion-ventas">
+    <h1 class="tituloVenta" [ngsReveal]="{reset:true}">Vehículos<span [ngsReveal]="{reset:true}">Disponibles</span> </h1>
+    <div class="contenedor__sesion-ventas" [ngsReveal]="{reset:true}">
         <div class="contenedor__menu-buscar">
             <div class="contenedor__filtros">
                 <p>Filtros activos</p>
@@ -212,7 +212,7 @@
             </div>
         </div>
         <div class="contenedor__venta-vehiculos">
-            <a href="#" class="frame-blanco-vehiculo">
+            <a href="#" class="frame-blanco-vehiculo" [ngsReveal]="{reset:true}">
                 <div class="contenedor__img-carro-venta">
                     <img src="./assets/img/veh1.jpg" loading="lazy" alt="imgCarSell">
                 </div>
@@ -222,7 +222,7 @@
                     <h4 class="marca">Toyota corola</h4>                                                
                 </div>
             </a>
-            <a href="#" class="frame-blanco-vehiculo">
+            <a href="#" class="frame-blanco-vehiculo" [ngsReveal]="{reset:true}">
                 <div class="contenedor__img-carro-venta">
                     <img src="./assets/img/veh2.jpg" loading="lazy" alt="imgCarSell">
                 </div>
@@ -232,7 +232,7 @@
                     <h4 class="marca">Toyota corola</h4>                                                
                 </div>
             </a>
-            <a href="#" class="frame-blanco-vehiculo">
+            <a href="#" class="frame-blanco-vehiculo" [ngsReveal]="{reset:true}">
                 <div class="contenedor__img-carro-venta">
                     <img src="./assets/img/veh3.jpg" loading="lazy" alt="imgCarSell">
                 </div>
@@ -242,7 +242,7 @@
                     <h4 class="marca">Toyota corola</h4>                                                
                 </div>
             </a>
-            <a href="#" class="frame-blanco-vehiculo">
+            <a href="#" class="frame-blanco-vehiculo" [ngsReveal]="{reset:true}">
                 <div class="contenedor__img-carro-venta">
                     <img src="./assets/img/veh4.jpg" loading="lazy" alt="imgCarSell">
                 </div>
@@ -252,7 +252,7 @@
                     <h4 class="marca">Toyota corola</h4>                                                
                 </div>
             </a>
-            <a href="#" class="frame-blanco-vehiculo">
+            <a href="#" class="frame-blanco-vehiculo" [ngsReveal]="{reset:true}">
                 <div class="contenedor__img-carro-venta">
                     <img src="./assets/img/veh5.jpg" loading="lazy" alt="imgCarSell">
                 </div>
@@ -262,7 +262,7 @@
                     <h4 class="marca">Toyota corola</h4>                                                
                 </div>
             </a>
-            <a href="#" class="frame-blanco-vehiculo">
+            <a href="#" class="frame-blanco-vehiculo" [ngsReveal]="{reset:true}">
                 <div class="contenedor__img-carro-venta">
                     <img src="./assets/img/veh6.jpg" loading="lazy" alt="imgCarSell">
                 </div>
@@ -279,15 +279,15 @@
 <!-- ==========================================SECTION 1 END=============================-->
 <!-- **********************************************************************************-->
 <!-- ==========================================SECTION 2 MISION START=============================-->
-<section class="sesion__mision" id="mision">
+<section class="sesion__mision" id="mision" >
     <div class="box">
         <!--el elemento  data-jarallax-element mueve el elemento de derecha a izquierda el valor 0 pertenece al eje "Y" y el 200 pertenece al eje "X" -->
-        <h2 >Misión </h2>
+        <h2 [ngsReveal]="{reset:true}">Misión </h2>
         <div class="container">                
             <div class="imgBx jarallax"><!--la clase jarallax reconoce donde esta la imagen que se va a mover-->
                 <img class="jarallax-img" src="./assets/img/mision.jpg" alt="mision-imagen" loading="lazy"><!--la clase jarallax-img es elobjeto que se mueve -->
             </div>
-            <div class="content" >
+            <div class="content" [ngsReveal]="{reset:true}" >
                 <p>Somos un concesionario oficial ubicado en Colombia especializado en la comercialización de automóviles de alta gama nuevos y usados, así como de sus repuestos, accesorios y mantenimiento. Nuestro equipo se encuentra altamente capacitado para brindar un servicio profesional, calificado, óptimo y personalizado, cumpliendo con el ordenamiento social, ambiental y de la marca buscando la tranquilidad y seguridad de nuestros clientes.
                 </p>
             </div>
@@ -297,15 +297,15 @@
 <!-- ==========================================SECTION 2 MISION END=============================-->
 <!--*****************************************************************************-->
 <!-- ==========================================SECTION 2 VISION START=============================-->
-<section class="sesion__vision" id="vision">
+<section class="sesion__vision" id="vision" >
     <div class="box">
         <!--el elemento  data-jarallax-element mueve el elemento de derecha a izquierda el valor 0 pertenece al eje "Y" y el 200 pertenece al eje "X" -->
-        <h2 >Visión </h2>
+        <h2 [ngsReveal]="{reset:true}">Visión </h2>
         <div class="container">                
             <div class="imgBx jarallax"><!--la clase jarallax reconoce donde esta la imagen que se va a mover-->
                 <img class="jarallax-img" src="./assets/img/vision.jpg" alt="mision-imagen" loading="lazy"><!--la clase jarallax-img es elobjeto que se mueve -->
             </div>
-            <div class="content" >
+            <div class="content" [ngsReveal]="{reset:true}" >
                 <p>Ser uno de los concesionarios con la mayor tecnología de punta y confort en sus automóviles, garantizando ser la opción preferida en el mercado, líder en calidad, rentabilidad, capacidad financiera y la mejor experiencia para nuestros clientes.</p>
             </div>
         </div>
@@ -318,8 +318,8 @@
 <section class="sesion2" id="pruebaManejo">
     <div class="conS2">
         <div class="s2-text">
-            <h1>Prueba<span>de Manejo</span></h1>
-            <p>VIVE LA EXPERIENCIA DE CONDUCIR EN NUESTRO CONCECIONARIO, <br> VEN YA Y AGENDA TU CITA CON NOSOTROS!
+            <h1 [ngsReveal]="{reset:true}">Prueba<span [ngsReveal]="{reset:true}">de Manejo</span></h1>
+            <p [ngsReveal]="{reset:true}">VIVE LA EXPERIENCIA DE CONDUCIR EN NUESTRO CONCECIONARIO, <br> VEN YA Y AGENDA TU CITA CON NOSOTROS!
                 <br> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident ex repellat in facere, quod
                 hic quis rerum quam amet asperiores nisi nemo perferendis accusantium. Distinctio quo laborum velit
                 deserunt numquam. </p>
@@ -332,28 +332,28 @@
 <!-- ==========================================SECTION 2 END=============================-->
 <!-- **********************************************************************************-->
 <!-- ==========================================SESION 3 START=============================-->
-<section class="sesion3" id="servicio">
+<section class="sesion3" id="servicio" >
     <div class="conS3">
         <div class="s3-img1">
             <img src="./assets/img/llantasMonton.png" loading="lazy" alt="monton de llantas">
         </div>
         <div class="s3-text">
-            <h1>Servicios</h1>
+            <h1 [ngsReveal]="{reset:true}">Servicios</h1>
             <p><a href="">* Aplican términos y condiciones.Por favor antes de acceder a nuestros servicios lea
                     cuidadosamente las clausulas del doumento</a></p>
             <div>
-                <h3>Taller</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed itaque facilis, repellendus
+                <h3 [ngsReveal]="{reset:true}">Taller</h3>
+                <p [ngsReveal]="{reset:true}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed itaque facilis, repellendus
                      </p>
             </div>
             <div>
-                <h3>Accesorios</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed itaque facilis, repellendus
+                <h3 [ngsReveal]="{reset:true}">Accesorios</h3>
+                <p [ngsReveal]="{reset:true}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed itaque facilis, repellendus
                     quia vel iste quo officia perferendis accusamus harum </p>
             </div>
             <div>
-                <h3>Repuestos</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed itaque facilis, repellendus
+                <h3 [ngsReveal]="{reset:true}">Repuestos</h3>
+                <p [ngsReveal]="{reset:true}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit sed itaque facilis, repellendus
                     quia vel iste quo officia perferendis accusamus harum </p>
             </div>
         </div>
@@ -366,9 +366,9 @@
 <!-- ==========================================SECTION 3 END=============================-->
 <!-- **********************************************************************************-->
 <!-- ==========================================SESION 4 START=============================-->
-<section class="sesion4" id="contacto">
+<section class="sesion4" id="contacto" >
     <div class="s4-cont">
-        <h1 class="heading">Contáctenos</h1>
+        <h1 class="heading" [ngsReveal]="{reset:true}">Contáctenos</h1>
         <div class="row">
             <form action="" class="containerFormaulario">
                 <input type="text" placeholder="Nombre" class="box">
@@ -388,13 +388,13 @@
 <!-- ==========================================SECTION 4 END=============================-->
 <!-- **********************************************************************************-->
 <!-- ==========================================SESION 5 START=============================-->
-<section class="sesion5" id="mapaSitio">
+<section class="sesion5" id="mapaSitio" >
     <div class="conS5">
         <div class="s5-img1">
             <img src="./assets/img/bmw-3.png" loading="lazy" alt="bmw-m6-front">
         </div>
         <div class="s5-text">
-            <h1>Mapa<span>del Sitio</span></h1>
+            <h1 [ngsReveal]="{reset:true}">Mapa<span [ngsReveal]="{reset:true}">del Sitio</span></h1>
             <iframe class="map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2334364227613!2d-75.57588018575862!3d6.2329279954881605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e44284b5701a58f%3A0xb31d13b03ef5d400!2sFord%20-%20El%20Roble%20Motor%20Palac%C3%A9!5e0!3m2!1sen!2sin!4v1636909737422!5m2!1sen!2sin"
                 allowfullscreen="" loading="lazy"></iframe>

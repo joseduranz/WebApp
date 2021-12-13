@@ -1,11 +1,12 @@
-.infoPersona{
+.infoSolicitud{
     background-color: var(--background-color-principal);
     color: var(--color-gris-principal);
     padding: 20vh 10vw;
+    height: 1900px;
 }
-.infoPersona h1{
+.infoSolicitud h1{
     font-size: 4rem;
-    padding-bottom: 20px;
+    padding: 20px 0;
     border-bottom: 1px solid var(--color-gris-principal);
 }
 .informacion{
@@ -22,8 +23,9 @@
     display: flex;
     align-items: center;
     height: 55px;
-    width: 190px;
+    width: 290px;
     border-bottom: 1px solid var(--color-gris-principal);    
+    *background-color: skyblue;
 }
 .informacion span{
     display: flex;
@@ -44,4 +46,7 @@
 }
 .botones_edicion-eliminacion a:hover{
     color: rgb(255, 0, 0);
+}
+.informacion div img{
+    width: 100%;
 }

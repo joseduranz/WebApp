@@ -1,6 +1,6 @@
 .info-vehiculo{
     width: 100%;
-    height: 2200px;
+    height: 2900px;
     background-color: var(--background-color-principal);
     color: var(--color-gris-principal);
 }
@@ -23,7 +23,7 @@
     margin-bottom: 20px;
 }
 .imgcar {
-    margin-top: 50px;
+    margin-top: 0px;
     height: 400px;
     border-radius: 25px;  
     overflow: hidden;
@@ -191,4 +191,17 @@
 }
 .preguntar button{
     margin-bottom: 50px;
+}
+.solicitud{
+    margin-top: 20px;
+}
+.solicitud h1{
+}
+.solicitud input{
+   height: 30px;
+   width: 100%;
+   display: block;
+   padding-left: 10px;
+   border-radius: 15px;
+   margin-bottom: 30px;
 }

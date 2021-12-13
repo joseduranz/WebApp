@@ -1,0 +1,12 @@
+<section class="crear-persona-sesion">
+   
+    <form action=""  [formGroup]="fgValidador" (ngSubmit)="EliminarSolicitud()">
+        <h1>Eliminar Publicaión?</h1>
+        <p>Está seguro que desea eliminar esta Publicaión?,con esta acción no hay recuperación</p>
+        <p>Request :</p>
+        <div class="contenedor-inputs">
+            <input formControlName="id" type="text" readonly>
+        </div>
+        <button  [disabled]="!fgValidador" [ngClass]="{'btnDisabled':!fgValidador.valid}"  type="submit"  class="boton">Eliminar</button>
+    </form>
+</section>

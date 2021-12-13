@@ -34,7 +34,7 @@
         </div>
         <!---------modo admin------------------------>
         <ul class="nav" *ngIf="sesionAdmin">
-            <i class="fas fa-home iconos"></i>
+            
             <li><a href="http://localhost:4200/inicio#inicio"class="home-header menus-h">inicio</a>
                 <ul><li><a href="http://localhost:4200/inicio#vehiculos">Productos</a></li>
                         <li><a href="http://localhost:4200/inicio#mision" >Misión</a></li>
@@ -47,7 +47,7 @@
                 </ul>
             </li>
             
-            <i class="fas fa-car iconos"></i>
+            
             <li><a routerLink="/administracion/buscar-vehiculo" class="productos-header menus-h">Vehículos</a>
                 <ul>
                     <li><a routerLink="/administracion/buscar-vehiculo">Ver Todo</a></li>
@@ -55,23 +55,22 @@
                 </ul>
             </li>
             
-            <i class="fas fa-warehouse iconos"></i>
-            <li><a routerLink="/solicitud/generar-solicitud" class="servicios-header menus-h">Servicios</a>
+            
+            <li><a routerLink="solicitud/buscar-solicitud"class="servicios-header menus-h">Servicios</a>
                 <ul>
-                    <li><a href="">Ver Todo</a></li>
-                    <li><a href="">Buscar</a></li>
+                    <li><a routerLink="solicitud/buscar-solicitud">Ver Todo</a></li>
                 </ul>
             </li>
             
-            <i class="fas fa-user iconos"></i>
+            
             <li><a routerLink="/administracion/index-admin" class="usuario-header menus-h">Admin</a>
                 <ul>
                 <li><a routerLink="/administracion/index-admin">Administradores</a><i class="fas fa-angle-right"></i>
                     <ul>
-                        <li><a routerLink="/solicitud/generar-solicitud">Solicitudes</a><i class="fas fa-angle-right"></i>
+                        <li><a routerLink="solicitud/buscar-solicitud">Solicitudes</a><i class="fas fa-angle-right"></i>
                             <ul>
                                 <li><a routerLink="/administracion/buscar-solicitudes">Eliminar</a></li>
-                                <li><a routerLink="/administracion/buscar-solicitudes">Ver Todos</a></li>
+                                <li><a routerLink="solicitud/buscar-solicitud">Ver Todos</a></li>
                             </ul>
                         </li>
                         <li><a routerLink="/administracion/buscar-cliente">Clientes</a><i class="fas fa-angle-right"></i>
@@ -90,12 +89,14 @@
                                 <li><a routerLink="/administracion/buscar-asesor">Ver Todos</a></li>
                             </ul>
                         </li>
-                        <li><a routerLink="/administracion/index-admin">Mi cuenta</a><i class="fas fa-angle-right"></i>
+                        <li><a routerLink="/administracion/index-cliente/{{id}}">Mi cuenta</a><i class="fas fa-angle-right"></i>
                             <ul>
-                                <li><a routerLink="/administracion/buscar-admin">Actualizar</a></li>
+                                <li><a routerLink="/administracion/index-cliente/{{id}}">Mi cuenta</a></li>
+                                <li><a routerLink="/seguridad/cerrar-sesion">Cerrar sesión</a></li>
+                                <li><a routerLink="/administracion/actualizar-cliente/{{id}}">Actualizar</a></li>
                             </ul>
                         </li>
-                        <li><a routerLink="/administracion/buscar-admin">Productos</a><i class="fas fa-angle-right"></i>
+                        <li><a routerLink="/administracion/buscar-vehiculo">Productos</a><i class="fas fa-angle-right"></i>
                             <ul>
                                 <li><a routerLink="/administracion/registrar-vehiculo">Registrar</a></li>
                                 <li><a routerLink="/administracion/buscar-vehiculo">Actualizar</a></li>
@@ -105,7 +106,6 @@
                         </li>
                         <li><a routerLink="/solicitud/generar-solicitud">Servicios</a><i class="fas fa-angle-right"></i>
                             <ul>
-                                <li><a routerLink="/solicitud/generar-solicitud">Registrar</a></li>
                                 <li><a routerLink="/solicitud/generar-solicitud">Actualizar</a></li>
                                 <li><a routerLink="/solicitud/generar-solicitud">Eliminar</a></li>
                                 <li><a routerLink="/solicitud/generar-solicitud">Ver Todos</a></li>
@@ -119,7 +119,6 @@
         </ul>
          <!---------modo asesor------------------------>
          <ul class="nav" *ngIf="sesionAsesor">
-            <i class="fas fa-home iconos"></i>
             <li><a href="http://localhost:4200/inicio#inicio"class="home-header menus-h">inicio</a>
                 <ul><li><a href="http://localhost:4200/inicio#vehiculos">Productos</a></li>
                         <li><a href="http://localhost:4200/inicio#mision" >Misión</a></li>
@@ -132,14 +131,12 @@
                 </ul>
             </li>
             
-            <i class="fas fa-car iconos"></i>
             <li><a routerLink="/administracion/buscar-vehiculo" class="productos-header menus-h">Vehículos</a>
                 <ul>
                     <li><a routerLink="/administracion/buscar-vehiculo">Ver Todo</a></li>
                 </ul>
             </li>
             
-            <i class="fas fa-warehouse iconos"></i>
             <li><a routerLink="/solicitud/generar-solicitud" class="servicios-header menus-h">Servicios</a>
                 <ul>
                     <li><a href="">Ver Todo</a></li>
@@ -147,38 +144,38 @@
                 </ul>
             </li>
             
-            <i class="fas fa-user iconos"></i>
-            <li><a routerLink="/administracion/index-admin" class="usuario-header menus-h">Asesor</a>
+            <li><a routerLink="/administracion/index-asesor" class="usuario-header menus-h">Asesor</a>
                 <ul>
-                <li><a routerLink="/administracion/index-asesor">Asesores</a><i class="fas fa-angle-right"></i>
-                    <ul><li><a routerLink="/solicitud/generar-solicitud">Solicitudes</a><i class="fas fa-angle-right"></i>
-                            <ul><li><a routerLink="/administracion/buscar-solicitudes">Eliminar</a></li>
-                                <li><a routerLink="/administracion/buscar-solicitudes">Ver Todos</a></li>
-                            </ul>
-                        </li>
-                        <li><a routerLink="/administracion/buscar-cliente">Clientes</a><i class="fas fa-angle-right"></i>
-                            <ul>
-                                <li><a routerLink="/administracion/registrar-cliente">Registrar</a></li>
-                                <li><a routerLink="/administracion/buscar-cliente">Actualizar</a></li>
-                                <li><a routerLink="/administracion/buscar-cliente">Ver Todos</a></li>
-                            </ul>
-                        </li>
-                        <li><a routerLink="/administracion/index-asesor">Mi cuenta</a><i class="fas fa-angle-right"></i>
-                            <ul>
-                                <li><a routerLink="/seguridad/recuperar-pasword">Cambiar Contraseña</a></li>
-                                <li><a routerLink="/administracion/buscar-asesor">Actualizar</a></li>
-                                <li><a routerLink="/administracion/buscar-asesor">Eliminar</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+                    <li><a routerLink="/administracion/index-asesor">Asesores</a><i class="fas fa-angle-right"></i>
+                        <ul><li><a routerLink="/solicitud/generar-solicitud">Solicitudes</a><i class="fas fa-angle-right"></i>
+                                <ul><li><a routerLink="/administracion/buscar-solicitudes">Eliminar</a></li>
+                                    <li><a routerLink="/administracion/buscar-solicitudes">Ver Todos</a></li>
+                                </ul>
+                            </li>
+                            <li><a routerLink="/administracion/buscar-cliente">Clientes</a><i class="fas fa-angle-right"></i>
+                                <ul>
+                                    <li><a routerLink="/administracion/registrar-cliente">Registrar</a></li>
+                                    <li><a routerLink="/administracion/buscar-cliente">Actualizar</a></li>
+                                    <li><a routerLink="/administracion/buscar-cliente">Ver Todos</a></li>
+                                </ul>
+                            </li>
+                            <li><a routerLink="/administracion/index-cliente/{{id}}">Mi cuenta</a><i class="fas fa-angle-right"></i>
+                                <ul>
+                                    <li><a routerLink="/administracion/index-cliente/{{id}}">Mi cuenta</a></li>
+                                    <li><a routerLink="/seguridad/cerrar-sesion">Cerrar sesión</a></li>
+                                    <li><a routerLink="/seguridad/recuperar-pasword">Cambiar Contraseña</a></li>
+                                    <li><a routerLink="/administracion/actualizar-cliente/{{id}}">Actualizar</a></li>
+                                    <li><a routerLink="/administracion/eliminar-cliente/{{id}}">Eliminar</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
             </li>
            
         </ul>
          <!---------modo cliente------------------------>
          <ul class="nav" *ngIf="sesionCliente">
-            <i class="fas fa-home iconos"></i>
             <li><a href="http://localhost:4200/inicio#inicio"class="home-header menus-h">inicio</a>
                 <ul><li><a href="http://localhost:4200/inicio#vehiculos">Productos</a></li>
                         <li><a href="http://localhost:4200/inicio#mision" >Misión</a></li>
@@ -191,31 +188,28 @@
                 </ul>
             </li>
             
-            <i class="fas fa-car iconos"></i>
             <li><a routerLink="/administracion/buscar-vehiculo" class="productos-header menus-h">Vehículos</a>
                 <ul>
                     <li><a routerLink="/administracion/buscar-vehiculo">Ver Todo</a></li>
                 </ul>
             </li>
                         
-            <i class="fas fa-user iconos"></i>
-            <li><a routerLink="/administracion/index-admin" class="usuario-header menus-h">tu Cuenta</a>
-                <ul><li><a routerLink="/administracion/buscar-cliente">Clientes</a><i class="fas fa-angle-right"></i>
+            <li><a routerLink="/administracion/index-cliente/{{id}}" class="usuario-header menus-h">tu Cuenta</a>
+                <ul><li><a routerLink="/administracion/index-cliente/{{id}}">Clientes</a><i class="fas fa-angle-right"></i>
                     <ul>
-                        <li><a routerLink="/seguridad/login">Iniciar Sesión</a></li>
-                        <li><a routerLink="/administracion/registrar-cliente">Registrarse</a></li>
+                        <li><a routerLink="/administracion/index-cliente/{{id}}">Mi cuenta</a></li>
                         <li><a routerLink="">Mi Solicitud</a></li>
+                        <li><a routerLink="/seguridad/cerrar-sesion">Cerrar sesión</a></li>
                         <li><a routerLink="/seguridad/recuperar-pasword">Cambiar Contraseña</a></li>
-                        <li><a routerLink="/administracion/buscar-cliente">Actualizar Información</a></li>
-                        <li><a routerLink="/administracion/buscar-cliente">Eliminar mi Cuenta</a></li>
+                        <li><a routerLink="/administracion/actualizar-cliente/{{id}}">Actualizar Información</a></li>
+                        <li><a routerLink="/administracion/eliminar-cliente/{{id}}">Eliminar mi Cuenta</a></li>
                     </ul>
                 </li>
             </ul>
             </li>
         </ul>
-         <!---------modo cliente------------------------>
+         <!---------modo no registrado ni iniciado sesion------------------------>
          <ul class="nav" *ngIf="!sesionIniciada">
-            <i class="fas fa-home iconos"></i>
             <li><a href="http://localhost:4200/inicio#inicio"class="home-header menus-h">inicio</a>
                 <ul><li><a href="http://localhost:4200/inicio#vehiculos">Productos</a></li>
                         <li><a href="http://localhost:4200/inicio#mision" >Misión</a></li>
@@ -228,19 +222,16 @@
                 </ul>
             </li>
             
-            <i class="fas fa-car iconos"></i>
             <li><a routerLink="/administracion/buscar-vehiculo" class="productos-header menus-h">Vehículos</a>
                 <ul>
                     <li><a routerLink="/administracion/buscar-vehiculo">Ver Todo</a></li>
                 </ul>
             </li>
                         
-            <i class="fas fa-user iconos"></i>
-            <li><a routerLink="/administracion/index-admin" class="usuario-header menus-h">Registrarse</a>
+            <li><a routerLink="/administracion/registrar-cliente" class="usuario-header menus-h">Registrarse</a>
                 <ul><li><a routerLink="/administracion/registrar-cliente">Registrarse</a>
                     <li><a routerLink="/seguridad/login">Iniciar Sesión</a>
                     <li><a routerLink="/seguridad/recuperar-pasword">Recuperar Contraseña</a>
-    
                 </li>
             </ul>
             </li>

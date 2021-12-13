@@ -1,11 +1,17 @@
 <section class="infoPersona">
     <h1>Información de la Cuenta</h1>
-    <div class="informacion" *ngIf="informacionPersona">
+    <div class="informacion" *ngIf="informacionPersona" [ngsReveal]="{reset:true}">
         <div><p>Nombres: </p><span>{{informacionPersona.nombres}}</span></div>
         <div><p>Apellidos: </p><span>{{informacionPersona.apellidos}}</span></div>
         <div><p>Email: </p> <span>{{informacionPersona.correoElectronico}}</span></div>
         <div><p>Celular: </p> <span>{{informacionPersona.celular}}</span></div>
         <div><p>Dirección: </p> <span>{{informacionPersona.direccion}}</span></div>        
     </div>
+    <div class="botones_edicion-eliminacion">
+        <a routerLink="/administracion/actualizar-cliente/{{id}}">Editar información</a>
+        <a routerLink="/administracion/eliminar-cliente/{{id}}">Eliminar información</a>
+        <p>*Ten presente que al eliminar la cuenta ya no podras acceder a nuestros servicios y todos los datos seran eliminados y no podrán recuperarse</p>
+    </div>
+
 
 </section>

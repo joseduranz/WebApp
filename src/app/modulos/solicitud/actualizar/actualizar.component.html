@@ -1,0 +1,22 @@
+<section class="crear-persona-sesion">
+    <form action=""  [formGroup]="fgValidador" (ngSubmit)="EditarSolicitud()"> <!--[formGroup]="fgValidador"-->
+        <h1>Editar Información</h1>
+        <div class="contenedor-inputs">
+
+            <input formControlName="id" type="text" readonly>
+
+            <input formControlName="direccion" type="text" placeholder="Dirección">
+
+            <input formControlName="ciudad" type="text" placeholder="Ciudad">
+
+            <input formControlName="departamento" type="text" placeholder="Departamento" readonly>
+
+            <input formControlName="tipo" type="text" placeholder="Descripcion">
+
+            <input formControlName="contratoAceptado" type="text" placeholder="Contrato Aceptado?">
+
+            <input formControlName="contratoCargado"  type="text" placeholder="Contrato Cargado">
+        </div>
+        <button  [disabled]="!fgValidador" [ngClass]="{'btnDisabled':!fgValidador.valid}"  type="submit"  class="boton">Actualizar</button>
+    </form>
+</section>

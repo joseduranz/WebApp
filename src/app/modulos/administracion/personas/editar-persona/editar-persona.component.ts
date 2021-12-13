@@ -47,7 +47,7 @@ export class EditarPersonaComponent implements OnInit {
       this.fgValidador.controls['rol'].setValue(datos.rol);
 
     },(error:any)=>{
-      alert("la publicacion de el vehiculo no existe en la base de datos");
+      alert("El usuario no existe en la base de datos");
     })
   }
 
@@ -74,8 +74,10 @@ export class EditarPersonaComponent implements OnInit {
 
 
     this.servicioPersona.ActualizarPersona(persona).subscribe((datos:ModeloPersonas)=>{
-      alert("el cliente fue actualizado exitosamente!!");
-      this.router.navigate(["/administracion/buscar-cliente"])
+      alert("la información fue actualizada exitosamente!!");
+  
+        this.router.navigate([`/administracion/index-cliente/${id}`])
+      
 
     },(error:any)=>{
         alert("error No se pudo realizar la actualización");

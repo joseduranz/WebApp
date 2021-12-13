@@ -1,0 +1,29 @@
+<section class="listadoSolicitudes">
+    <h1>Solicitudes Realizadas</h1>
+
+      <!--=============================-->
+      
+      <div class="encabezado">
+        
+        <h4 style="width: 150px;">Vehiculo</h4>
+        <h4>Radicado</h4>
+        <h4>Cliente</h4>
+        <h4 style="width: 100px;">Ciudad</h4>
+        <h4 style="width: 100px;"></h4>
+        <h4 style="width: 100px;"></h4>
+        <h4 style="width: 100px;"></h4>
+      </div>
+      <!--=============================-->
+      
+      <div *ngFor="let p of listadosolicitudes" >
+        <div class="contenido">
+          <img *ngIf="vehiculo"src="{{vehiculo.foto}}" alt="" style="width: 150px;">
+          <p>{{p.id}}</p>
+          <p *ngIf="persona">{{persona.nombres}}</p>
+          <p style="width: 100px;">{{p.ciudad}}</p>
+          <p style="width: 100px;"><a routerLink="/solicitud/info-solicitud/{{p.id}}" class="ver">Ver</a></p>
+          <p style="width: 100px;"><a routerLink="/solicitud/actualizar-solicitud/{{p.id}}" class="editar">Editar</a></p>
+          <p style="width: 100px; "><a routerLink="/solicitud/eliminar-solicitud/{{p.id}}"  class="eliminar" >Eliminar</a></p>
+        </div>
+    </div>
+  </section>

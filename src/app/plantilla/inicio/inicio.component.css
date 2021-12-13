@@ -721,14 +721,14 @@ body{
 /***********************************************************************/
 /*==============================SESION "3" START==========================*/
 .sesion3{
-    margin-top: -170px;
+    *margin-top: -170px;
     background: var(--background-color-principal);
     display: flex;
     flex-wrap: wrap;
     height: 580px;
     justify-content: space-between;
     align-items: center;
-    clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
+    *clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);
     overflow: hidden;
 }
 .conS3{
@@ -755,7 +755,7 @@ body{
 .s3-text h1{/*titulo servicios*/
     position: absolute;
     left: 0;
-    top:-50px;
+    top:-30px;
     font-size: var(--medida-titulo-principal);
     font-weight: var(--bold-titulo-principal);
     background: var(--background-titulo-principal);

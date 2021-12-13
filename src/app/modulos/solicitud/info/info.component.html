@@ -1,0 +1,30 @@
+<section class="infoSolicitud">
+    <h1>Información de la Solicitud</h1>
+    <div class="informacion" *ngIf="informacionSolicitud" >
+        <div><p>Radicado: </p><span>{{informacionSolicitud.id}}</span></div>
+        <div><p>Estado Contrato: </p><span>{{informacionSolicitud.contratoAceptado}}</span></div>      
+    </div>
+    <h1>Información de el Cliente</h1>
+    <div class="informacion" *ngIf="informacionPersona" >
+        <div><p>Nombres: </p><span>{{informacionPersona.nombres}}</span></div>
+        <div><p>Apellidos: </p><span>{{informacionPersona.apellidos}}</span></div>
+        <div><p>Email: </p> <span>{{informacionPersona.correoElectronico}}</span></div>
+        <div><p>Celular: </p> <span>{{informacionPersona.celular}}</span></div>
+        <div><p>Dirección: </p> <span>{{informacionPersona.direccion}}</span></div>         
+    </div>
+    <h1>Información de el Vehiculo</h1>
+    <div class="informacion" *ngIf="informacionVehiculo" >
+        <div><p>Marca: </p><span>{{informacionVehiculo.marca}}</span></div>
+        <div><p>Precio</p><span>{{informacionVehiculo.precio}}</span></div>
+        <div><p>Modelo: </p> <span>{{informacionVehiculo.modelo}}</span></div>
+        <div><p>Descripción: </p> <span>{{informacionVehiculo.video}}</span></div>
+        <div><img src="{{informacionVehiculo.foto}}" alt=""></div>     
+    </div>
+    <div class="botones_edicion-eliminacion">
+        <a  routerLink="/solicitud/actualizar-solicitud/{{informacionSolicitud.id}}">Editar información</a>
+        <a  routerLink="/solicitud/eliminar-solicitud/{{informacionSolicitud.id}}">Eliminar información</a>
+        <p>*Ten presente que al eliminar la cuenta ya no podras acceder a nuestros servicios y todos los datos seran eliminados y no podrán recuperarse</p>
+    </div>
+    <!--[ngsReveal]="{reset:true}"-->
+
+</section>

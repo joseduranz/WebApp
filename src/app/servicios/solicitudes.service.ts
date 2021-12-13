@@ -26,7 +26,7 @@ CrearSolicitud(solicitud: ModeloSolicitud):Observable<ModeloSolicitud>{
 }
 /*actualizar un solicitud  */
 ActualizarSolicitud(solicitud: ModeloSolicitud):Observable<ModeloSolicitud>{
-  return this.http.put<ModeloSolicitud>(`http://localhost:3000/solicituds/${solicitud.id}`,solicitud)   
+  return this.http.put<ModeloSolicitud>(`http://localhost:3000/solicituds/${solicitud.id}`,solicitud,{})   
 }
 /*eliminar un solicitud  */
 EliminacionSolicitud(id:string):Observable<any>{

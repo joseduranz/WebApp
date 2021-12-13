@@ -5,6 +5,9 @@ import { VehiculosService } from 'src/app/servicios/vehiculos.service';
 import { Subscriber, Subscription } from 'rxjs';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 import { ModeloIdentificar } from 'src/app/modelos/identificar.modelo';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SolicitudesService } from 'src/app/servicios/solicitudes.service';
+import { ModeloSolicitud } from 'src/app/modelos/solicitud.modelo';
 
 
 @Component({
@@ -19,9 +22,19 @@ export class InformacionComponent implements OnInit {
   informacionVehiculo: ModeloVehiculo = new ModeloVehiculo;
   subs: Subscription = new Subscription();
   idCliente?:string;
-  sesionCliente?:boolean = false
+  sesionCliente?:boolean = false;
+
+  fgValidador: FormGroup =this.fb.group({
+    'direccion':['', [Validators.required]],
+    'ciudad':['', [Validators.required]],
+    'departamento':['', [Validators.required]],
+    'tipo':['', [Validators.required]],
+  })
+
 
   constructor(
+    private fb: FormBuilder,
+    private servicioSolicitud: SolicitudesService,
     private servicioVehiculo: VehiculosService,//traer el objeto tipo vehiculo de Servicios/vehiculosService
     private router: Router, //este redireciona a otra pagina
     private route:ActivatedRoute,//se inyecta para poder sacar el id que viene desde el backen
@@ -55,6 +68,42 @@ export class InformacionComponent implements OnInit {
     },(error:any)=>{
       alert("la publicacion de el vehiculo no existe en la base de datos");
     })
+  }
+  
+  GenerarSolicitud(){
+ 
+    let direccion = this.fgValidador.controls['direccion'].value;
+    let ciudad = this.fgValidador.controls['ciudad'].value;
+    let departamento = this.fgValidador.controls['departamento'].value;
+    let tipo = this.fgValidador.controls['tipo'].value;
+
+
+    let solicitud= new ModeloSolicitud();
+    solicitud.direccion=direccion;
+    solicitud.ciudad=ciudad;
+    solicitud.departamento=departamento;
+    solicitud.tipo=tipo;
+    solicitud.vehiculoId=this.id;
+    solicitud.personaId=this.idCliente;
+    solicitud.contratoCargado="pendiente";
+    solicitud.contratoAceptado="pendiente"
+    
+    console.log(solicitud.direccion);
+    console.log(solicitud.ciudad);
+    console.log(solicitud.departamento);
+    console.log(solicitud.tipo);
+    console.log(solicitud.vehiculoId);
+    console.log(solicitud.personaId);
+
+
+
+    this.servicioSolicitud.CrearSolicitud(solicitud).subscribe((ModeloSolicitud)=>{
+      alert("su solicitud ha sido generada!!");
+      this.router.navigate(["/administracion/buscar-vehiculo"])
+
+    },(error:any)=>{
+        alert("error generando la solicitud");
+      })
   }
 
 }

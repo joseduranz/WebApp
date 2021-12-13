@@ -1,0 +1,53 @@
+.listadoSolicitudes{
+    background-color: var(--background-color-principal);
+    color: rgb(170, 170, 170);
+    padding: 20vh 5vw; 
+    min-width: 1300px;
+}
+.listadoSolicitudes h1{
+    color: var(--color-gris-principal);
+    font-size: 4rem;
+    margin-bottom: 80px;
+}
+
+.boton{
+    position: relative;
+    padding: 8px 12px;
+    bottom: 40px;
+}
+.encabezado,
+.contenido{
+    display: flex;
+    flex-direction: row;
+}
+.encabezado h4,
+.contenido p{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.089);
+    align-items: center;
+    padding-left: 10px;
+    width: 250px;
+    border: 1px solid var(--color-gris-principal);
+}
+.contenido p{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.089);
+    align-items: center;
+    padding-left: 10px;
+    width: 250px;
+    height: 90px;
+    border: 1px solid var(--color-gris-principal);
+}
+.encabezado h4{
+    font-size: 1.5rem;
+}
+.ver,
+.editar{
+    color: rgb(112, 112, 112);
+}
+.eliminar{
+    color: rgb(214, 54, 54);
+}
+.contenido p a:hover{
+    color: rgb(255, 255, 255);
+}
