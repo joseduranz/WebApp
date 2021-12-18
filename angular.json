@@ -32,8 +32,7 @@
               "src/styles.css"
             ],
             "scripts": [ 
-              "src/assets/misJs/mis.js",
-              "./node_modules/scrollreveal/dist/scrollreveal.js"
+              "src/assets/misJs/mis.js"
             ]
           },
           "configurations": {
@@ -102,8 +101,7 @@
               "src/styles.css"
             ],
             "scripts": [
-              "src/assets/misJs/mis.js",
-              "./node_modules/scrollreveal/dist/scrollreveal.js"
+              "src/assets/misJs/mis.js"
             ]
           }
         }
