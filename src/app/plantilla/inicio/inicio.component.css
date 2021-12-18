@@ -6,51 +6,36 @@ body{
     /*==== 1 ====*/
     background: var(--background-negro-principal); 
     overflow: hidden;
-    height: 850px;
-    margin-top: 0px;
-}
-.tituloEscoje {
-    position: absolute;
-    top: 18vw;
-    margin-left: 100px;
-    *color: var(--grisClaro);
-    font-size: 5em;
-    font-weight: 700;
-    background: linear-gradient(to bottom, rgb(137, 137, 137), rgba(255, 0, 0, 0));
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
+    width: 100%;
+    height: 860px;
+    margin-top: -100px;
 }
 /*background start======================*/
 .containerImg {
     /*======2=======*/
     *background-color: blue;
     position: relative;
-    width: 100vw;
-    height: 800px;
+    width: 100%;
+    height: 960px;
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
 .imgPiso {
-    *background-color: blueviolet;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    *background-image: linear-gradient(to top, black 40%,transparent);
+    position: absolute;
     width: 100%;
-    *height: 250px;
-    *margin-top: 350px;
-    background-position-y: 0;
-    transform-origin: bottom;
+    top:  0;
     z-index: 3;
+    transform-origin: bottom;
 
 }
 .lamparas {
     position: absolute;
-    top: 450px;
-    width: 100vw;
+    bottom: 0;
+    width: 100%;
+    height: 960px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,17 +43,21 @@ body{
 }
 .lamparas img {/* imagenes ciudad fondo*/
     *background-color: rgba(137, 43, 226, 0.274);
+    top: 0;
     position: absolute;
     width: 100%;
+    *transform-origin: bottom;
+    *backdrop-filter: grayscale(100%);
 }
 .separador-negro{
     position: absolute;
     background-image: linear-gradient(to top, rgb(37, 37, 37) 70%, transparent);
-    top: 740px;
+    top: 680px;
     width: 100%;
-    height: 200px;
+    min-width: 600px;
+    height: 100px;
     z-index: 6;
-}
+} 
 /*background end======================*/
 /*iconos bajar a otra páguina start======================*/
 .cotenedor-icono {
@@ -119,11 +108,12 @@ body{
     *background-color: brown;
     position: absolute;
     *height: 15px;
-    margin: auto;    
-    margin-top: 200px;
+    *margin: auto;    
+    *margin-top: 0px;
     overflow: hidden;
+    top: 750px;
     width: 100vw;
-    z-index: 5;
+    z-index: 999;
 }
 .sliderLogo .slideTrackLogo {
     position: relative;
@@ -141,30 +131,27 @@ body{
     display: flex;
     flex-direction: row;
     *justify-content: space-between;
-    height: 30px;
+    height: 40px;
     width: calc(16.66vw * 12);
 }
 .slideLogos img {
-    opacity: .5;
+    opacity: .2;
 }
 /*iconos logos end======================*/
 /*carrusel vehiculos start======================*/
 .sectionPrueba {
     position: absolute;
-    align-items: center;
-    justify-content: center;
+    display: inline-block;
     z-index: 5;
-    *background: rgba(66, 32, 8, 0.295);
-    *padding: 30px;
+    top: 0;
     width: 100vw;
-    height: 800px;
+    height: 920px;
 }
 .carousel__contenedor {
-    *background-color: rgba(51, 71, 11, 0.384);
+    *background-color: rgba(255, 94, 0, 0.164);
     position: relative;
-    *width: 100vw;
-    *height: 100vh;
-    *margin: 0 30px 0 30px;
+    width: 100vw;
+    height: 920px;
 }
 .carousel__anterior2,
 .carousel__siguiente2 {
@@ -196,17 +183,20 @@ body{
 }
 .carousel__elemento {
     *background-color: blue;
+    display: flex;
+    justify-content: center;
     width: 100vw;
-    height: 800px;
+    height: 960px;
     position: relative;
     text-align: center;
 }
 .s0imgCar {/* carros del carrusel imagen*/
     *background-color: blueviolet;
     position: absolute;
-    width: 40%;
-    left: 100px;
-    top: calc(50% - 125px);
+    width: 50%;
+    *max-width: 500px;
+    top: 0;
+    margin-top: 20%;
     z-index: -2;
 }
 .s0ContCar {
@@ -229,6 +219,70 @@ body{
 .carousel__indicadores .glider-dot.active {
     opacity: 1;
 }
+
+.fondo-info-carros{
+    position: relative;
+    width: 100%;
+    *background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fondo-info-carros h1{
+    width: 100vw;
+    overflow: hidden;
+    background-image: var( --background-titulo-principal);
+    *position: absolute;
+    font-size: 25vw;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    opacity: .2;
+    margin-top: -100px;
+    z-index: -99;
+}
+.fondo-info-carros .parrafo-carro{
+    *background-color: tomato;
+    position: absolute;
+    overflow: hidden;
+    top: 40%;
+    right: 100px;
+    width: 400px;
+    height: 200px;
+    color: white;
+}
+.fondo-info-carros .parrafo-carro h2{
+    font-size: 4rem;
+}
+.fondo-info-carros .parrafo-carro p{
+    width: 300px;
+    text-align: center;
+    margin-left: 50px;
+}
+/*contenido del boton saber mas start=====================*/
+.btnCarousel {
+    background-color: transparent;
+    padding: 1rem 4rem;
+    border-radius: 5px;
+    border: 1px solid red;
+    color: white;
+    font-size: 1rem;
+    *position: absolute;
+    margin: 20px 0;
+    right: 80px;
+    bottom: 400px;
+    transition: .3s ease-in-out;
+}
+.btnCarousel:hover {
+    background-color: rgb(255, 255, 255);
+    color: var(--red);
+    transform: scale(1.1);
+}
+
+
+
+
+
 /*SPARK FONDO================*/
 .nombreCar{
     *background-color: blue;
@@ -297,26 +351,19 @@ body{
 }
 
 /*contenido del texto en vehiculos  end======================*/
-/*contenido del boton saber mas start=====================*/
-.btnCarousel {
-    background-color: red;
-    padding: 1rem 2rem;
-    border-radius: 25px;
-    color: white;
-    font-size: 1rem;
-    position: absolute;
-    right: 80px;
-    bottom: 400px;
-    transition: .3s ease-in-out;
-}
-.btnCarousel:hover {
-    background-color: rgb(255, 255, 255);
-    color: var(--red);
-    transform: scale(1.1);
-}
+
 /*contenido del boton saber mas end=====================*/
-@media (max-width: 991px) {}
+@media (max-width: 350px) {
+   
+}
 /*==============================SESION "0" END===========================*/
+
+
+
+
+
+
+
 /***********************************************************************/
 /*==============================SESION GARANTIA SEGURIDAD START===========================*/
 .garantia-seguridad-asesoria{
@@ -333,7 +380,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 220px;
+    max-width: 220px;
     padding: 40px;
     margin: 0px 30px;
     color: var(--color-gris-principal);
@@ -351,12 +398,43 @@ body{
     font-size: 2rem;
 }
 .garantia-seguridad-asesoria > p{
- position: absolute;
- bottom: 20px;
- color: var(--color-gris-principal);
+    position: absolute;
+    bottom: 20px;
+    color: var(--color-gris-principal);
 }
 
+
+/*-----------------------------------------------------------*/
+@media screen and (max-width: 780px) {
+    .garantia-seguridad-asesoria{
+        flex-wrap: wrap;
+        height: 850px;
+        min-height: 900px;
+        padding-bottom: 30px;
+    }
+    .garantia-seguridad-asesoria div{
+        margin: 30px 20px;
+    }
+    .garantia-seguridad-asesoria > p{
+        bottom: 0px;
+    }
+  }
+  @media screen and (max-width: 520px) {
+    .garantia-seguridad-asesoria{
+        height: 1200px;
+        min-height: 1400px;
+    }
+    .garantia-seguridad-asesoria div{
+        margin: 0px 20px;
+    }
+  }
 /*==============================SESION GARANTIA SEGURIDAD END===========================*/
+
+
+
+
+
+
 /***********************************************************************/
 /*==============================SESION "1" START===========================*/
 .sesion1{
@@ -524,6 +602,12 @@ body{
     left: 35%;
 }
 /*==============================SESION "1" END===========================*/
+
+
+
+
+
+
 /***********************************************************************/
 /*===============SISION  MISION y VISION START======================*/
 .sesion__mision, .sesion__vision{/*sesion*/

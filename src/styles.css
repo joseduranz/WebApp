@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 :root {
     --grisClaro: #cbcbcb;
     --grisMedio: rgb(164, 164, 164);
@@ -43,6 +44,8 @@
     text-decoration: none;
     min-zoom: 25px;    
     scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+    
 }
 
 html {
@@ -64,7 +67,7 @@ input {
 }
 
 body {
-    background-color: rgb(51, 51, 51);
+    background-color: var(--background-color-principal);
     overflow-x: hidden;
 }
 
@@ -73,6 +76,7 @@ section {
     height: 800px;
     width: 100%;
 }
+
 /*====BOTONES ESTILO START===========*/
 
 .btn{
@@ -167,18 +171,28 @@ section {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    padding: 10px 15px;
-    background-color: red;
+    padding: 5px 7px;
+    background-image: var(--background-titulo-secundario);
     font-size: 2rem;
-    color: white;
-    border-radius: 100%;
+    color: rgb(39, 39, 39);
+    border-radius: 5px;
     transform: translateY(100px);
     transition: .9s;
     z-index: 99;
 }
-.subirHome:hover{
-    background-color: white;
-    color: red;
+.subirHome:hover > i{
+    color: rgb(255, 255, 255);
+    animation: iconoSubir 1s infinite;
+}
+@keyframes iconoSubir {
+    from{
+        transform: translateY(10px);
+        opacity: 0;
+        }
+    to{
+        transform: translateY(-8px);
+        opacity: 1;
+        }
 }
 .subirHomeActivo{
     transform: translateY(0);

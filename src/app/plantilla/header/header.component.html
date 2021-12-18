@@ -28,10 +28,31 @@
         </div>
 </header-->
 <header>
-    <div class="headerLista">
+    <div class="info-user" *ngIf="!sesionIniciada">
+        <a  routerLink="/administracion/registrar-cliente">
+            <button class="btnIniciarSesion btn" >Registrate</button>
+            <i class="far fa-user loginIcon"></i>
+        </a>
         <div class="contenedor-logo-header">
-            <a routerLink="/inicio"><img class="logoHeader logo" loading="lazy" src="./assets/img/logoAutoLuxuryColor.png" alt="logo"></a>
+            <a routerLink="/inicio"><!--img class="logoHeader logo" loading="lazy" src="./assets/img/logoAutoLuxuryColor.png" alt="logo"--> <p>AUTO<span>LUXURY </span></p>  </a>
         </div>
+        <a  routerLink="/seguridad/login">
+            <button class="btnIniciarSesion btn" >Iniciar Sesion</button>
+            <i class="far fa-user loginIcon"></i>
+        </a>
+    </div>
+    <div class="info-user" *ngIf="sesionIniciada">
+        <p>Bienvenidio <span>{{nombre}}</span></p>
+        <div class="contenedor-logo-header">
+            <a routerLink="/inicio"><!--img class="logoHeader logo" loading="lazy" src="./assets/img/logoAutoLuxuryColor.png" alt="logo"--> <p>AUTO<span>LUXURY </span></p>  </a>
+        </div>
+        <a *ngIf="sesionIniciada" routerLink="/seguridad/cerrar-sesion">
+            Cerrar Sesion
+            <i class="fas fa-sign-out-alt loginIcon"></i>
+        </a>
+    </div>
+    <div class="headerLista">
+        
         <!---------modo admin------------------------>
         <ul class="nav" *ngIf="sesionAdmin">
             
@@ -238,14 +259,8 @@
         </ul>
 
         <div class="contenedor-info-sesion-header" id="login-btn">
-            <a *ngIf="!sesionIniciada" routerLink="/seguridad/login">
-                <button class="btnIniciarSesion btn" >Iniciar Sesion</button>
-                <i class="far fa-user loginIcon"></i>
-            </a>
-            <a *ngIf="sesionIniciada" routerLink="/seguridad/cerrar-sesion">
-                <button class="btnIniciarSesion btn" >Cerrar Sesion</button>
-                <i class="fas fa-sign-out-alt loginIcon"></i>
-            </a>
+            
+            
         </div>
     </div>
 </header>

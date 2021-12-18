@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ModeloPersonas } from 'src/app/modelos/personas.modelo';
+import { PersonasService } from 'src/app/servicios/personas.service';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
 
@@ -25,8 +27,7 @@ export class CrearPersonaComponent implements OnInit {
   
   siteKey:string;//llave de captcha
   
-  
-  constructor(private fb: FormBuilder, private router:Router) {
+  constructor(private fb: FormBuilder, private router:Router,private servicioPersona: PersonasService) {
     this.siteKey = '6LdwKGUdAAAAAMC0Y5gS7570bte16ti5WPCPalWJ';
 
    }
@@ -76,19 +77,30 @@ export class CrearPersonaComponent implements OnInit {
       celular:telefono,
       //documentoIdentidad:documentoId
     }
-      /// a travez del metodo fecht se envian los datos a la url declarada anteriormente, en un archivo json
-    fetch (url, {
-      method:'POST',
-      body: JSON.stringify(datos),
-      headers:{'Content-Type':'application/json'}
-    }).then(res =>res.json()) //la respuesta que me envia desde la base de datos 
-      .then(mensaje =>{
-        console.log(mensaje) //mostrar en la consola de el navegador el mensaje
-      })
 
-      ///redireciona a la paguina indicada
-      this.router.navigate(["/seguridad/login"]);
-    }  
+
+    this.servicioPersona.ObtenerTodasPersonas().subscribe((personasBuscar:ModeloPersonas[])=>{
+      for(let p of personasBuscar){
+        let emailVerificar = p.correoElectronico;
+        if(emailVerificar == datos.correoElectronico){
+          alert("el email ya esta registrado")
+        }else{
+          /// a travez del metodo fecht se envian los datos a la url declarada anteriormente, en un archivo json
+                fetch (url, {
+                  method:'POST',
+                  body: JSON.stringify(datos),
+                  headers:{'Content-Type':'application/json'}
+                }).then(res =>res.json()) //la respuesta que me envia desde la base de datos 
+                  .then(mensaje =>{
+                    console.log(mensaje) //mostrar en la consola de el navegador el mensaje
+                  })
+
+                  ///redireciona a la paguina indicada
+                  this.router.navigate(["/seguridad/login"]);
+        }
+      }this.router.navigate(["/inicio"]);
+    })   
+  }  
     
 
 }

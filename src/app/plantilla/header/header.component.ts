@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
   subs: Subscription = new Subscription();
   rol?:string;
   id?:string;
+  nombre?:string;
 
   constructor(private servicioSeguridad : SeguridadService) { }
 
@@ -42,6 +43,7 @@ export class HeaderComponent implements OnInit {
 
       this.rol= this.servicioSeguridad.ObtenerRol().datos.rol;
       this.id= this.servicioSeguridad.ObtenerRol().datos.id;
+      this.nombre= this.servicioSeguridad.ObtenerRol().datos.nombre;
 
     })
   }

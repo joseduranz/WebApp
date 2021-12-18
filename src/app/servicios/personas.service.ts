@@ -23,7 +23,7 @@ CrearPersona(persona: ModeloPersonas):Observable<ModeloPersonas>{
   return this.http.post("http://localhost:3000/personas",persona)
 }
 /*actualizar un persona  */
- ActualizarPersona(persona: ModeloPersonas):Observable<ModeloPersonas>{
+ActualizarPersona(persona: ModeloPersonas):Observable<ModeloPersonas>{
   return this.http.put<ModeloPersonas>(`http://localhost:3000/personas/${persona.id}`,persona)   
 }
 /*eliminar un persona  */

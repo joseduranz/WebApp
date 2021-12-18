@@ -4,8 +4,20 @@ header{
     height: 150px;
     width: 100%;
     z-index: 99;
+    margin-top: 100px;
     background-image: linear-gradient(to bottom, rgb(17, 17, 17), transparent 90%);
 }
+.info-user{
+    background-color: rgb(24, 24, 24);
+    display: flex;
+    flex-direction: row;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 80px;
+}
+
+
 /* header lista menu*/
 .headerLista{
     *position: fixed;
@@ -15,9 +27,19 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 80px;
+    padding: 0 20px;
     z-index: 9;
     
+}
+.contenedor-logo-header p{
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+}
+.contenedor-logo-header span{
+    font-size: 2rem;
+    font-weight: 700;
+    color: red;
 }
 .logoHeader {
     width: 11rem;
@@ -66,7 +88,7 @@ header{
 }
 .nav{
     margin-left: 80px;
-    margin-top: -30px;
+    *margin-top: -30px;
     position: relative;
 }
 .nav li a{/* listas- menu */

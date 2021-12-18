@@ -1,5 +1,5 @@
     <section class="containerLogin">
-        <form action="" class="formLogin" [formGroup]=fgValidador  (ngSubmit)="IdentificarUsuario()">
+        <form action="" class="formLogin" [formGroup]="fgValidador"  (ngSubmit)="IdentificarUsuario()">
             <h3>Iniciar Sesión</h3>
             <div class="login" [ngClass]="{'inputError':Email()?.invalid && (Email()?.dirty || Email()?.touched)}">
                 <input formControlName="usuario" type="email" placeholder="Email" class="boxInput"  required>

@@ -15,7 +15,7 @@ export class IdentificacionComponent implements OnInit {
   fgValidador: FormGroup = this.fb.group({ //comunicacion y request del backend y frontend
     'usuario': ['', [Validators.required, Validators.email, Validators.maxLength(30)]], //el campo valida si esta vacido , entonces lo pone requerido y si no lo estaentonces valida que sea de tipo email
     'clave': ['', [Validators.required, Validators.maxLength(10)]],
-    'captcha': ['', [Validators.required]]
+    //'captcha': ['', [Validators.required]]
   });
 
   siteKey: string;//llave de captcha
@@ -41,13 +41,13 @@ export class IdentificacionComponent implements OnInit {
     let claveCifrada = cryptoJS.MD5(clave).toString();//codificar la clave   
     this.servicioSeguridad.Identificar(usuario, claveCifrada).subscribe((datos: any) => {
       //si todo funciona correctamente
-      //alert("el usuario existe en la base de datos");
+      alert("Bienvenido");
       this.servicioSeguridad.AlmacenarSesion(datos);
       ///implementar validacion de el rol
       let validarRol = this.servicioSeguridad.ObtenerRol();
       if (validarRol.datos.rol == "Admin") {
         this.router.navigate(["/administracion/index-admin"]); //Admin}
-      }else if (validarRol.datos.rol == "cliente") {
+      }else if (validarRol.datos.rol == "asesor") {
         this.router.navigate(["/administracion/index-asesor"]); //Asesor
       }else {
         this.router.navigate(["/administracion/buscar-vehiculo"]);// cliente//se inyecta en el constructor y aca se hace el llamado

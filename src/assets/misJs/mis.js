@@ -213,12 +213,13 @@ function validacion(){
     }
 
 function gsapJava() {
+    
     gsap.to(".imgPiso", {
         scrollTrigger: {
             end: "center top",
             scrub: 0
         },
-        scaleY: -1.6,
+        scaleY: -1,
     });
     /*------------*/
     gsap.to(".carousel__elemento", {
@@ -226,8 +227,8 @@ function gsapJava() {
             end: "center top",
             scrub: 0
         },
-        translateY: 710,
-        scaleY:.8
+        translateY: 410,
+        
 
     });
     gsap.to(".sliderLogo", {
@@ -235,7 +236,7 @@ function gsapJava() {
             end: "center top",
             scrub: 0
         },
-        translateY: 750
+        translateY: 150
     });
     gsap.to(".cotenedor-icono i", {
         scrollTrigger: {
@@ -250,7 +251,7 @@ function gsapJava() {
             end: "center top",
             scrub: 0
         },
-        translateY: 1450,
+        translateY: 900,
     });
     /*------------*/
     gsap.to(".lamp2", {
@@ -258,7 +259,7 @@ function gsapJava() {
             end: "center top",
             scrub: 0
         },
-        translateY: 1430,
+        translateY: 870,
     });
     /*------------*/
     gsap.to(".lamp3", {
@@ -266,7 +267,7 @@ function gsapJava() {
             end: "center top",
             scrub: 0
         },
-        translateY: 1400,
+        translateY: 840,
     });
     /*------------*/
     gsap.to(".lamp4", {
@@ -274,7 +275,7 @@ function gsapJava() {
             end: "center top",
             scrub: 0
         },
-        translateY: 1370,
+        translateY: 810,
     });
     /*------------*/
     gsap.to(".lamp5", {
@@ -282,7 +283,7 @@ function gsapJava() {
             end: "center top",
             scrub: 0
         },
-        translateY: 1340,
+        translateY: 790,
     });
     /*------------*/
     gsap.to(".lamp6", {
@@ -290,7 +291,7 @@ function gsapJava() {
             end: "center top",
             scrub: 0
         },
-        translateY: 1310,
+        translateY: 760,
     });
     /*------------*/
     gsap.to(".lamp7", {
@@ -298,7 +299,7 @@ function gsapJava() {
             end: "center top",
             scrub: 0
         },
-        translateY: 1280,
+        translateY: 730,
     });
     /*------------*/
     gsap.to(".lamp8", {
@@ -306,8 +307,26 @@ function gsapJava() {
             end: "center top",
             scrub: 0
         },
-        translateY: 1200,
+        translateY: 700,
     });
+    /*------------*/
+    gsap.to(".fondo-info-carros h1", {
+        scrollTrigger: {
+            end: "center top",
+            scrub: 1
+        },
+        translateY: 200,
+    });
+     /*------------*/
+     gsap.to(".parrafo-carro", {
+        scrollTrigger: {
+            end: "center top",
+            scrub: 1
+        },
+        translateY: 700,
+    });
+
+    
     
     /*gsap.to(".jarallax-img", {
         scrollTrigger: {

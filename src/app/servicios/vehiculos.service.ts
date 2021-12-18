@@ -8,7 +8,6 @@ import { SeguridadService } from './seguridad.service';
   providedIn: 'root'
 })
 export class VehiculosService {
-  [x: string]: any;
 
   token:string="";
 
