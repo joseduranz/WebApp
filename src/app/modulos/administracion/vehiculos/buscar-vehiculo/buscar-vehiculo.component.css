@@ -4,7 +4,6 @@
   color: white;
   display: flex;
   flex-wrap: wrap;
-  *justify-content: space-between;
   align-items: center;
   padding-top: 90px;
   min-height: 1200px;
@@ -30,19 +29,8 @@
   -webkit-background-clip: text;
   background-clip: text;
 }
-.vehiculos-disponibles{
-*background-color: blue;
-}
-.vehiculos-disponibles h1{
-*background-color: blue;
-margin: 50px 190px 0 90px;
-color: var(--color-gris-principal);
-font-weight: 100;
-font-size: 1.2rem;
 
-}
 .contenedor__sesion-ventas{/*contenedor de contenido de la sesion de ventas*/
-*background-color: green;
 margin-top: 30px;
 margin-bottom: 170px;
 width: 100%;
@@ -73,7 +61,6 @@ flex-direction: row;
   font-size: 3rem;
   transition: .5s;
   z-index: 2;
-  *box-shadow: -2px 2px 8px rgb(59, 59, 59);
   animation: menuFiltro 2s infinite;
 }
 .contenedor__menu-buscar{
@@ -125,7 +112,6 @@ flex-direction: row;
 }
 .contenedor__vista{
   width: 80%;
-  *background-color: thistle;
   margin-bottom: 10px;
 }
 .contenedor__vista div{
@@ -145,7 +131,6 @@ flex-direction: row;
   display: flex;
   flex-direction: column;
   line-height: 70px;
-  *background-color: tomato;
   width: 80%;
 }
 .contenedor__marca,
@@ -163,7 +148,6 @@ flex-direction: row;
   border-bottom: 1px solid rgb(190, 190, 190);
 }
 .contenedor__ordenarPor i{
-  *position: absolute;
   color: rgb(158, 158, 158);
 }
 .contenedor__marca i,
@@ -215,7 +199,7 @@ flex-direction: row;
 /*edicion del menu de filtro end=======*/
 
 .contenedor__venta-vehiculos{/*contenedor de todos los frames de los vehiculos ofertados*/
-*background-color: rgb(255, 255, 255);
+
 width: 100%;
 display: flex;
 flex-direction: row;
@@ -250,7 +234,6 @@ flex-wrap: wrap;
 }
 .frame-blanco-vehiculo img{/*imagen de vehiculo a la venta*/
   width: 100%;
-  *object-fit: cover;
   transition: .3s ease-in-out;
 }
 .frame-blanco-vehiculo img:hover{/*imagen de vehiculo a la venta*/
@@ -258,7 +241,6 @@ flex-wrap: wrap;
   
 }
 .contenedor__contenido-carro-venta{/*contenedor del contenido de la venta*/
-  *background-color: blue;
   padding: 15px;
   color: var(--color-gris-principal);
   font-size: 1.3rem;

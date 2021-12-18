@@ -12,7 +12,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SpinnerModule } from './shared/components/spinner/spinner.module';
 import { SpinnerInterceptor } from './shared/interceptor/spinner.interceptor';
-import { NgsRevealModule } from 'ngx-scrollreveal';
+
 
 
 
@@ -30,8 +30,7 @@ import { NgsRevealModule } from 'ngx-scrollreveal';
     NgxCaptchaModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SpinnerModule,
-    NgsRevealModule
+    SpinnerModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true}

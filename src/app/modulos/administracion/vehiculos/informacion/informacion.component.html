@@ -1,7 +1,7 @@
 <section class="info-vehiculo">
     <div class="info-contenido">
         <div class="informacion-imagen-caracteristicas" *ngIf="informacionVehiculo">
-            <div class="precio-e-img" ngsReveal >
+            <div class="precio-e-img"  >
                 <div class="imgcar">
                     <img src="{{informacionVehiculo.foto}}" alt="">
                 </div>                
@@ -13,16 +13,16 @@
                 </div>
             </div>
             
-            <div class="botones" ngsReveal >
+            <div class="botones"  >
                 <button class="boton">Preguntar</button>
                 <button class="boton"><i class="fab fa-whatsapp"></i>watsapp</button>
             </div>
-            <div class="compartir" ngsReveal >
+            <div class="compartir"  >
                 <a href="#">                    
                     <p><i class="fas fa-share-alt"></i>  compartir</p>
                 </a> 
             </div>
-            <div class="caracteristicas" ngsReveal>
+            <div class="caracteristicas" >
                 <h1>Características principales</h1>
                 <div class="tabla">
                     <div class="encabezado">
@@ -41,11 +41,11 @@
                     </div>
                 </div>
             </div>
-            <div class="descripcion" ngsReveal >
+            <div class="descripcion"  >
                 <h1>Descripción</h1>
                 <p>{{informacionVehiculo.video}}</p>
             </div>
-            <div class="info-concecionario" ngsReveal >
+            <div class="info-concecionario"  >
                 <div class="empresa">
                     <img  src="./assets/img/logoAutoLuxuryColor.png" loading="lazy" alt="">
                     <div>
@@ -65,12 +65,12 @@
                     <button class="boton">Llamar</button>              
                 </div>
             </div>
-            <div class="preguntar" ngsReveal>
+            <div class="preguntar" >
                 <h1>Preguntar a un asesor</h1>
                 <textarea name="" id="" cols="30" rows="10" placeholder="Escriba su pregunta aquí"></textarea>
                 <button class="boton">Preguntar</button>
             </div>
-            <div class="solicitud preguntar" ngsReveal >
+            <div class="solicitud preguntar"  >
                 <h1>Deseo generar una solicitud</h1>
                     <form action="" [formGroup]="fgValidador" (ngSubmit)="GenerarSolicitud()" *ngIf="idCliente && sesionCliente">
                         <input formControlName="direccion" type="text" placeholder="Dirección">
