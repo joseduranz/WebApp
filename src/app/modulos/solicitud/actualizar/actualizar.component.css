@@ -21,7 +21,6 @@
     border-radius: 25px;  
   }
   .crear-persona-sesion form div{
-      *background-color: turquoise;
       width: 100%;
       display: flex;
       flex-direction: column;

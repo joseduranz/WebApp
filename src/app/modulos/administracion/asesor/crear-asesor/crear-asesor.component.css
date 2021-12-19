@@ -26,7 +26,6 @@
 .contenido__formulario{ /* contiene los divs de los inputs y el boton submit*/
     display: flex;
     flex-direction: column;
-    *background-color: rgb(197, 197, 197);
 }
 .contenedor_inputs-iconos-mesajeEserror{
     height: 30px;    

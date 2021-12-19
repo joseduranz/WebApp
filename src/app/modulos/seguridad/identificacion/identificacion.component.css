@@ -14,7 +14,6 @@
         }
         
         .formLogin {
-            *position: absolute;
             text-align: center;
             padding: 3.5rem;
             width: 40rem;
@@ -55,7 +54,6 @@
             font-size: 1.5rem;
         }
         .container__reCaptcha{
-            *background-color: aqua;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -71,7 +69,6 @@
             font-size: 1.6rem;
             color: rgb(177, 177, 177);
             text-transform: none;
-            *border: var(--border);
             padding: 1rem 1.2rem;
             border-radius: 25px;
         }

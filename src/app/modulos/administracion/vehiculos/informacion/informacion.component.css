@@ -17,7 +17,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    *background-color: violet;
 }
 .precio-e-img{
     margin-bottom: 20px;
@@ -42,7 +41,6 @@
 }
 .precio-encargado{
     text-align: right;
-    *padding: 0px 30px;
 }
 .precio-encargado > h1{
     color: red;
@@ -66,12 +64,10 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-   *background-color: yellow;
    border-top: 1px solid var(--color-gris-principal);
 }
 .botones button{
     width: 20%;
-    *height: 25px;
     margin:35px;
 }
 .botones button i{
@@ -79,7 +75,6 @@
 }
 /*---------------------------*/
 .compartir{
-    *background-color: turquoise;
     text-align: center;    
 }
 .compartir a p{
@@ -91,9 +86,7 @@
     color: white;
 }
 /*---------------------------*/
-.caracteristicas{
-    *background-color: yellow;
-}
+
 .caracteristicas > h1{
     margin: 35px 5px;
     font-size: 1.9rem;
@@ -117,7 +110,6 @@
 }
 /*---------------------------*/
 .descripcion{
-    *background-color: yellow;
     margin: 55px 0px;
     padding: 35px 5px;
     border-top: 1px solid var(--color-gris-principal);
@@ -134,7 +126,6 @@
 }
 /*---------------------------*/
 .info-concecionario{
-    *background-color: violet;
     margin-bottom: 40px;
     border-bottom: 1px solid var(--color-gris-principal);
 }
@@ -165,14 +156,12 @@
     width: 100%;
     margin-top: 20px;
     margin-bottom: 50px;
-    *background-color: yellow;
 }
 .cont-button .boton{
     width: 25%;
 }
 /*-----------------------------*/
 .preguntar{
-    *background-color: yellow;
     margin: 5px 0px;
     padding: 05px;
     border-bottom: 1px solid var(--color-gris-principal);
@@ -194,8 +183,6 @@
 }
 .solicitud{
     margin-top: 20px;
-}
-.solicitud h1{
 }
 .solicitud input{
    height: 30px;

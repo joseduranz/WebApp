@@ -65,7 +65,6 @@
 }
 .input{
     position: relative;
-    *background-color: tomato;
     width: 190px;
     padding: 8px;
     background-color: transparent;
@@ -116,10 +115,4 @@
     margin: 10px;
     color: rgb(221, 221, 221);
     font-size: 18px;
-}
-
-@media (max-width: 991px){
-    .containerFooter{
-        *flex-direction: column;
-    }
 }
