@@ -12,22 +12,22 @@ export class PersonasService {
 
 /*lista de personas */
 ObtenerTodasPersonas():Observable <ModeloPersonas[]>{
-  return this.http.get<ModeloPersonas[]>("http://localhost:3000/personas");
+  return this.http.get<ModeloPersonas[]>("https://autoluxuryb.herokuapp.com/personas");
 }
 /*buscar personas por id*/
 BuscarPersonaPorId(id:string):Observable <ModeloPersonas>{
-  return this.http.get<ModeloPersonas>(`http://localhost:3000/personas/${id}`);
+  return this.http.get<ModeloPersonas>(`https://autoluxuryb.herokuapp.com/personas/${id}`);
 }
 /*crear un persona nuevo */
 CrearPersona(persona: ModeloPersonas):Observable<ModeloPersonas>{
-  return this.http.post("http://localhost:3000/personas",persona)
+  return this.http.post("https://autoluxuryb.herokuapp.com/personas",persona)
 }
 /*actualizar un persona  */
 ActualizarPersona(persona: ModeloPersonas):Observable<ModeloPersonas>{
-  return this.http.put<ModeloPersonas>(`http://localhost:3000/personas/${persona.id}`,persona)   
+  return this.http.put<ModeloPersonas>(`https://autoluxuryb.herokuapp.com/personas/${persona.id}`,persona)   
 }
 /*eliminar un persona  */
 EliminacionPersona(id:string):Observable<any>{
-  return this.http.delete(`http://localhost:3000/personas/${id}`)
+  return this.http.delete(`https://autoluxuryb.herokuapp.com/personas/${id}`)
  }
 }

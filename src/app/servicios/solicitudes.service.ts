@@ -12,25 +12,25 @@ export class SolicitudesService {
 
 /*lista de solicitudes */
 ObtenerTodasSolicitudes():Observable <ModeloSolicitud[]>{
-  return this.http.get<ModeloSolicitud[]>("http://localhost:3000/solicituds");
+  return this.http.get<ModeloSolicitud[]>("https://autoluxuryb.herokuapp.com/solicituds");
 }
 
 /*buscar solicitud por id*/
 BuscarSolicitudPorId(id:string):Observable <ModeloSolicitud>{
-  return this.http.get<ModeloSolicitud>(`http://localhost:3000/solicituds/${id}`);
+  return this.http.get<ModeloSolicitud>(`https://autoluxuryb.herokuapp.com/solicituds/${id}`);
 }
 
 /*crear un solicitud nuevo */
 CrearSolicitud(solicitud: ModeloSolicitud):Observable<ModeloSolicitud>{
-  return this.http.post("http://localhost:3000/solicituds",solicitud)
+  return this.http.post("https://autoluxuryb.herokuapp.com/solicituds",solicitud)
 }
 /*actualizar un solicitud  */
 ActualizarSolicitud(solicitud: ModeloSolicitud):Observable<ModeloSolicitud>{
-  return this.http.put<ModeloSolicitud>(`http://localhost:3000/solicituds/${solicitud.id}`,solicitud,{})   
+  return this.http.put<ModeloSolicitud>(`https://autoluxuryb.herokuapp.com/solicituds/${solicitud.id}`,solicitud,{})   
 }
 /*eliminar un solicitud  */
 EliminacionSolicitud(id:string):Observable<any>{
-  return this.http.delete(`http://localhost:3000/solicituds/${id}`)
+  return this.http.delete(`https://autoluxuryb.herokuapp.com/solicituds/${id}`)
  }
 
 
