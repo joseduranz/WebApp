@@ -71,7 +71,7 @@ function RegistrarPersona(){
         let correo = document.querySelector('#txtCorreo').value;
         let celular = document.querySelector('#txtCelular').value;
     
-        let url = `http://localhost:4200/administracion/registrar`;
+        let url = `https://autoluxuryb.herokuapp.com/administracion/registrar`;
     
         let datos = {
           nombres:nombres,

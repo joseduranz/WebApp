@@ -56,7 +56,7 @@ export class CrearAsesorComponent implements OnInit {
     let direccion = this.formularioRegistro.controls['direccion'].value;
 
     //si se guarda correctamente en la base de datos
-    let url = `http://localhost:3000/personas`;
+    let url = `https://autoluxuryb.herokuapp.com/personas`;
     
     let datos = {
       nombres:nombres,
