@@ -28,7 +28,7 @@ export class CrearPersonaComponent implements OnInit {
   siteKey:string;//llave de captcha
   
   constructor(private fb: FormBuilder, private router:Router,private servicioPersona: PersonasService) {
-    this.siteKey = '6LdwKGUdAAAAAMC0Y5gS7570bte16ti5WPCPalWJ';
+    this.siteKey = '6Lfn27EdAAAAAGjsfkhwTTcBBTE7NsM02buqj-29';
 
    }
 
@@ -66,7 +66,7 @@ export class CrearPersonaComponent implements OnInit {
     //let documentoId = this.fgValidadorRegistrar.controls['documentoId'].value;
 
     //si se guarda correctamente en la base de datos
-    let url = `http://localhost:3000/personas`;
+    let url = `https://autoluxuryb.herokuapp.com/personas`;
     
     let datos = {
       nombres:nombres,

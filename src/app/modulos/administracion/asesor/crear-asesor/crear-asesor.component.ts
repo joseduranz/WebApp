@@ -25,7 +25,7 @@ export class CrearAsesorComponent implements OnInit {
   siteKey:string;//llave de captcha
 
   constructor(private router:Router) { 
-    this.siteKey = '6LdwKGUdAAAAAMC0Y5gS7570bte16ti5WPCPalWJ';
+    this.siteKey = '6Lfn27EdAAAAAGjsfkhwTTcBBTE7NsM02buqj-29';
   }
 
   ngOnInit(): void {

@@ -17,7 +17,7 @@ export class InicioComponent implements OnInit {
   siteKey:string;
 
   constructor() { 
-    this.siteKey = '6LdwKGUdAAAAAMC0Y5gS7570bte16ti5WPCPalWJ';
+    this.siteKey = '6Lfn27EdAAAAAGjsfkhwTTcBBTE7NsM02buqj-29';
   }
 
   ngOnInit(): void {
