@@ -4,8 +4,8 @@
 import * as fb from 'firebase/app';
 
 export const environment = {
-  production: false,
-  firebaseConfig : {
+  production: true,
+  firebase : {
     apiKey: "AIzaSyDjerqM_9Q7aDzNQ9yjs8fdDxCFDxtxQZg",
     authDomain: "img-autoluxury.firebaseapp.com",
     projectId: "img-autoluxury",
@@ -15,7 +15,7 @@ export const environment = {
     measurementId: "G-KLN75EFS8V"
   }
 };
-fb.initializeApp(environment.firebaseConfig);
+fb.initializeApp(environment.firebase);
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
