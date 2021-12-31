@@ -1,8 +1,8 @@
 /*===============ADMIN START======================*/
 .admin{/*sesion admin*/
     width: 100vw;
-    height: 1800px;
-    padding: 150px 0px 0px 150px; 
+    height: 100%;
+    padding: 150px 100px 150px 100px; 
     background: linear-gradient(to bottom right, rgb(37, 37, 37), rgb(41, 41, 41));
     color: rgb(80, 80, 80);
 }
@@ -11,9 +11,43 @@
     margin: 0 0 10px 0;
     color: rgb(255, 22, 22);   
 }
+.contenedor__info-admin p{
+    text-justify: auto;
+    width: 70vw;
+}
+.titulo-y-botonBuscar{
+    display: flex;
+    flex-direction: row;
+}
 .titulos__cajones{/*link titulos a las listas principales*/
     color: rgb(87, 80, 70);
     transition: .3s ease;
+    width: 50%;
+}
+
+.buscar{
+    margin: 10px 5px 0 15px;
+    width: 100%;
+    height: 25px;
+    border-radius: 25px;
+    box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
+                inset -4px -4px 4px rgb(45, 45, 45);
+    border-bottom: 1px solid rgb(52, 52, 52);
+    border-right: 1px solid rgb(52, 52, 52); 
+}
+.buscar:hover{
+    background-color: rgb(44, 44, 44);
+}
+.buscar i{
+    padding: 5px;
+    margin-left: 7px;
+}
+.buscar input{
+    font-size: 1.4rem;
+    width: 78%;
+    padding: 2px 2px;
+    background: none;
+    color: white;
 }
 .contenedor__info-admin .solicitudes,
 .contenedor__info-admin .clientes,
@@ -22,8 +56,8 @@
 .contenedor__info-admin .servicios{
     position: relative;
     background-image: linear-gradient(to bottom right,rgb(45, 45, 45),rgb(32, 32, 32) );
-    height: 235px;
-    width: 70vw;
+    height: 300px;
+    width: 100%;
     padding: 20px 30px;
     margin: 35px 0;
     border-radius: 25px;
@@ -50,7 +84,6 @@
     display: flex;
     flex-wrap: wrap;
     width: 99%;
-    height: 60px;
     padding: 5px 0px 0px 30px;
     line-height: 20px;
     border-top: 1px solid rgb(37, 37, 37);
@@ -71,31 +104,77 @@
 .acceso__metodo-crud a:hover{ 
     color: rgb(150, 150, 150);    
 }
-.buscar{
-    position: absolute;
-    top: 40px;
-    right: 38px;
-    width: 200px;
-    height: 25px;
-    border-radius: 25px;
-    box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
-                inset -4px -4px 4px rgb(45, 45, 45);
-    border-bottom: 1px solid rgb(52, 52, 52);
-    border-right: 1px solid rgb(52, 52, 52); 
-}
-.buscar:hover{
-    background-color: rgb(44, 44, 44);
-}
-.buscar i{
-    padding: 5px;
-    margin-left: 7px;
-}
-.buscar input{
-    font-size: 1.4rem;
-    width: 78%;
-    padding: 2px 2px;
-    background: none;
-    color: white;
-}
 /*===============ADMIN END======================*/
 /******************************************************************/
+
+@media (max-width:700px){
+    .admin{
+        padding: 50px 15px 150px 20px;
+    }
+    .contenedor__info-admin{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .contenedor__info-admin .titulo{ /*titulo administracion*/
+        margin: 0 0 10px 10px;
+    }
+    .contenedor__info-admin p{
+        margin: 0px;
+        width: 90%;
+    }
+    .contenedor__info-admin .solicitudes,
+    .contenedor__info-admin .clientes,
+    .contenedor__info-admin .asesores,
+    .contenedor__info-admin .productos,
+    .contenedor__info-admin .servicios{
+        border-radius: 0;
+        border: none;
+        width: 90%;
+        height: 100%;
+        box-shadow: none;
+        overflow-x: hidden;
+        background: none;
+        padding: 0;
+        margin: 20px 0px 0 0;
+    }
+    .buscar{
+        width: 90%;
+    }
+    .contenedor__info-admin div p{/*informacion despues del titulo del contendor*/
+        padding: 0px;    
+    }
+    .acceso__metodo-crud{/*contenedor crud*/
+        padding: 0 0 10px 0;
+    }
+    .acceso__metodo-crud a{
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.315);
+    }
+}
+@media (max-width: 550px) {
+    .admin{
+        padding: 50px 5px 150px 5px;
+    }
+    .contenedor__info-admin .titulo{ /*titulo administracion*/
+        margin-left: 0;
+        font-size: 11vw;
+    }
+    .titulo-y-botonBuscar{
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+    .contenedor__info-admin .solicitudes,
+    .contenedor__info-admin .clientes,
+    .contenedor__info-admin .asesores,
+    .contenedor__info-admin .productos,
+    .contenedor__info-admin .servicios{
+        height: 100%;
+    }
+    .contenedor__info-admin div h4{/*titulo del contenedor*/
+        font-size: 2rem;
+    }
+}

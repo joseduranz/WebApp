@@ -1,43 +1,190 @@
-.crear-vehiculo-sesion{
-  background-color: var(--background-color-principal);
-  height: 1300px;
+
+.cracionVeh{
   display: flex;
-  justify-content: center;
-  padding-top: 150px;
-  color: rgb(80, 80, 80);
+  flex-direction: row;
+  overflow: hidden;
 }
-.crear-vehiculo-sesion h1{
-  font-size: 3rem;
-    margin-bottom: 20px;
+
+.contenedor1{
+  width: 100vw;
+  min-height: 100vh;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
 }
-.crear-vehiculo-sesion form{
-  width: 550px;
-  padding: 45px;
-  height: 900px;
+.h3titulo{
+  margin: 10px 0 0 0;
+  color: white;
+}
+.h3titulo span{
+  margin: 10px 0 0 0;
+  background-color: rgb(255, 0, 0);
+  padding: 4px 10px;
+  border-radius: 50%;
+}
+.labelyInput{
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.labelImg{
+  padding: 50px;
+  color: #171717;
+  background-color: white;
+  border-radius: 10px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.labelImg:hover{
+  color: rgb(255, 255, 255);
+  background-image: var(--background-titulo-secundario);
+}
+.labelImg:hover i{
+  color: rgb(255, 255, 255);
+}
+.imgCargadas{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 200px;
+}
+.imgcar{
+  margin: 20px;
+  width: 200px;
+}
+.fas{
+  color: rgb(255, 0, 0);
+  font-size: 4rem;
+}
+
+.atributos{
+  margin: 50px 0 200px 0;
+  padding: 50px 30px 10px 30px;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   background-image: var(--background-cajon-negro);
   box-shadow:var(--box-shadow-cajon-principal);
   border-top: var(--border-top-cajon-principal);
   border-left:var(--border-left-cajon-principal);
   border-radius: 25px;  
 }
-.crear-vehiculo-sesion form div{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-.crear-vehiculo-sesion form div input{
+.input{
   font-size: 1.2rem;
   color: var(--color-gris-principal);
   background-color: transparent;
   padding-left: 10px;
   height: 30px;    
-  margin: 15px 0 ;
+  margin: 5px 0 25px 0;
   border-radius: 25px;
   box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
               inset -4px -4px 4px rgb(45, 45, 45);
   border-bottom: 1px solid rgb(52, 52, 52);
   border-right: 1px solid rgb(52, 52, 52); 
 }
-.crear-vehiculo-sesion form div input:hover{
-  background-color: rgb(41, 41, 41);
+.label{
+  margin: -50px 0 40px 10px;
+  font-size: 1rem;
+  transition: .3s;
+}
+.label2{
+  margin: -215px 0 200px 10px;
+  font-size: 1rem;
+  transition: .3s;
+  z-index: 9;
+}
+.input:hover{
+  background-color: rgb(48, 48, 48);
+}
+.input:focus + .label{
+  margin: -80px 0 70px 10px;
+  color: #a8a8a8;
+}
+.input:required:valid + .label{
+  margin: -80px 0 70px 10px;
+}
+
+textarea{
+  resize: none;
+  width: 100%;
+  font-size: 1.2rem;
+  color: var(--color-gris-principal);
+  background-color: transparent;
+  padding-left: 10px;
+  min-height: 200px;   
+  margin: 5px 0 25px 0;
+  border-radius: 25px;
+  box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
+              inset -4px -4px 4px rgb(45, 45, 45);
+  border-bottom: 1px solid rgb(52, 52, 52);
+  border-right: 1px solid rgb(52, 52, 52); 
+}
+textarea:focus + .label2{
+  margin: -250px 0 235px 10px;
+  color: #a8a8a8;
+}
+
+textarea:required:valid + .label2{
+  margin: -250px 0 235px 10px;
+}
+.botones{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.boton{
+  padding: 10px 20px;
+  margin: 20px;
+  width: 35%;
+  font-size: 1rem;
+}
+.botonPublicar2{
+  padding: 10px 20px;
+  margin: 20px;
+  width: 35%;
+  font-size: 1rem;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(255, 0, 0);
+}
+.botonPublicar2:hover{
+  background-image: var(--background-titulo-secundario);
+  color: white;
+}
+.botonPublicar:hover{
+  background-color: rgb(255, 255, 255);
+  color: rgb(255, 0, 0);
+}
+@keyframes  borde-error {
+  0%{
+      border: 2.5px solid rgba(255, 0, 0, 0);
+  }
+  50%{
+      border: 2.5px solid rgba(255, 0, 0, 0.26);
+  }
+  100%{
+      border: 2.5px solid rgba(255, 0, 0, 0);
+  }
+}
+
+@media (max-width:650px) {
+  .atributos{
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    width: 80%;
+  }
+  .boton{
+    width: 100%;
+  }
+}
+@media (max-width:420px) {
 }

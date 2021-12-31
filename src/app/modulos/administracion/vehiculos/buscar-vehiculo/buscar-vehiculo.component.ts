@@ -36,8 +36,6 @@ export class BuscarVehiculoComponent implements OnInit {
       //atraves de 
       this.sesionIniciada = datos.estaIdentificado;
       this.sesionAdmin = datos.inicioAdmin;
-      
-      this.sesionAdmin = datos.inicioAdmin;
       this.sesionAsesor = datos.inicioAsesor;
       this.sesionCliente = datos.inicioCliente;
 

@@ -1,4 +1,21 @@
-    
+<div class="modal" *ngIf="modal">
+    <div class="modal-mensaje">
+        <div class="titulo-x">
+            <h1 class="h1">¡Enviado!</h1>
+            <i type="button" (click)="CerrarModal()" class="fas fa-times"></i>
+        </div>
+        <div class="mensaje">
+            <p>Su mensaje se ha enviado exitosamente, en breve un asesor lo contactara para ayudarle en lo que necesite</p>
+        </div>
+        <div class="boton-cerrar">
+            <button type="button" (click)="CerrarModal()" >Cerrar</button>
+        </div>
+    </div>
+</div>
+
+<div class="logo-details">
+    <img loading="lazy" src="./assets/img/logoAutoLuxuryColor.png" alt="logo">
+ </div>
 <!-- ==========================================SECTION 0 START=============================-->
 <section class="sesion0 client-area" id="inicio">
         <!--2-->
@@ -183,6 +200,7 @@
         </div>
         
 </section>
+
 <!--icono bajar a otra pestana===============================-->
 <div class="cotenedor-icono" >
         <p><a href="https://autoluxury.herokuapp.com/inicio#vehiculos" class="texto-blanco"><i  class="fas fa-chevron-down"></i></a></p>
@@ -191,23 +209,26 @@
 <!-- **********************************************************************************-->
 <!-- ==========================================SECtion seguridad y garantia START=============================-->
 <section class="garantia-seguridad-asesoria" >
-    <div class="contenedor__garantia" >
-        <img src="./assets/img/garantia.png" loading="lazy" alt="garantia">
-        <h1 >Garantía</h1>
-        <p >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit deserunt non explicabo asperiores minus quod, beatae odit voluptates architecto delectus excepturi</p>
-    </div>
-    <div class="contenedor__garantia">
-        <img src="./assets/img/seguridad.png" loading="lazy" alt="garantia">
-        <h1  >Seguridad</h1>
-        <p  >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit deserunt non explicabo asperiores minus quod, beatae odit voluptates architecto delectus excepturi</p>
-    </div>
-    <div class="contenedor__garantia" >
-        <img src="./assets/img/atencion.png" loading="lazy" alt="garantia">
-        <h1  >Asesoria</h1>
-        <p   >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit deserunt non explicabo asperiores minus quod, beatae odit voluptates architecto delectus excepturi</p>
+    <div class="contenedor-cuadros">
+        <div class="contenedor__garantia" >
+            <img src="./assets/img/garantia.png" loading="lazy" alt="garantia">
+            <h1 >Garantía</h1>
+            <p >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit deserunt non explicabo asperiores minus quod, beatae odit voluptates architecto delectus excepturi</p>
+        </div>
+        <div class="contenedor__garantia">
+            <img src="./assets/img/seguridad.png" loading="lazy" alt="garantia">
+            <h1  >Seguridad</h1>
+            <p  >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit deserunt non explicabo asperiores minus quod, beatae odit voluptates architecto delectus excepturi</p>
+        </div>
+        <div class="contenedor__garantia" >
+            <img src="./assets/img/atencion.png" loading="lazy" alt="garantia">
+            <h1  >Asesoria</h1>
+            <p   >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit deserunt non explicabo asperiores minus quod, beatae odit voluptates architecto delectus excepturi</p>
+        </div>
     </div>
     <p>* Ofrecemos productos y servícios de calidad, si tienes incovenientes al navegar por favor infórmanos  para solucionar los inconvenientes lo mas pronto posible</p>
 </section>
+
 <!-- ==========================================SECtion seguridad y garantia END=============================-->
 <!-- **********************************************************************************-->
 <!-- ==========================================SECTION 1 START=============================-->
@@ -406,17 +427,19 @@
     <div class="s4-cont">
         <h1 class="heading" >Contáctenos</h1>
         <div class="row">
-            <form action="" class="containerFormaulario">
-                <input type="text" placeholder="Nombre" class="box">
-                <input type="email" placeholder="E-mail" class="box">
-                <input type="number" placeholder="Telefono" class="box">
-                <textarea placeholder="Escribe tu mensaje" class="box" cols="30" rows="10"></textarea>
-                <button type="submit"  class="btn btnContactenos">Enviar</button>
+            <form action="" class="containerFormaulario" id="form" [formGroup]="fgValidador" (ngSubmit)="FormularioEnvio()">
+                <input formControlName="nombre" type="text" placeholder="Nombre" class="box" name="nombre">
+                <input formControlName="email" type="email" placeholder="E-mail" class="box" name="email">
+                <input formControlName="emailPrueba" type="email" placeholder="ingrese el email para realizar pruebas de funcionalidad" class="box" name="email">
+                <input formControlName="telefono" type="text" placeholder="Telefono" class="box" name="telefono">
+                <textarea formControlName="mensaje" placeholder="Escribe tu mensaje" class="box" cols="30" rows="10" name="contenido"></textarea>
+                <button type="submit" (click)="FormularioEnvio()" class="btn btnContactenos">Enviar</button>
                 <!--=======CAPTCHA VALIDACION START==========-->
                 <!--ngx-recaptcha2 #captchaElem
                     [siteKey]="siteKey" ></ngx-recaptcha2-->
                 <!--=======CAPTCHA VALIDACION START==========-->
             </form>
+            
             <img src="./assets/img/concecionario.png" loading="lazy" alt="">
         </div>
     </div>
@@ -445,3 +468,4 @@
 <!-- <button class="subirHome" id="subirHome">
     <i class="fas fa-chevron-up"></i>
 </button> -->
+

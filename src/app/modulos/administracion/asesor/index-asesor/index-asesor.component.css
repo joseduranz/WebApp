@@ -1,78 +1,33 @@
 /*===============ASESOR START======================*/
-.asesor{/*sesion admin*/
+.asesor{/*sesion asesor*/
     width: 100vw;
-    height: 1000px;
-    padding: 150px 0px 0px 150px; 
+    height: 100%;
+    padding: 150px 100px 150px 100px; 
     background: linear-gradient(to bottom right, rgb(37, 37, 37), rgb(41, 41, 41));
     color: rgb(80, 80, 80);
 }
-
 .contenedor__info-asesor .titulo{ /*titulo asesor*/
     font-size: 4rem;
     margin: 0 0 10px 0;
-    color: rgb(255, 22, 22);  
+    color: rgb(255, 22, 22);   
+}
+.contenedor__info-asesor p{
+    text-justify: auto;
+    width: 70vw;
+}
+.titulo-y-botonBuscar{
+    display: flex;
+    flex-direction: row;
 }
 .titulos__cajones{/*link titulos a las listas principales*/
     color: rgb(87, 80, 70);
     transition: .3s ease;
+    width: 50%;
 }
-.contenedor__info-asesor .solicitudes,
-.contenedor__info-asesor .clientes{
-    position: relative;
-    background-image: linear-gradient(to bottom right,rgb(45, 45, 45),rgb(32, 32, 32) );
-    height: 235px;
-    width: 70vw;
-    padding: 20px 30px;
-    margin: 35px 0;
-    border-radius: 25px;
-    overflow-y: auto;
-    box-shadow: 8px 8px 8px rgb(30, 30, 30),
-                -8px -8px 8px rgb(45, 45, 45);    
-    border-top: 1px solid rgb(52, 52, 52);
-    border-left: 1px solid rgb(52, 52, 52);
-    
-}
-.contenedor__info-asesor div h4{/*titulo del contenedor*/
-    font-size: 3rem;
-    width: 190px;
-}
-.contenedor__info-admin div h4:hover{
-    color: rgb(129, 129, 129);
-}
-.contenedor__info-asesor div p{/*informacion despues del titulo del contendor*/
-    padding: 5px 10px;
-}
-.acceso__metodo-crud{/*contenedor crud*/
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    width: 99%;
-    height: 60px;
-    padding: 5px 0px 0px 30px;
-    line-height: 20px;
-    border-top: 1px solid rgb(37, 37, 37);
-}
-.acceso__metodo-crud::after{/*contenedor crud*/
-    position: absolute;
-    left: 0;
-    top: 0;
-    content: "";
-    width: 100%;
-    border-top: 1px solid rgb(52, 52, 52);
-}
-.acceso__metodo-crud a{/*crud*/
-    color: rgb(80, 80, 80);
-    width: 100%;
-    font-size: .85rem; 
-}
-.acceso__metodo-crud a:hover{ 
-    color: rgb(150, 150, 150);    
-}
+
 .buscar{
-    position: absolute;
-    top: 40px;
-    right: 38px;
-    width: 200px;
+    margin: 10px 5px 0 15px;
+    width: 100%;
     height: 25px;
     border-radius: 25px;
     box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
@@ -94,5 +49,132 @@
     background: none;
     color: white;
 }
-/*===============ASESOR END======================*/
+.contenedor__info-asesor .solicitudes,
+.contenedor__info-asesor .clientes,
+.contenedor__info-asesor .asesores,
+.contenedor__info-asesor .productos,
+.contenedor__info-asesor .servicios{
+    position: relative;
+    background-image: linear-gradient(to bottom right,rgb(45, 45, 45),rgb(32, 32, 32) );
+    height: 300px;
+    width: 100%;
+    padding: 20px 30px;
+    margin: 35px 0;
+    border-radius: 25px;
+    overflow-y: auto;
+    box-shadow: 8px 8px 8px rgb(30, 30, 30),
+                -8px -8px 8px rgb(45, 45, 45);    
+    border-top: 1px solid rgb(52, 52, 52);
+    border-left: 1px solid rgb(52, 52, 52);
+    
+}
+.contenedor__info-asesor div h4{/*titulo del contenedor*/
+    font-size: 3rem;
+    width: 190px;
+}
+
+.contenedor__info-asesor div h4:hover{
+    color: rgb(129, 129, 129);
+}
+.contenedor__info-asesor div p{/*informacion despues del titulo del contendor*/
+    padding: 5px 10px;    
+}
+.acceso__metodo-crud{/*contenedor crud*/
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    width: 99%;
+    padding: 5px 0px 0px 30px;
+    line-height: 20px;
+    border-top: 1px solid rgb(37, 37, 37);
+}
+.acceso__metodo-crud::after{/*contenedor crud*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    width: 100%;
+    border-top: 1px solid rgb(52, 52, 52);
+}
+.acceso__metodo-crud a{/*crud*/
+    color: rgb(80, 80, 80);
+    width: 100%;
+    font-size: .85rem;   
+}
+.acceso__metodo-crud a:hover{ 
+    color: rgb(150, 150, 150);    
+}
+/*===============asesor END======================*/
 /******************************************************************/
+
+@media (max-width:700px){
+    .asesor{
+        padding: 50px 15px 150px 20px;
+    }
+    .contenedor__info-asesor{
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+    .contenedor__info-asesor .titulo{ /*titulo asesoristracion*/
+        margin: 0 0 10px 10px;
+    }
+    .contenedor__info-asesor p{
+        margin: 0px;
+        width: 90%;
+    }
+    .contenedor__info-asesor .solicitudes,
+    .contenedor__info-asesor .clientes,
+    .contenedor__info-asesor .asesores,
+    .contenedor__info-asesor .productos,
+    .contenedor__info-asesor .servicios{
+        border-radius: 0;
+        border: none;
+        width: 90%;
+        height: 100%;
+        box-shadow: none;
+        overflow-x: hidden;
+        background: none;
+        padding: 0;
+        margin: 20px 0px 0 0;
+    }
+    .buscar{
+        width: 90%;
+    }
+    .contenedor__info-asesor div p{/*informacion despues del titulo del contendor*/
+        padding: 0px;    
+    }
+    .acceso__metodo-crud{/*contenedor crud*/
+        padding: 0 0 10px 0;
+    }
+    .acceso__metodo-crud a{
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.315);
+    }
+}
+@media (max-width: 550px) {
+    .asesor{
+        padding: 50px 5px 150px 5px;
+    }
+    .contenedor__info-asesor .titulo{ /*titulo asesoristracion*/
+        margin-left: 0;
+        font-size: 14vw;
+    }
+    .titulo-y-botonBuscar{
+        flex-direction: column;
+        margin-bottom: 40px;
+    }
+    .contenedor__info-asesor .solicitudes,
+    .contenedor__info-asesor .clientes,
+    .contenedor__info-asesor .asesores,
+    .contenedor__info-asesor .productos,
+    .contenedor__info-asesor .servicios{
+        height: 100%;
+    }
+    .contenedor__info-asesor div h4{/*titulo del contenedor*/
+        font-size: 2rem;
+    }
+}

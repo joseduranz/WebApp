@@ -7,7 +7,7 @@ import { RecuperarClaveComponent } from './recuperar-clave/recuperar-clave.compo
 
 const routes: Routes = [
   {//CAMBIO-CLAVE
-    path:"cambiar-pasword",
+    path:"cambiar-pasword/:id",
     component:CambioClaveComponent
   },
   {//IDENTIFICACION

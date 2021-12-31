@@ -1,0 +1,64 @@
+.recuperarClave{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100%;
+    padding: 150px;
+}
+h1{
+    color: var(--color-gris-principal);
+    font-size: 5vw;
+    white-space: nowrap;
+    margin-top: -100px;
+}
+.containerinput{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+.boxInput{
+    color: var(--color-gris-principal);
+    font-size: 1.2rem;
+    padding-left: 10px;
+    width: 100%;
+    height: 40px;
+    background: none;
+    position: relative;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    margin: 40px 0 60px 0;
+    box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
+                inset -4px -4px 4px rgb(45, 45, 45);
+    border-bottom: 1px solid rgb(52, 52, 52);
+    border-right: 1px solid rgb(52, 52, 52);
+}
+label{
+    color: var(--color-gris-principal);
+    margin: -90px 0 40px 10px;
+    font-size: 1rem;
+    transition: .3s;
+    z-index: 9;
+}
+.boxInput:focus + .label{
+    margin: -120px 0 70px 10px;
+    color: #a8a8a8;
+}
+.boxInput:required:valid + .label{
+    margin: -120px 0 70px 10px;
+  }
+
+@media (max-width:350px) {
+    .recuperarClave{
+        padding: 40px;
+    }
+    form{
+        padding: 30px;
+        width: 100vw;
+    }
+    h1{
+        margin-top: 60px;
+    }
+}

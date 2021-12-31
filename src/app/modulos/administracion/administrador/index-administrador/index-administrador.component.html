@@ -6,25 +6,35 @@
             <p style="font-size: .8rem;">* Antes de la eliminacion o actualizacion de cualquier campo se debe estar de acuerdo con el resto de administradores de la página </p>
             <p style="font-size: .8rem;">*cualquier información eliminada no podra ser recuperada bajo ninguna circunstancia</p>
             <div class="solicitudes">
-                <a class="titulos__cajones" routerLink="soilicitud/lista-solicitudes">
-                    <h4>Solicitudes</h4>
-                    <p>Administrar solicitudes</p>
-                </a>
+                <div class="titulo-y-botonBuscar">
+                    <a class="titulos__cajones" routerLink="soilicitud/lista-solicitudes">
+                        <h4>Solicitudes</h4>
+                        <p>Administrar solicitudes</p>
+                    </a>
+                    <div class="buscar">
+                        <i class="fas fa-search"></i>
+                       <input type="text" placeholder="Buscar">                                         
+                    </div>
+                </div>
                 <div class="acceso__metodo-crud">
                     <a routerLink="#">Deseo Ver todas las solicitudes realizadas por los clientes.</a>
                     <a routerLink="#">Deseo Buscar a una solicitud de un cliente en específico.</a>
                     <a routerLink="#">Deseo Eliminar una solicitud de algún cliente. </a>
                 </div>
-                <div class="buscar">
-                    <i class="fas fa-search"></i>
-                   <input type="text" placeholder="Buscar">                                         
-                </div>
+                
             </div>
             <div class="clientes">
-                <a class="titulos__cajones" routerLink="administracion/lista-cliente">
-                    <h4>Clientes</h4>
-                    <p>Administrar clientes</p>
-                </a>                
+                <div class="titulo-y-botonBuscar">
+                    <a class="titulos__cajones" routerLink="administracion/lista-cliente">
+                        <h4>Clientes</h4>
+                        <p>Administrar clientes</p>
+                    </a>  
+                    <div class="buscar">
+                        <i class="fas fa-search"></i>
+                       <input type="text" placeholder="Buscar">                                         
+                    </div>
+                </div>
+                              
                 <div class="acceso__metodo-crud">
                     <a routerLink="/administracion/buscar-cliente">Deseo Ver todos los clientes registrado en la página </a>
                     <a routerLink="/administracion/registrar-cliente">Deseo Registrar a un nuevo cliente en la página </a>
@@ -32,16 +42,20 @@
                     <a routerLink="/administracion/buscar-cliente">Para la actualización de un cliente debes buscar en la lista donde se muestran a todos los clientes </a>
                     <a routerLink="/administracion/buscar-cliente">Para Eliminar la informacion o el account de un cliente registrado en la página,debes buscar en la lista donde se muestran a todos los clientes</a>
                 </div>
-                <div class="buscar">
-                    <i class="fas fa-search"></i>
-                   <input type="text" placeholder="Buscar">                                         
-                </div>
+                
             </div>
             <div class="asesores">
-                <a class="titulos__cajones" routerLink="administracion/lista-asesores">
-                    <h4>Asesores</h4>
-                    <p>Administrar asesores</p>
-                </a>                
+                <div class="titulo-y-botonBuscar">
+                    <a class="titulos__cajones" routerLink="administracion/lista-asesores">
+                        <h4>Asesores</h4>
+                        <p>Administrar asesores</p>
+                    </a> 
+                    <div class="buscar">
+                        <i class="fas fa-search"></i>
+                       <input type="text" placeholder="Buscar">                                         
+                    </div>
+                </div>
+                               
                 <div class="acceso__metodo-crud">
                     <a routerLink="/administracion/buscar-asesor">Deseo Ver todos los asesores registrado en la página </a>
                     <a routerLink="/administracion/registrar-asesor">Deseo Registrar a un nuevo asesor en la página </a>
@@ -49,16 +63,19 @@
                     <a routerLink="/administracion/buscar-asesor">Para la actualización de un asesor debes buscar en la lista donde se muestran a todos los asesores </a>
                     <a routerLink="/administracion/buscar-asesor">Para Eliminar la informacion o el account de un asesor registrado en la página,debes buscar en la lista donde se muestran a todos los clientes</a>
                 </div>
-                <div class="buscar">
-                    <i class="fas fa-search"></i>
-                   <input type="text" placeholder="Buscar">                                         
-                </div>
             </div>
             <div class="productos">
-                <a class="titulos__cajones" routerLink="administracion/lista-vehiculos">
-                    <h4>Productos</h4>
-                    <p>Administrar productos</p>
-                </a>                
+                <div class="titulo-y-botonBuscar">
+                    <a class="titulos__cajones" routerLink="administracion/lista-vehiculos">
+                        <h4>Productos</h4>
+                        <p>Administrar productos</p>
+                    </a> 
+                    <div class="buscar">
+                        <i class="fas fa-search"></i>
+                       <input type="text" placeholder="Buscar">                                         
+                    </div>
+                </div>
+                               
                 <div class="acceso__metodo-crud">
                     <a routerLink="/administracion/buscar-vehiculo">Deseo Ver todos los vehículos publicádos en la página </a>
                     <a routerLink="/administracion/registrar-vehiculo">Deseo Publicar un vehículo en la página nuevo o usado</a>
@@ -66,26 +83,27 @@
                     <a routerLink="/administracion/buscar-vehiculo">Para Actualizar la información de un vehículo debes buscarlo en la lista de vehiculos disponibles</a>
                     <a routerLink="/administracion/buscar-vehiculo">Para Eliminar una publición en la página, buscalo en la lista de vehículos disponibles</a>
                 </div>
+                
+            </div>
+            <div class="servicios">
+                <div class="titulo-y-botonBuscar">
+                    <a class="titulos__cajones" routerLink="#">
+                        <h4>Servicios</h4>
+                        <p>Administrar servicios</p>
+                    </a>
+                    
                 <div class="buscar">
                     <i class="fas fa-search"></i>
                    <input type="text" placeholder="Buscar">                                         
                 </div>
-            </div>
-            <div class="servicios">
-                <a class="titulos__cajones" routerLink="#">
-                    <h4>Servicios</h4>
-                    <p>Administrar servicios</p>
-                </a>
+                </div>
+                
                 <div class="acceso__metodo-crud">
                     <a routerLink="#">Deseo Ver todos los serviciospublicados en la página </a>
                     <a routerLink="#">Deseo Publicar un nuevo servicio en la página </a>
                     <a routerLink="#">Deseo Buscar a un servicio publicado en la página </a>
                     <a routerLink="#">Deseo Actualizar la información a un servicio en específico publicado en la página por solicitud de el mismo asesor </a>
                     <a routerLink="#">Deseo Eliminar un servicio publicado, por violar las normas pactadas en los términos y condiciones </a>
-                </div>
-                <div class="buscar">
-                    <i class="fas fa-search"></i>
-                   <input type="text" placeholder="Buscar">                                         
                 </div>
             </div>
             <P>* cualquier solicitud debe contar con un documento de respaldo autorizada por el cliente con el fin de evitar problemas legales</P>

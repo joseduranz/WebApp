@@ -1,1 +1,13 @@
-<p>recuperar-clave works!</p>
+<section class="recuperarClave">
+    <h1>RECUPERAR CONTRASEÑA</h1>
+    <form action="" [formGroup]="fgValidador" (ngSubmit)="BuscarCorreo()">
+        <div class="containerinput">
+            <input formControlName="correoElectronico" class="boxInput" type="text" id="mail" required> <label class="label"  for="mail">Ingrese su email</label>
+        </div>
+        <div class="container__reCaptcha">
+            <ngx-recaptcha2 #captchaElem
+            [siteKey]="siteKey" formControlName="captcha" class="reCaptcha"></ngx-recaptcha2>
+        </div>
+        <button [disabled]="!fgValidador.valid" [ngClass]="{'btnDisabled':!fgValidador.valid}" type="submit" class="boton" >Enviar</button>
+    </form>
+</section>

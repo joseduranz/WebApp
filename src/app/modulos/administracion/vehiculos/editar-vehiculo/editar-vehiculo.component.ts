@@ -12,7 +12,8 @@ import { VehiculosService } from 'src/app/servicios/vehiculos.service';
 export class EditarVehiculoComponent implements OnInit {
 
   id:string="";/*variable para guardar el id que viene del backend */
-   
+  modal:boolean=false;
+  modal2:boolean=false;
   fgValidador:FormGroup=this.fb.group({
     'id':['', [Validators.required]],
     'matricula':['', [Validators.required]],
@@ -93,12 +94,18 @@ export class EditarVehiculoComponent implements OnInit {
 
 
     this.servicioVehiculo.ActualizarVehiculo(vehiculo).subscribe((datos:ModeloVehiculo)=>{
-      alert("el vehiculo fue actualizado exitosamente!!");
+      this.modal=!this.modal
       this.router.navigate(["/administracion/buscar-vehiculo"])
 
     },(error:any)=>{
-        alert("error No se pudo realizar la actualización");
+      this.modal2=!this.modal2
       })
+  }
+  CerrarModal(){
+    this.modal=!this.modal
+  }
+  CerrarModalError(){
+    this.modal2=!this.modal2
   }
 
 }

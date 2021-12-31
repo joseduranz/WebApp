@@ -30,10 +30,11 @@ import { SpinnerInterceptor } from './shared/interceptor/spinner.interceptor';
     NgxCaptchaModule,
     HttpClientModule,
     ReactiveFormsModule,
-    SpinnerModule
+    SpinnerModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true}
+  //, BUCKET, useValue:'gs://img-autoluxury.appspot.com'
   ],
   bootstrap: [AppComponent]
 })

@@ -382,7 +382,4 @@ function gsapJava() {
         },
         translateX: 500
     });
-
-
- 
 }

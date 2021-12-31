@@ -1,170 +1,214 @@
 
-        /*=====VENTANA LOGIN START======*/
-        .containerLogin {
-            position: relative;
-            height: 800px;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(to bottom right, rgb(37, 37, 37), rgb(41, 41, 41));
-            color: rgb(80, 80, 80);
-            transition: 1.3s ease-in-out;
+ /*=====VENTANA LOGIN START======*/
+.containerLogin {
+    position: relative;
+    height: 100%;
+    padding: 100px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-color-principal);
+    color: rgb(80, 80, 80);
+    transition: 1.3s ease-in-out;
+}       
+.formLogin {
+    text-align: center;
+    padding: 3.5rem;
+    width: 40rem;
+    border-radius: 25px;
+    box-shadow: 8px 8px 8px rgb(30, 30, 30),
+        -8px -8px 8px rgb(45, 45, 45);    
+    border-top: 1px solid rgb(52, 52, 52);
+    border-left: 1px solid rgb(52, 52, 52);
+}        
+.containerLogin form h3 {
+    padding-bottom: 1rem;
+    font-size: 3rem;
+    margin: 30px 10px;
+    text-align: left;
+}         
+.containerLogin.active {
+    right: 0;
+}
+.login{
+    position: relative;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    margin: 40px 0 20px 0;
+    box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
+                inset -4px -4px 4px rgb(45, 45, 45);
+    border-bottom: 1px solid rgb(52, 52, 52);
+    border-right: 1px solid rgb(52, 52, 52); 
+}         
+.login:hover{
+    background-color: rgb(41, 41, 41);
+  }
+.fa-user,
+.fa-key{
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    color: var(--grisOscuro);
+    font-size: 1.5rem;
+}
+.container__reCaptcha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.reCaptcha{
+    margin: 10px;
+}
+.boxInput {
+    background: none;
+    margin: 0 0 0 3rem;
+    width: 90%;
+    height: 30px;
+    font-size: 1.6rem;
+    color: rgb(177, 177, 177);
+    text-transform: none;
+    padding: 1rem 1.2rem;
+    border-radius: 25px;
+}
+.containerLogin form p {
+    text-align: right;
+    padding: 1rem 0;
+    font-size: 1rem;
+    color: rgb(121, 121, 121);
+}
+.containerLogin form p a {
+    color: rgb(182, 182, 182);
+}  
+.containerLogin form p a:hover {
+    color: rgb(255, 255, 255);
+}
+.boton{
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+    color: white;
+    border-radius: 40px;
+    font-size: 13px;
+    box-shadow: 8px 8px 8px rgb(30, 30, 30),
+                -8px -8px 8px rgb(65, 65, 65);   
+}
+.boton:hover{
+    background-image:linear-gradient(to bottom right,  rgb(255, 0, 128),  rgb(255, 0, 0));
+    color: white;
+}
+.btnDisabled{
+    margin-top: 30px;
+    color: rgb(212, 212, 212);
+    background: none;   
+    box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
+                inset -4px -4px 4px rgb(45, 45, 45);
+    border-bottom: 1px solid rgb(52, 52, 52);
+    border-right: 1px solid rgb(52, 52, 52);
+    
+}        
+.btnDisabled:hover{
+    background: none; 
+    color: rgb(212, 212, 212);
+}        
+.formLogin .error{/*clase con los errores*/
+    color: red;
+    
+}
+.formLogin .error p{ /* contiene la informacion del error espacio en blanco y medida*/
+    font-size: .9rem;
+    text-align: center;
+    margin: -25px 0 0 0;
+}
+.inputError{/* si hay error mostrar rojo*/
+    border: 2.5px solid rgba(255, 0, 0, 0.26);
+    animation: borde-error 1s ease-in-out infinite;
+}
+@keyframes  borde-error {
+    0%{
+        border: 2.5px solid rgba(255, 0, 0, 0);
+    }
+    50%{
+        border: 2.5px solid rgba(255, 0, 0, 0.26);
+    }
+    100%{
+        border: 2.5px solid rgba(255, 0, 0, 0);
+    }
+}
 
-        }
-        
-        .formLogin {
-            text-align: center;
-            padding: 3.5rem;
-            width: 40rem;
-            border-radius: 25px;
-            box-shadow: 8px 8px 8px rgb(30, 30, 30),
-                -8px -8px 8px rgb(45, 45, 45);    
-            border-top: 1px solid rgb(52, 52, 52);
-            border-left: 1px solid rgb(52, 52, 52);
-        }
-        
-        .containerLogin form h3 {
-            padding-bottom: 1rem;
-            font-size: 3rem;
-            margin: 30px 10px;
-            text-align: left;
-        }  
+.mostrar-ocultar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    width: 40px;
+    color: var(--grisOscuro);
+}       
+ngx-recaptcha2{
+    resize: none;
+}
 
-        .containerLogin.active {
-            right: 0;
-        }
-        .login{
-            position: relative;
-            border-radius: 25px;
-            margin: 40px 0 20px 0;
-            box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
-                        inset -4px -4px 4px rgb(45, 45, 45);
-            border-bottom: 1px solid rgb(52, 52, 52);
-            border-right: 1px solid rgb(52, 52, 52); 
-        }
-        .login:hover{
-            background-color: rgb(41, 41, 41);
-          }
-        .login i{
-            position: absolute;
-            left: 10px;
-            top: 5px;
-            color: var(--grisOscuro);
-            font-size: 1.5rem;
-        }
-        .container__reCaptcha{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .reCaptcha{
-            margin: 10px;
-        }
-        .boxInput {
-            background: none;
-            margin: 0 0 0 3rem;
-            width: 90%;
-            height: 30px;
-            font-size: 1.6rem;
-            color: rgb(177, 177, 177);
-            text-transform: none;
-            padding: 1rem 1.2rem;
-            border-radius: 25px;
-        }
-        .containerLogin form p {
-            text-align: right;
-            padding: 1rem 0;
-            font-size: 1rem;
-            color: rgb(121, 121, 121);
-        }
+.sesionIniciada{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 330px;
+}
+.sesionIniciada:hover{
+    color: rgb(187, 187, 187);
+}
+.sesionIniciada p{
+    color: white;
+    font-size: 3rem;
+}
+.sesionIniciada a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+}
 
-
-
-
-        .containerLogin form p a {
-            color: rgb(182, 182, 182);
-        }  
-        .containerLogin form p a:hover {
-            color: rgb(255, 255, 255);
-        }
-        .boton{
-            margin-top: 30px;
-            width: 100%;
-            height: 40px;
-            background-image:linear-gradient(to bottom right, rgb(255, 113, 113),  rgb(255, 72, 72));
-            color: white;
-            border-radius: 40px;
-            font-size: 13px;
-            box-shadow: 8px 8px 8px rgb(30, 30, 30),
-                        -8px -8px 8px rgb(65, 65, 65);   
-        }
-        .boton:hover{
-            background-image:linear-gradient(to bottom right,  rgb(255, 0, 128),  rgb(255, 0, 0));
-            color: white;
-        }
-        .btnDisabled{
-            margin-top: 30px;
-            color: rgb(212, 212, 212);
-            background: none;   
-            box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
-                        inset -4px -4px 4px rgb(45, 45, 45);
-            border-bottom: 1px solid rgb(52, 52, 52);
-            border-right: 1px solid rgb(52, 52, 52);
-            
-        }        
-        .btnDisabled:hover{
-            background: none; 
-            color: rgb(212, 212, 212);
-        }        
-        .formLogin .error{/*clase con los errores*/
-            color: red;
-            
-        }
-        .formLogin .error p{ /* contiene la informacion del error espacio en blanco y medida*/
-            font-size: .9rem;
-            text-align: center;
-            margin: -25px 0 0 0;
-        }
-        .inputError{/* si hay error mostrar rojo*/
-            border: 2.5px solid rgba(255, 0, 0, 0.26);
-            animation: borde-error 1s ease-in-out infinite;
-        }
-        @keyframes  borde-error {
-            0%{
-                border: 2.5px solid rgba(255, 0, 0, 0);
-            }
-            50%{
-                border: 2.5px solid rgba(255, 0, 0, 0.26);
-            }
-            100%{
-                border: 2.5px solid rgba(255, 0, 0, 0);
-            }
-        }
-
-        @media (max-width: 770px) {
-            #close-login-form {
-                margin-top: -410px;
-                right: -5%;
-            }
-        }
-
-        @media (max-width: 573px) {
-            .formLogin {
-                width: 80%;
-            }
-
-            #close-login-form {
-                top: 94%;
-                right: -22px;
-            }
-        }
-
-        @media (max-width: 308px) {
-            #close-login-form {
-                top: 71%;
-
-            }
-        }
-
-        /*=====VENTANA LOGIN END======*/
+@media (max-width: 700px) {
+    .containerLogin{
+        padding-top: 50px;
+    }
+    .formLogin {
+        width: 400px;
+        min-width: 20vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .formLogin {
+        border: none;
+        box-shadow:none;    
+    }
+}
+@media (max-width: 350px) {
+    .containerLogin form h3 {
+        font-size: 4rem;
+        border-bottom: 1px solid gray;
+    } 
+    .login{
+        margin-top: 100px ;
+    } 
+    .fa-user,
+    .fa-key{
+        font-size: 4rem;
+        left: calc(50vw - 70px);
+        top: -82px;
+    }
+    .boxInput {
+        width: 100%;
+        margin:0 ;
+        border-radius: 90px;
+    }
+}
+@media (max-width: 250px) {
+    .containerLogin form h3 {
+        font-size: 3rem;
+    }  
+}

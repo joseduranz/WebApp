@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to bottom right, rgb(37, 37, 37), rgb(41, 41, 41));
+    background: var(--background-color-principal);
     color: rgb(80, 80, 80);
 }
 .contenedor__toda-informacion{/* contiene toda la informacion*/
@@ -95,7 +95,6 @@
     margin-top: 10px;
     width: 100%;
     height: 40px;
-    background-image:linear-gradient(to bottom right, rgb(255, 113, 113),  rgb(255, 72, 72));
     color: white;
     border-radius: 40px;
     font-size: 13px;
@@ -129,4 +128,65 @@
 }
 .iniciarsesionLink a:hover{
     color: rgb(255, 255, 255);
+}
+
+@media (max-width: 550px) {
+    .contenedor__toda-informacion{
+        width: 100VW;
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+    .contenedor__toda-informacion h1{
+        text-align: center;
+    }
+}
+@media (max-width: 420px) {
+    .Registro__asesor{
+        height: 900px;
+    }
+    .contenido__formulario{
+        align-items: center;
+        justify-content: center;
+    }
+    .contenedor_inputs-iconos-mesajeEserror{
+        position: relative;
+        height: 60px;    
+        margin: 45px 0;
+        border-radius: 45px;
+    }    
+    .icon{
+        background-color: chartreuse;
+        width: auto;
+        position: absolute;
+        font-size: 4rem;
+        top: -70px;
+        padding: 0;
+        margin: 0px;
+        right: 25vw;
+    }
+    .input{ /* contiene los inputs*/
+        width: 100%;
+        padding-left: 0px;
+        background-color: tomato;
+    }
+    
+}
+
+.sesionIniciada{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 330px;
+}
+.sesionIniciada p{
+    color: white;
+    font-size: 3rem;
+}
+.sesionIniciada a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
 }

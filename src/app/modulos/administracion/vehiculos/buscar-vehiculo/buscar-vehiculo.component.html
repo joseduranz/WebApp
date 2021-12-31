@@ -4,9 +4,27 @@
     
     <a routerLink="/administracion/registrar-vehiculo" *ngIf="sesionAdmin" class="linkAddVehiculos"><span class="textoAddVehiculo" >Publicar Vehiculo</span><p>+</p> </a>
     <div class="contenedor__sesion-ventas">
+        
+        <!-- ====contenedores vehiculos====-->
+        <div class="contenedor__venta-vehiculos">
+            <a routerLink="/administracion/informacion-vehiculo/{{p.id}}" class="frame-blanco-vehiculo" *ngFor="let p of listadoVehiculos">
+                <div class="contenedor__img-carro-venta">
+                    <img src="{{p.foto}}" loading="lazy" alt="imgCarSell">
+                </div>
+                <div class="contenedor__contenido-carro-venta">
+                    <p>{{p.modelo}}</p>
+                    <h3 class="precio">$ {{p.precio}}</h3>
+                    <!--p>{{p.categoria}}</p-->
+                    <h4 class="marca">{{p.marca}}</h4>
+                </div>
+                <a *ngIf="sesionAdmin" routerLink="/administracion/actualizar-vehiculo/{{p.id}}" class="linkPublicacion">Editar</a>
+                <a *ngIf="sesionAdmin" routerLink="/administracion/eliminar-vehiculo/{{p.id}}" class="linkPublicacion">Eliminar</a>
+            </a>
+        </div>
+
         <!-- ====contenedores menu de filtro====-->
         <div class="link-contenedorMenu">
-            <i class="fas fa-caret-right icono-saca-menu"></i>
+            <i class="fas fa-caret-left icono-saca-menu"></i>
             <div class="contenedor__menu-buscar" id="filtro">
                 <div class="contenedor__filtros">
                     <p>Filtros activos</p>
@@ -71,22 +89,6 @@
                     </form>
                 </div>
             </div>
-        </div>
-        <!-- ====contenedores vehiculos====-->
-        <div class="contenedor__venta-vehiculos">
-            <a routerLink="/administracion/informacion-vehiculo/{{p.id}}" class="frame-blanco-vehiculo" *ngFor="let p of listadoVehiculos">
-                <div class="contenedor__img-carro-venta">
-                    <img src="{{p.foto}}" loading="lazy" alt="imgCarSell">
-                </div>
-                <div class="contenedor__contenido-carro-venta">
-                    <h3 class="precio">{{p.precio}}</h3>
-                    <p>{{p.modelo}}</p>
-                    <!--p>{{p.categoria}}</p-->
-                    <h4 class="marca">{{p.marca}}</h4>
-                </div>
-                <a *ngIf="sesionAdmin" routerLink="/administracion/actualizar-vehiculo/{{p.id}}" class="linkPublicacion">Editar</a>
-                <a *ngIf="sesionAdmin" routerLink="/administracion/eliminar-vehiculo/{{p.id}}" class="linkPublicacion">Eliminar</a>
-            </a>
         </div>
     </div>
 </section>

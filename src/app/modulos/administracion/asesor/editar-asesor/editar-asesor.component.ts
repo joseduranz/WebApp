@@ -53,7 +53,7 @@ export class EditarAsesorComponent implements OnInit {
   
   EditarAsesor(){
     
-    let id = this.fgValidador.controls['id'].value;
+    let id = this.id;
     let nombres = this.fgValidador.controls['nombres'].value;
     let apellidos = this.fgValidador.controls['apellidos'].value;
     let rol = this.fgValidador.controls['rol'].value;

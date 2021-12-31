@@ -1,3 +1,17 @@
+<div class="modal" *ngIf="modal">
+    <div class="modal-mensaje">
+        <div class="titulo-x">
+            <h1 class="h1">¡Listo!</h1>
+            <i type="button" (click)="CerrarModal()" class="fas fa-times"></i>
+        </div>
+        <div class="mensaje">
+            <p>la publicación se ha eliminado exitosamente</p>
+        </div>
+        <div class="boton-cerrar">
+            <button type="button" (click)="CerrarModal()" >Cerrar</button>
+        </div>
+    </div>
+</div>
 <section class="crear-vehiculo-sesion">
    
     <form action=""  [formGroup]="fgValidador" (ngSubmit)="EliminarVehiculo()">

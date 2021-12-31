@@ -1,1 +1,14 @@
-<p>eliminar-administrador works!</p>
+<section class="crear-persona-sesion">
+   
+    <form action=""  [formGroup]="fgValidador" (ngSubmit)="EliminarPersona()">
+        <h1>Eliminar Registro?</h1>
+        <p>Está seguro que desea eliminar este registro?,con esta acción no hay recuperación</p>
+        <br>
+        <br>
+        <p>Request :</p>
+        <div class="contenedor-inputs">
+            <input formControlName="id" type="text" readonly>
+        </div>
+        <button  [disabled]="!fgValidador" [ngClass]="{'btnDisabled':!fgValidador.valid}"  type="submit"  class="boton">Eliminar</button>
+    </form>
+</section>

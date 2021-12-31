@@ -1,43 +1,137 @@
+
 .crear-vehiculo-sesion{
-    background-color: var(--background-color-principal);
-    height: 1300px;
+  background-color: var(--background-color-principal);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 150px 0;
+  color: rgb(80, 80, 80);
+  user-select: none;
+}
+.crear-vehiculo-sesion h1{
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+.crear-vehiculo-sesion form{
+  width: 550px;
+  padding: 45px;
+  height: 100%;
+  background-image: var(--background-cajon-negro);
+  box-shadow:var(--box-shadow-cajon-principal);
+  border-top: var(--border-top-cajon-principal);
+  border-left:var(--border-left-cajon-principal);
+  border-radius: 25px;  
+}
+.contenedor-inputs{
+    width: 100%;
     display: flex;
-    justify-content: center;
-    padding-top: 150px;
-    color: rgb(80, 80, 80);
+    flex-direction: column;
+}
+.inputId{
+  font-size: 1.2rem;
+  color: var(--color-gris-principal);
+  background-color: transparent;
+  padding-left: 10px;
+  height: 30px;    
+  margin: 5px 0 25px 0;
+  border-radius: 25px;
+  box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
+              inset -4px -4px 4px rgb(45, 45, 45);
+  border-bottom: 1px solid rgb(52, 52, 52);
+  border-right: 1px solid rgb(52, 52, 52);
+}
+.input{
+  font-size: 1.2rem;
+  color: var(--color-gris-principal);
+  background-color: transparent;
+  padding-left: 10px;
+  height: 30px;    
+  margin: 5px 0 25px 0;
+  border-radius: 25px;
+  box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
+              inset -4px -4px 4px rgb(45, 45, 45);
+  border-bottom: 1px solid rgb(52, 52, 52);
+  border-right: 1px solid rgb(52, 52, 52); 
+}
+.label{
+  margin: -50px 0 40px 10px;
+  font-size: 1rem;
+  transition: .3s;
+}
+.label2{
+  margin: -215px 0 200px 10px;
+  font-size: 1rem;
+  transition: .3s;
+  z-index: 9;
+}
+
+.input:hover{
+  background-color: rgb(48, 48, 48);
+}
+.input:focus + .label{
+  margin: -80px 0 70px 10px;
+  color: #a8a8a8;
+}
+.input:required:valid + .label{
+  margin: -80px 0 70px 10px;
+}
+.input:focus:required:invalid,
+  textarea:focus:required:invalid{
+  border: 1px solid red;
+  animation: borde-error 1s ease-in-out infinite;
+}
+.input:required:valid,
+  textarea:required:valid {
+  border: 1px solid rgb(47, 143, 23);
+  box-shadow: 1px 1px 9px green;
+}
+textarea{
+  resize: none;
+  width: 100%;
+  font-size: 1.2rem;
+  color: var(--color-gris-principal);
+  background-color: transparent;
+  padding-left: 10px;
+  min-height: 200px;   
+  margin: 5px 0 25px 0;
+  border-radius: 25px;
+  box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
+              inset -4px -4px 4px rgb(45, 45, 45);
+  border-bottom: 1px solid rgb(52, 52, 52);
+  border-right: 1px solid rgb(52, 52, 52); 
+}
+textarea:focus + .label2{
+  margin: -250px 0 235px 10px;
+  color: #a8a8a8;
+}
+
+textarea:required:valid + .label2{
+  margin: -250px 0 235px 10px;
+}
+@keyframes  borde-error {
+  0%{
+      border: 2.5px solid rgba(255, 0, 0, 0);
   }
-  .crear-vehiculo-sesion h1{
-    font-size: 3rem;
-      margin-bottom: 20px;
+  50%{
+      border: 2.5px solid rgba(255, 0, 0, 0.26);
+  }
+  100%{
+      border: 2.5px solid rgba(255, 0, 0, 0);
+  }
+}
+
+@media (max-width:650px) {
+  .crear-vehiculo-sesion{
+    padding-top: 50px;
   }
   .crear-vehiculo-sesion form{
-    width: 550px;
-    padding: 45px;
-    height: 900px;
-    background-image: var(--background-cajon-negro);
-    box-shadow:var(--box-shadow-cajon-principal);
-    border-top: var(--border-top-cajon-principal);
-    border-left:var(--border-left-cajon-principal);
-    border-radius: 25px;  
+    background: none;
+    box-shadow: none;
+    border: none;
   }
-  .crear-vehiculo-sesion form div{
-      width: 100%;
-      display: flex;
-      flex-direction: column;
+}
+@media (max-width:420px) {
+  .crear-vehiculo-sesion h1{
+    font-size: 4rem;
   }
-  .crear-vehiculo-sesion form div input{
-    font-size: 1.2rem;
-    color: var(--color-gris-principal);
-    background-color: transparent;
-    padding-left: 10px;
-    height: 30px;    
-    margin: 15px 0 ;
-    border-radius: 25px;
-    box-shadow: inset 4px 4px 4px rgb(30, 30, 30),
-                inset -4px -4px 4px rgb(45, 45, 45);
-    border-bottom: 1px solid rgb(52, 52, 52);
-    border-right: 1px solid rgb(52, 52, 52); 
-  }
-  .crear-vehiculo-sesion form div input:hover{
-    background-color: rgb(41, 41, 41);
-  }
+}

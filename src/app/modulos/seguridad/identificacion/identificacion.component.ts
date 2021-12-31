@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, MaxLengthValidator, Validators } from '@angular/forms';
+import { FormBuilder, FormsModule, FormGroup, MaxLengthValidator, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as cryptoJS from 'crypto-js';
-import { Action } from 'rxjs/internal/scheduler/Action';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { ModeloIdentificar } from 'src/app/modelos/identificar.modelo';
 import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
 @Component({
@@ -15,9 +16,12 @@ export class IdentificacionComponent implements OnInit {
   fgValidador: FormGroup = this.fb.group({ //comunicacion y request del backend y frontend
     'usuario': ['', [Validators.required, Validators.email, Validators.maxLength(30)]], //el campo valida si esta vacido , entonces lo pone requerido y si no lo estaentonces valida que sea de tipo email
     'clave': ['', [Validators.required, Validators.maxLength(10)]],
-    //'captcha': ['', [Validators.required]]
+    'captcha': ['']
   });
 
+  show: boolean = false;
+  subs: Subscription = new Subscription();
+  sesionIniciada?:boolean = false;
   siteKey: string;//llave de captcha
 
 
@@ -26,12 +30,18 @@ export class IdentificacionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
+    this.subs=this.servicioSeguridad.ObtenerDatosUsuarioSesion().subscribe((datos:ModeloIdentificar)=>{
+      this.sesionIniciada = datos.estaIdentificado;
+    })
   }
-  Email() {//el get lo que me permite es no darle parenesis al final del metodo
+
+  password() {
+    this.show = !this.show;
+  }
+  Email() {
     return this.fgValidador.get('usuario');
   }
-  Clave() {//el get lo que me permite es no darle parenesis al final del metodo
+  Clave() {
     return this.fgValidador.get('clave');
   }
 
@@ -41,8 +51,9 @@ export class IdentificacionComponent implements OnInit {
     let claveCifrada = cryptoJS.MD5(clave).toString();//codificar la clave   
     this.servicioSeguridad.Identificar(usuario, claveCifrada).subscribe((datos: any) => {
       //si todo funciona correctamente
-      alert("Bienvenido");
       this.servicioSeguridad.AlmacenarSesion(datos);
+      let nombre =this.servicioSeguridad.ObtenerRol().datos.nombre;
+      alert(`Bienvenido ${nombre}`);
       ///implementar validacion de el rol
       let validarRol = this.servicioSeguridad.ObtenerRol();
       if (validarRol.datos.rol == "Admin") {

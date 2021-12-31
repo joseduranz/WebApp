@@ -1,32 +1,66 @@
+<div class="modal" *ngIf="modal">
+    <div class="modal-mensaje">
+        <div class="titulo-x">
+            <h1 class="h1">¡Listo!</h1>
+            <i type="button" (click)="CerrarModal()" class="fas fa-times"></i>
+        </div>
+        <div class="mensaje">
+            <p>la publicación se ha actualizado exitosamente</p>
+        </div>
+        <div class="boton-cerrar">
+            <button type="button" (click)="CerrarModal()" >Cerrar</button>
+        </div>
+    </div>
+</div>
+<div class="modal" *ngIf="modal2">
+    <div class="modal-mensaje">
+        <div class="titulo-x">
+            <h1 class="h1">¡Error!</h1>
+            <i type="button" (click)="CerrarModalError()" class="fas fa-times"></i>
+        </div>
+        <div class="mensaje">
+            <p>No se ha podido realizar la actualización</p>
+        </div>
+        <div class="boton-cerrar">
+            <button type="button" (click)="CerrarModalError()" >Cerrar</button>
+        </div>
+    </div>
+</div>
 <section class="crear-vehiculo-sesion">
     <form action=""  [formGroup]="fgValidador" (ngSubmit)="EditarVehiculo()">
         <h1>Editar Vehículo</h1>
         <div class="contenedor-inputs">
 
-            <input formControlName="id" type="text" readonly>
+            <input class="inputId" formControlName="id" type="text" readonly >
 
-            <input formControlName="marca" type="text" placeholder="marca">
-
-            <input formControlName="precio" type="text" placeholder="precio">
-
-            <input formControlName="matricula" type="text" placeholder="matricula">
-
-            <input formControlName="modelo" type="text" placeholder="modelo">
-
-            <input formControlName="categoria" type="text" placeholder="categoria">
-
-            <input formControlName="tipoOferta"  type="text" placeholder="oferta">
-
-            <input formControlName="encargado" type="text" placeholder="encargado">
-
-            <input formControlName="contactoEncargado" type="text" placeholder="numero encargado">
-
-            <input formControlName="foto" type="text" placeholder="foto">
-
-            <input formControlName="video"  type="text" placeholder="video">
-
-            <input formControlName="estado" type="text" placeholder="estado">
+            <input class="input" formControlName="marca" type="text" id="marca" required> <label class="label" for="marca">Marca</label>
+    
+            <input class="input" formControlName="precio" type="text" id="precio" required ><label class="label" for="precio">Precio</label>
+    
+            <input class="input" formControlName="matricula" type="text" id="matricula" required ><label class="label" for="matricula">Matrícula</label>
+    
+            <input class="input" formControlName="modelo" type="text" id="modelo" required ><label class="label" for="modelo">Modelo</label>
+    
+            <input class="input" formControlName="categoria" type="text" id="categoria" required ><label class="label" for="categoria">Categoria</label>
+    
+            <input class="input" formControlName="tipoOferta"  type="text" id="oferta" required ><label class="label" for="oferta">Oferta</label>
+    
+            <input class="input" formControlName="encargado" type="text" id="encargado" required ><label class="label" for="encargado">Encargado</label>
+    
+            <input class="input" formControlName="contactoEncargado" type="text" id="numeroEncargado" required ><label class="label" for="numeroEncargado">Contacto</label>
+    
+            <input class="input" formControlName="foto" type="text" id="foto" required><label class="label" for="foto"  >Foto</label>
+    
+            <input class="input" formControlName="estado" type="text" id="estado" required><label class="label" for="estado"  >Estado</label>
+    
+            <!--input formControlName="video"  type="text" id="video"><label class="label" for="">Descripcion</label-->
+            <textarea formControlName="video"  type="text"  id="video" required ></textarea><label class="label2" for="video">Descripcion</label>
         </div>
         <button  [disabled]="!fgValidador" [ngClass]="{'btnDisabled':!fgValidador.valid}"  type="submit"  class="boton">Actualizar</button>
     </form>
 </section>
+
+
+               
+            
+  

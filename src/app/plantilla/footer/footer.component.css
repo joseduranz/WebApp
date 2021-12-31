@@ -3,10 +3,8 @@
     width: 100%;
     background-color: transparent;
     color: var(--color-gris-principal);
-    height: 300px;
-    bottom: 0;
+    height: 220px;
     display: flex;
-    align-items: top;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -22,6 +20,7 @@
     background: rgb(186, 31, 31);
     height: .09px;
     width: 80%;
+    margin-bottom: 50px;
 }
 .containerLogoFooter{
     position: absolute;
@@ -34,14 +33,23 @@
     width: 100px;
     top: -45px;
 }
+.contenedor-informacion{
+    display: flex;
+    flex-wrap: wrap;
+}
+.informacion{
+    width: 200px;
+    margin: 10px 0 60px 0;
+    padding-left: 50px;
+}
 .footerInformacion{
-    margin-bottom: 60px;
-    padding: 50px; 
+    padding: 0px; 
     line-height: 18px;
     font-size: 9px;
 }
 .footerInformacion li h1{
     margin-bottom: 10px; 
+    white-space: nowrap;
 }
 .footerInformacion li a{
     color: var(--color-gris-principal);
@@ -53,7 +61,6 @@
 
 .containerEmailInput{
     position: relative;
-    top: -35px;
     width: 200px;
     display: flex;
     flex-direction: column;
@@ -62,6 +69,7 @@
 }
 .containerInput{
     position: relative;
+    margin: 20px 0 ;
 }
 .input{
     position: relative;
@@ -78,26 +86,28 @@
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     padding: 6px;
-    margin: .2rem .4rem;
+    margin: .4rem .4rem;
     right: 0;
 }
 .final{
+    margin: 0;
     background-color: rgb(46, 46, 46);
     height: 50px;
     width: 100%;
     display: flex;
     align-items: center;
+    padding:0 50px;
     justify-content: left;
 }
 .textoFinal {
-    font-size: .7rem;
-    
+    font-size: .7rem;    
     width: 50%;
     padding: 10px;
 }
 .final a{
     color: rgb(221, 221, 221);
     margin: 15px;
+    white-space: nowrap;
 }
 .final a:hover,
 .redesSociales a:hover{
@@ -115,4 +125,64 @@
     margin: 10px;
     color: rgb(221, 221, 221);
     font-size: 18px;
+}
+
+
+@media (max-width:850px) {
+    .contenedor-informacion{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .footerInformacion{
+        padding: 0; 
+    }
+    .final{
+        height: auto;
+        padding: 0;
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+    .textoFinal {
+        font-size: .7rem;    
+        width: 100%;
+    }
+    .redesSociales{
+        width: 100%;
+        margin-right: 0;
+        justify-content: center;
+    }
+}
+@media (max-width:500px) {
+    .footerInformacion{
+        text-align: center;
+    }
+    .informacion{
+        padding: 0;
+    }
+    .textoFinal {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width:200px) {
+    .textoFinal {
+        width: 100%;
+    }
+    .textoFinal a{
+        margin: 10px 0;
+    }
+    .containerInput{
+        margin: 0 ;
+    }
+    .input{
+        width: 100vw;
+    }
+    .logoFooter{
+        display: none;
+    }
+    .final a{
+        margin: 0;
+    }
 }

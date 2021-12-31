@@ -1,36 +1,41 @@
+
 .info-vehiculo{
     width: 100%;
-    height: 2900px;
+    height: 100%;
+    padding-bottom: 100px;
     background-color: var(--background-color-principal);
     color: var(--color-gris-principal);
-}
-.info-contenido{
+    z-index: -9;
+  }
+  .info-contenido{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0px 60px;
-}
-/*---------------------------*/
-.informacion-imagen-caracteristicas{
+    margin: 0px 7vw;
+  }
+  /*---------------------------*/
+  .informacion-imagen-caracteristicas{
     width: 80%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-.precio-e-img{
+  }
+  .precio-e-img{
     margin-bottom: 20px;
-}
-.imgcar {
+  }
+  .imgcar {
     margin-top: 0px;
-    height: 400px;
+    height: 100%;
     border-radius: 25px;  
     overflow: hidden;
     display: flex;
     justify-content: center;
-}
-.imgcar > img{
-    min-width: 500px;
+    z-index: 1;
+  }
+  .imgcar > img{
+    min-width: 10px;
+    width: 600px;
     object-fit: cover;
     object-position: center; 
     margin-bottom: 50px;
@@ -38,117 +43,125 @@
     box-shadow:var(--box-shadow-cajon-principal);
     border-top: var(--border-top-cajon-principal);
     border-left:var(--border-left-cajon-principal);
-}
-.precio-encargado{
+    z-index: 2;
+  }
+  .precio-encargado{
+    margin-top: -14vh;
     text-align: right;
-}
-.precio-encargado > h1{
+    z-index: 9;
+  }
+  .precio-encargado > h1{
     color: red;
-    font-size: 4rem;
+    font-size: 2.5rem;
     text-align: left;
     border-top: 1px solid var(--color-gris-principal);
-}
-.precio-encargado > h1 span{
+  }
+  .precio-encargado > h1 span{
     color: rgb(230, 230, 230);
-}
-
-.precio-encargado > h2{
+  }
+  
+  .precio-encargado > h2{
     text-transform: uppercase;
-    font-size: 5rem;
+    font-size: 12vw;
     text-align: center;
     margin-bottom: 10px;
-}
-/*---------------------------*/
-.botones{
+    z-index: 9;
+  }
+  /*---------------------------*/
+  .botones{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
    border-top: 1px solid var(--color-gris-principal);
-}
-.botones button{
-    width: 20%;
+  }
+  .botones button{
+    min-width: 45%;
     margin:35px;
-}
-.botones button i{
+  }
+  .botones button i{
     margin-right:5px;
-}
-/*---------------------------*/
-.compartir{
+  }
+  /*---------------------------*/
+  .compartir{
     text-align: center;    
-}
-.compartir a p{
+  }
+  .compartir a p{
     padding-bottom: 25px;
     color: var(--color-gris-principal);
     border-bottom: 1px solid var(--color-gris-principal);
-}
-.compartir a p:hover{
+  }
+  .compartir a p:hover{
     color: white;
-}
-/*---------------------------*/
-
-.caracteristicas > h1{
+  }
+  /*---------------------------*/
+  
+  .caracteristicas > h1{
     margin: 35px 5px;
     font-size: 1.9rem;
-}
-.caracteristicas .tabla{
+  }
+  .caracteristicas .tabla{
     border-radius: 25px;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: row;
-}
-.caracteristicas .tabla div{
+  }
+  .caracteristicas .tabla div{
     margin: 0 1px;
-    width: 48%;
-}
-.caracteristicas .tabla div p{
+    width: 100%;
+  }
+  .caracteristicas .tabla div p{
     background-color: rgb(139, 139, 139);
     padding: 20px 10px;
-}
-.caracteristicas .tabla div .p1{
+    overflow-x: scroll;
+  }
+  .caracteristicas .tabla div .p1{
     background-color: rgb(88, 88, 88);
     color: white;
-}
-/*---------------------------*/
-.descripcion{
+  }
+  /*---------------------------*/
+  .descripcion{
     margin: 55px 0px;
     padding: 35px 5px;
     border-top: 1px solid var(--color-gris-principal);
     border-bottom: 1px solid var(--color-gris-principal);
-}
-.descripcion > h1{
+  }
+  .descripcion > h1{
     margin-bottom: 35px ;
     font-size: 1.9rem;
-}
-.descripcion > p{
+  }
+  .descripcion > p{
     line-height: 20px;
     font-size: 1.2;
     margin-bottom: 25px;
-}
-/*---------------------------*/
-.info-concecionario{
+  }
+  /*---------------------------*/
+  .info-concecionario{
     margin-bottom: 40px;
     border-bottom: 1px solid var(--color-gris-principal);
-}
-.empresa{
+  }
+  .empresa{
     display: flex;
     flex-direction: row;
     margin: 5px 7px;
-}
-.empresa img{
+  }
+  .empresa img{
     width: 50px;
     margin-right: 15px;
-}
-.horario,
-.ubicacion{
+  }
+  .horario,
+  .ubicacion{
     margin: 12px 70px;
-}
-.horario p,
-.ubicacion p,
-.empresa p{
+  }
+  .horario p,
+  .ubicacion p,
+  .empresa p{
     margin-left: 15px;
-}
-/*-----------------------------*/
-.info-concecionario .cont-button{
+  }
+  /*-----------------------------*/
+  .info-concecionario .cont-button{
     align-self: center;
     display: flex;
     align-items: center;
@@ -156,39 +169,97 @@
     width: 100%;
     margin-top: 20px;
     margin-bottom: 50px;
-}
-.cont-button .boton{
-    width: 25%;
-}
-/*-----------------------------*/
-.preguntar{
+  }
+  .cont-button .boton{
+    width: 100px;
+    min-width: 75%;
+  }
+  /*-----------------------------*/
+  .preguntar{
     margin: 5px 0px;
     padding: 05px;
     border-bottom: 1px solid var(--color-gris-principal);
-}
-.preguntar > h1{
+  }
+  .preguntar > h1{
     margin-bottom: 35px ;
     font-size: 1.9rem;
-}
-.preguntar textarea{
+  }
+  .preguntar textarea{
     resize: none;
     width: 100%;
     border-radius: 25px;
     padding: 10px 15px;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 50px;
-}
-.preguntar button{
+  }
+  .preguntar button{
     margin-bottom: 50px;
-}
-.solicitud{
+  }
+  .solicitud{
     margin-top: 20px;
-}
-.solicitud input{
+  }
+  .solicitud input{
    height: 30px;
    width: 100%;
    display: block;
    padding-left: 10px;
    border-radius: 15px;
    margin-bottom: 30px;
-}
+  }
+  
+  @media (max-width:800px){
+    .informacion-imagen-caracteristicas{
+      width: 100%;
+    }
+    .precio-encargado > h1{
+      font-size: 2rem;
+    }
+  }
+  @media (max-width:620px){
+    .imgcar{
+      overflow: hidden;
+      width: 100vw;
+      margin-left: -7vw;
+      border-radius: 0;
+      margin-top: -2vh;
+      padding: 0;
+    }
+    .imgcar > img{
+      margin: 0;
+      width: 100vw;
+      border-radius: 0px;
+      box-shadow:none;
+      border-top: none;
+      border-left:none;
+    }
+    .botones{
+      flex-direction: column;
+    }
+    .botones button{
+      margin:20px;
+    }
+    .precio-encargado h2{
+      position: relative;
+      margin-top: -180px;
+      padding-top: 150px;
+    }
+    .precio-encargado h2::before{
+      position: absolute;
+      content: "";
+      width: 100vw;
+      top: -60px;
+      left: -7vw;
+      height: 250px;
+      background-image: linear-gradient(to top,  #262626 8%,rgba(255, 0, 0, 0) 70%);
+      z-index: -1;
+    }
+    .caracteristicas .tabla{
+      width: 100vw;
+      margin-left: -7vw;
+      border-radius: 0;
+    }
+    .caracteristicas .tabla div .p1,
+    .caracteristicas .tabla div p{
+      padding: 5px 10px;
+    }
+  }

@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
 import { ActivatedRoute, Router  } from '@angular/router';
+import { ModeloDatos } from 'src/app/modelos/datos.modelo';
 import { ModeloPersonas } from 'src/app/modelos/personas.modelo';
 import { PersonasService } from 'src/app/servicios/personas.service';
+import { SeguridadService } from 'src/app/servicios/seguridad.service';
 
 @Component({
   selector: 'app-editar-persona',
@@ -27,7 +29,8 @@ export class EditarPersonaComponent implements OnInit {
     private fb: FormBuilder, //validar formulario y llevarlo al post
     private servicioPersona: PersonasService,//traer el objeto tipo vehiculo de Servicios/vehiculosService
     private router: Router, //este redireciona a otra pagina
-    private route:ActivatedRoute//se inyecta para poder sacar el id que viene desde el backend
+    private route:ActivatedRoute,//se inyecta para poder sacar el id que viene desde el backend
+    private servicioSeguridad : SeguridadService
   ) { }
 
   ngOnInit(): void {
@@ -54,7 +57,7 @@ export class EditarPersonaComponent implements OnInit {
   
   EditarCliente(){
     
-    let id = this.fgValidador.controls['id'].value;
+    let id = this.id;
     let nombres = this.fgValidador.controls['nombres'].value;
     let apellidos = this.fgValidador.controls['apellidos'].value;
     let rol = this.fgValidador.controls['rol'].value;
@@ -63,25 +66,29 @@ export class EditarPersonaComponent implements OnInit {
     let celular = this.fgValidador.controls['celular'].value;
 
 
-    let persona= new ModeloPersonas();
-    persona.id=id;
-    persona.nombres=nombres;
-    persona.apellidos=apellidos;
-    persona.rol=rol;
-    persona.direccion=direccion;
-    persona.correoElectronico=correoElectronico;
-    persona.celular=celular;
+    this.servicioPersona.BuscarPersonaPorId(id).subscribe((personaEncontrada:ModeloPersonas)=>{
+      if(personaEncontrada){
+        personaEncontrada.nombres=nombres;
+        personaEncontrada.apellidos=apellidos;
+        personaEncontrada.celular=celular;
+        personaEncontrada.rol=rol;
+        personaEncontrada.direccion=direccion;
 
-
-    this.servicioPersona.ActualizarPersona(persona).subscribe((datos:ModeloPersonas)=>{
-      alert("la información fue actualizada exitosamente!!");
-  
-        this.router.navigate([`/administracion/index-cliente/${id}`])
-      
-
-    },(error:any)=>{
-        alert("error No se pudo realizar la actualización");
-      })
+        this.servicioPersona.ActualizarPersona(personaEncontrada).subscribe((datos:ModeloPersonas)=>{
+         let datosAlm:ModeloDatos ={
+           nombre:nombres,
+           correo:correoElectronico,
+           id:id,
+           rol:rol
+         }
+          this.servicioSeguridad.ActualizarSesion(datosAlm);
+          alert("la información fue actualizada exitosamente!!");
+          this.router.navigate([`/administracion/index-cliente/${id}`])
+        })
+      }else{
+        alert("error No se pudo realizar la actualización ")
+      }
+    })
   }
 
 }

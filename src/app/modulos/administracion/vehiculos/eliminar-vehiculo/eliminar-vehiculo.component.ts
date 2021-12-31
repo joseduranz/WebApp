@@ -13,6 +13,7 @@ export class EliminarVehiculoComponent implements OnInit {
 
   id:string="";/*variable para guardar el id que viene del backend */
   informacionVehiculo: ModeloVehiculo = new ModeloVehiculo;
+  modal:boolean=false;
 
   fgValidador:FormGroup=this.fb.group({
     'id':['', [Validators.required]],
@@ -43,11 +44,14 @@ export class EliminarVehiculoComponent implements OnInit {
     let eliminarConId = this.informacionVehiculo.id=this.id;
 
     this.servicioVehiculo.EliminacionVehiculo(eliminarConId).subscribe(()=>{
-      alert("el vehiculo fue eliminado de la base de datos exitosamente!!");
+      this.modal=!this.modal
       this.router.navigate(["/administracion/buscar-vehiculo"])
 
     },(error:any)=>{
         alert("error No se pudo realizar la eliminacion");
       })
+  }
+  CerrarModal(){
+    this.modal=!this.modal
   }
 }

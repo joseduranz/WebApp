@@ -1,6 +1,6 @@
 
 
-<section class="Registro__asesor">
+<section class="Registro__asesor" *ngIf="!sesionCliente">
     <div class="contenedor__toda-informacion">
         <h1 >Registrar Cliente</h1>
         <form  [formGroup]=fgValidadorRegistrar (ngSubmit)="RegistrarUsuario()"  class="contenido__formulario" id="formulario">
@@ -21,16 +21,7 @@
                     <p  *ngIf="Apellidos()?.errors?.['required']">Error: El campo es obligatorio</p>
                     <p  *ngIf="!Apellidos()?.errors?.['required']">Error: El tamaño es de máximo 20 caracteres, y no puede contener símbolos o números</p>
                 </div>
-            </div>  
-             <!--====GRUPO DOCUMENTO IDENTIDAD===-->
-             <!--div class="contenedor_inputs-iconos-mesajeEserror"  [ngClass]="{'inputError':DocumentoId()?.invalid && (DocumentoId()?.dirty || DocumentoId()?.touched)}">
-                <i class="icon fas fa-user"  [ngClass]="{'error':DocumentoId()?.invalid && (DocumentoId()?.dirty || DocumentoId()?.touched)}"></i>
-                <input class="input" formControlName='documentosId' type="text"  name="nombre" id="nombre"   placeholder="DocumentoId" required>
-                <div *ngIf="DocumentoId()?.invalid && (DocumentoId()?.dirty || DocumentoId()?.touched)" class="error"> 
-                    <p  *ngIf="DocumentoId()?.errors?.['required']">Error: El campo es obligatorio</p>
-                    <p  *ngIf="!DocumentoId()?.errors?.['required']">Error: El tamaño es de máximo 20 caracteres, y no puede contener símbolos o números</p>
-                </div>
-            </div-->           
+            </div>         
             <!--====GRUPO CORREO ELECTRONICO===-->
             <div class="contenedor_inputs-iconos-mesajeEserror" [ngClass]="{'inputError':Email()?.invalid && (Email()?.dirty || Email()?.touched)}">
                 <i class="icon fas fa-envelope-open-text" [ngClass]="{'error':Email()?.invalid && (Email()?.dirty || Email()?.touched)}"></i>
@@ -73,4 +64,9 @@
         </form>
         <p class="iniciarsesionLink"> ¿ya tienes cuenta? <a  routerLink="/seguridad/login"> Iniciar Sesión</a> </p>
     </div>
+</section>
+
+<section class="sesionIniciada" *ngIf="sesionCliente">
+    <p>No puedes acceder a esta página</p>
+    <a routerLink="/inicio" class="boton">Volver</a>
 </section>

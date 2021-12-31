@@ -37,7 +37,7 @@ export class EliminarAsesorComponent implements OnInit {
       this.fgValidador.controls['id'].setValue(datos.id);
 
     },(error:any)=>{
-      alert("el Asesor no existe en la base de datos");
+      alert("el Registro no existe en la base de datos");
     })
   }
 
@@ -45,7 +45,7 @@ export class EliminarAsesorComponent implements OnInit {
     let eliminarConId = this.informacionPersna.id=this.id;
 
     this.servicioPersona.EliminacionPersona(eliminarConId).subscribe(()=>{
-      alert("el Asesor fue eliminado de la base de datos exitosamente!!");
+      alert("El Registro fue eliminado de la base de datos exitosamente!!");
       this.router.navigate(["/administracion/buscar-asesor"])
 
     },(error:any)=>{

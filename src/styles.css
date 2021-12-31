@@ -45,6 +45,7 @@
     min-zoom: 25px;    
     scroll-behavior: smooth;
     font-family: 'Poppins', sans-serif;
+    user-select: none;
     
 }
 
@@ -54,7 +55,6 @@ html {
 
 li {
     list-style: none;
-    display: inline;
 }
 
 button {
@@ -123,7 +123,7 @@ section {
     margin-top: 10px;
     width: 100%;
     height: 40px;
-    background-image:linear-gradient(to bottom right, rgb(255, 113, 113),  rgb(255, 72, 72));
+    background-color:red;
     color: white;
     border-radius: 40px;
     font-size: 13px;
@@ -151,15 +151,15 @@ section {
 }
  /* ================================*/
 /* oculta la barra de scroll*/
-::-webkit-scrollbar {
+::-webkit-scrollbar{
     width: 0;
 }
 /* forma del scroll*/
 .barra_progreso {
     position: fixed;
     top: 0;
-    left: 0;
-    width: 3px;
+    right: 0;
+    width: 5px;
     border-bottom: .5rem solid red;
     border-radius: 10px;
     background: rgb(253, 0, 0);
@@ -169,7 +169,7 @@ section {
 /*boton subir*/
 .subirHome{
     position: fixed;
-    bottom: 20px;
+    bottom: 0px;
     right: 20px;
     padding: 5px 7px;
     background-image: var(--background-titulo-secundario);
@@ -195,7 +195,7 @@ section {
         }
 }
 .subirHomeActivo{
-    transform: translateY(0);
+    transform: translateY(-60px);
 }
 
 
@@ -212,7 +212,75 @@ section {
         display: none;
     }
 }
-@media (max-width: 450px){
-   
+
+
+.modal{
+    position: fixed;
+    top: 0;
+    padding: 150px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.829);
+    color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999999;
+}
+.modal-mensaje{
+    background-image: var(--background-titulo-secundario);
+    padding: 20px;
+    border-radius: 10px;
+}
+.titulo-x{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.178);
+}
+.titulo-x .h1{
+    width: 50%;
+    margin: 0;
+}
+.titulo-x i{
+    width: 16px;
+    height: 16px;
+    color: white;
+    background-color:transparent;
+    padding: 12px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    margin-top: -10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+.titulo-x i:hover{
+    background-color: rgba(255, 255, 255, 0.432);
+    padding: 12px;
+    border-radius: 50%;
+ }
+.boton-cerrar{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.boton-cerrar button{
+    color: var(--color-gris-principal);
+    font-weight: 400;
+    font-size: 1.2rem;
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    transition: .3s ease-in-out;
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.377);
+}
+.boton-cerrar button:hover{
+    color: red;
+    box-shadow: -8px 8px 8px rgba(0, 0, 0, 0.377);
 }
 /*====BOTONES ESTILO END===========*/

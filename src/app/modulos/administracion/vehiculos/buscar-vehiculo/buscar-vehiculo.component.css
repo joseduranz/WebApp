@@ -6,7 +6,7 @@
   flex-wrap: wrap;
   align-items: center;
   padding-top: 90px;
-  min-height: 1200px;
+  height: 100%;
 }
 .sesion1 .tituloVenta{/* titulo vehiculos disponibles*/
   position:relative;
@@ -34,7 +34,8 @@
 margin-top: 30px;
 margin-bottom: 170px;
 width: 100%;
-min-height: 700px;      
+min-height: 700px; 
+height: 100%;     
 display: flex;
 flex-direction: row;
 
@@ -44,17 +45,17 @@ flex-direction: row;
   position: relative;
   background-image:  linear-gradient(to top left, red 60% ,rgb(255, 0, 170));;
   padding-top: 200px 0;
+  padding-left: 10px;
   margin-top: -900px;
-  margin-bottom: -600px;
   z-index: 1;
   width:300px ;
-  margin-left: -280px;
+  margin-right: -280px;
   transition: .5s;
  
 }
 .icono-saca-menu{
   position: fixed;
-  left: 5px;
+  right: 5px;
   top: 50%;
   border-radius: 50%;
   color: rgb(250, 250, 250);
@@ -71,11 +72,11 @@ flex-direction: row;
 
 .link-contenedorMenu:hover {
   position: relative;
-  margin-left: 0px;
+  margin-right: 0px;
   width: 260px;
 }
 .link-contenedorMenu:hover > .icono-saca-menu{
-  left: 210px;
+  right: 210px;
 }
 
 @keyframes menuFiltro {/* animacion de mostrar menu filtro*/
@@ -197,13 +198,14 @@ flex-direction: row;
 /*edicion del menu de filtro end=======*/
 
 .contenedor__venta-vehiculos{/*contenedor de todos los frames de los vehiculos ofertados*/
-
+height: 100%;
 width: 100%;
 display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: center;
 flex-wrap: wrap;
+padding: 0 0 0 5vw;
 
 }
 .frame-blanco-vehiculo{/*contenedor de imagen veiculo y texto venta*/
@@ -211,7 +213,7 @@ flex-wrap: wrap;
   margin: 30px 25px 0px 0px;
   min-width: 180px;
   max-width: 180px;
-  min-height: 250px;
+  min-height: 200px;
   background-image: var(--background-cajon-negro);
   box-shadow:var(--box-shadow-cajon-principal);
   border-top: var(--border-top-cajon-principal);
@@ -223,15 +225,14 @@ flex-wrap: wrap;
   transform: scale(1.01);
 }
 .contenedor__img-carro-venta{/*contenedor de la imagen de vehiculo a la venta*/
-  
-  height: 55%;
+  height: 100px;
   overflow: hidden;
   display: flex;
   align-items: center;
   border-radius: 25px 25px 0 0;
 }
 .frame-blanco-vehiculo img{/*imagen de vehiculo a la venta*/
-  width: 100%;
+  width: 105%;
   transition: .3s ease-in-out;
 }
 .frame-blanco-vehiculo img:hover{/*imagen de vehiculo a la venta*/
@@ -248,18 +249,26 @@ flex-wrap: wrap;
 .contenedor__contenido-carro-venta .precio{/*precio de vehiculo*/
   color: var(--grisClaro);     
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.096);
+}
+.contenedor__contenido-carro-venta p{
+  width: 50px;
+  padding-left: 7px;
+  border-radius: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.212);
   margin-bottom: 10px;
-  padding-bottom: 2px;
 }
 .contenedor__contenido-carro-venta h4{/*precio de vehiculo*/     
-  font-weight: 100;
+  font-weight: 600;
   font-size: 1.2rem;
 }
 .linkAddVehiculos{
   position: fixed;
   right: 0;
-  top: 60px;
+  top: -9vh;
   border-radius: 50%;
   margin: 85px 15px;
   display: flex;
@@ -274,7 +283,7 @@ flex-wrap: wrap;
 }
 .linkAddVehiculos > p{
   z-index: 1;
-  padding: 0 14px;
+  padding: 4px 7px 0 7px;
   display: flex;
   text-align: center;
   align-items: center;
@@ -334,3 +343,52 @@ flex-wrap: wrap;
   background-image: var(--background-titulo-secundario);
 }
 /*==============================SESION "1" END===========================*/
+@media (max-width:450px) {
+  .sesion1 .tituloVenta{/* titulo vehiculos disponibles*/
+    font-size:3rem;
+  }
+  .sesion1 .tituloVenta span{/* titulo vehiculos disponibles*/
+    font-size:2rem; 
+    bottom: -15px;
+  }
+  .frame-blanco-vehiculo{/*contenedor de imagen veiculo y texto venta*/
+    margin: 30px 15px 15px 0px;
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 220px;
+    background-color: rgb(53, 53, 53);
+    background-image: none;
+    box-shadow:none;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.158);
+    border: none;
+    border-radius: 15px;
+  }
+  .frame-blanco-vehiculo img{/*imagen de vehiculo a la venta*/
+    height: 100%;
+    width: auto;
+    image-resolution: 1dpi;
+  }
+  .contenedor__img-carro-venta{/*contenedor de la imagen de vehiculo a la venta*/
+    height: 90px;
+    border-radius:15px 15px 0 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+  .contenedor__contenido-carro-venta{/*contenedor del contenido de la venta*/
+    color: white;
+    font-size: 1rem;  
+    line-height: 20px; 
+  }
+  .contenedor__contenido-carro-venta .precio{/*precio de vehiculo*/
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .contenedor__contenido-carro-venta h4{/*precio de vehiculo*/     
+    font-weight: 400;
+    font-size: .8rem;
+  }
+  .linkPublicacion{
+    box-shadow: none;
+  }
+}

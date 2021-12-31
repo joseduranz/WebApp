@@ -2,6 +2,7 @@
     background-color: var(--background-color-principal);
     color: var(--color-gris-principal);
     padding: 20vh 10vw;
+    height: 100%;
 }
 .infoPersona h1{
     font-size: 4rem;

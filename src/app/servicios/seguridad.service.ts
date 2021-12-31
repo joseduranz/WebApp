@@ -10,24 +10,29 @@ import { ModeloIdentificar } from '../modelos/identificar.modelo';
 export class SeguridadService {
 
   DatosUsuarioSesion = new BehaviorSubject <ModeloIdentificar>(new ModeloIdentificar());
+  DatosUsuarioSesion2 = new BehaviorSubject <ModeloDatos>(new ModeloDatos());
 
   constructor(private http: HttpClient) { 
     this.verificarSesionActual();
   }
   /* metodos para validar el inicio y eliminacion de la informacion */
   //IDENTIFICA EL USUARIO EN LA BASE DE DATOS
-  Identificar(usuario: string, clave: string):Observable<ModeloIdentificar>{
-    return this.http.post("https://autoluxuryb.herokuapp.com/identificarPersona",{
-      usuario:usuario,
-      clave:clave
+  Identificar(Usuario: string, Clave: string):Observable<ModeloIdentificar>{
+    return this.http.post("http://localhost:3000//identificarPersona",{
+      usuario:Usuario,
+      clave:Clave,
     },
     {
-      headers: new HttpHeaders()
+      headers: new HttpHeaders(),
     })
   }
   //RESETEA DESPUES DE HABER ELIMINADO LOS DATOS DE LA SESION
   RefrescarDatosUsuarioSesion(datos: ModeloIdentificar){
     this.DatosUsuarioSesion.next(datos);
+  }
+  //RESETEA DESPUES DE HABER ELIMINADO LOS DATOS DE LA SESION 
+  RefrescarDatosUsuarioSesion2(datos: ModeloDatos){
+    this.DatosUsuarioSesion2.next(datos);
   }
   //OBTIENE LA INFORMACION DEL LOGIN GUARDADA EN EL NAVEGADOR
   ObtenerDatosUsuarioSesion(){
@@ -52,12 +57,40 @@ export class SeguridadService {
       datos.inicioAdmin=true;
     }else if (datos.datos?.rol=="asesor"){
       datos.inicioAsesor=true;
+      datos.tk="";
     }else{
       datos.inicioCliente=true;
+      datos.tk="";
     }
     let datosString = JSON.stringify(datos);
     localStorage.setItem("datosSesion",datosString);
     this.RefrescarDatosUsuarioSesion(datos);
+  }
+  //GUARDA LOS DATOS DEL INICIO DE SESION EN EL LOCALHOST DEL NAVEGADOR FORMATO JSON
+  ActualizarSesion(datos: ModeloDatos){//este metodo almacena en el navegador la informacion de iniciar sesion
+    
+    let datos2:ModeloIdentificar={
+      datos,
+      estaIdentificado:true,
+    }
+    if(datos.rol=="Admin"){
+      datos2.inicioAdmin=true;
+      datos2.tk=this.ObtenerToken();
+      let validarRol=this.ObtenerRol();
+      if (datos.rol == validarRol.datos.rol){
+        //alert("no cambio de rol")
+      }else{
+        alert("cierra sesion y vuelve a iniciar para tener todos los permisos de administrador")
+      }
+      
+    }else if (datos.rol=="asesor"){
+      datos2.inicioAsesor=true;
+    }else{
+      datos2.inicioCliente=true;
+    }
+    let datosString = JSON.stringify(datos2);
+    localStorage.setItem("datosSesion",datosString);
+    this.RefrescarDatosUsuarioSesion(datos2);
   }
   //RECIBE LOS DATOS DEL INICIO DE SESION  GUARDADOS EN EL LOCALHOST DEL NAVEGADOR EN FORMATO STRING
   ObtenerInformacion(){//este metodo obtiene la informacion alojada en la memoria interna de el navegador

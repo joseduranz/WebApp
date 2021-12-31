@@ -1,269 +1,230 @@
 <div class="barra_progreso" id="barra-progreso"></div>
 <!------bara de scroll personalisada-->
 <!-- ==========================================HEADER START=============================-->
-<!--header class="containerHeader">
-        <div class="containerHamburgesa " id="menuOpen">
-            <i  (click)="aparecerMenu()" id="menu-btn" class="fas fa-bars"></i>
-        </div>
-        <a routerLink="/inicio"><img class="logoHeader logo" loading="lazy" src="./assets/img/logoAutoLuxuryColor.png" alt="logo"></a>
-        <nav class="navbar">
-            <a href="https://autoluxury.herokuapp.com/inicio#inicio"> Inicio</a>
-            <a href="https://autoluxury.herokuapp.com/inicio#vehiculos"> Vehículos</a>
-            <a routerLink="/administracion/buscar-vehiculo"> listado Vehiculos</a>
-            <a routerLink="/administracion/buscar-cliente"> listado Personas</a>
-            <a routerLink="/administracion/buscar-asesor"> listado asesores</a>
-            <a *ngIf="sesionAsesor || sesionAdmin" routerLink="/administracion/index-admin"> Administrador</a>
-            <a *ngIf="sesionAsesor || sesionAdmin" routerLink="/administracion/index-asesor"> Asesor</a>
-        </nav>
-        <div id="login-btn">
-            <a *ngIf="!sesionIniciada" routerLink="/seguridad/login">
-                <button class="btnIniciarSesion btn" >Login</button>
-                <i class="far fa-user loginIcon"></i>
-            </a>
-            <a *ngIf="sesionIniciada" routerLink="/seguridad/cerrar-sesion">
-                <button class="btnIniciarSesion btn" >Logout</button>
-                <i class="fas fa-sign-out-alt loginIcon"></i>
-            </a>
-            
-        </div>
-</header-->
-<header>
-    <div class="info-user" *ngIf="!sesionIniciada">
-        <a  routerLink="/administracion/registrar-cliente">
-            <button class="btnIniciarSesion btn" >Registrate</button>
-            <i class="far fa-user loginIcon"></i>
-        </a>
-        <div class="contenedor-logo-header">
-            <a routerLink="/inicio"><!--img class="logoHeader logo" loading="lazy" src="./assets/img/logoAutoLuxuryColor.png" alt="logo"--> <p>AUTO<span>LUXURY </span></p>  </a>
-        </div>
-        <a  routerLink="/seguridad/login">
-            <button class="btnIniciarSesion btn" >Iniciar Sesion</button>
-            <i class="far fa-user loginIcon"></i>
-        </a>
-    </div>
-    <div class="info-user" *ngIf="sesionIniciada">
-        <p>Bienvenidio <span>{{nombre}}</span></p>
-        <div class="contenedor-logo-header">
-            <a routerLink="/inicio"><!--img class="logoHeader logo" loading="lazy" src="./assets/img/logoAutoLuxuryColor.png" alt="logo"--> <p>AUTO<span>LUXURY </span></p>  </a>
-        </div>
-        <a *ngIf="sesionIniciada" routerLink="/seguridad/cerrar-sesion">
-            Cerrar Sesion
-            <i class="fas fa-sign-out-alt loginIcon"></i>
-        </a>
-    </div>
-    <div class="headerLista">
-        
-        <!---------modo admin------------------------>
-        <ul class="nav" *ngIf="sesionAdmin">
-            
-            <li><a href="https://autoluxury.herokuapp.com/inicio#inicio"class="home-header menus-h">inicio</a>
-                <ul><li><a href="https://autoluxury.herokuapp.com/inicio#vehiculos">Productos</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#mision" >Misión</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#vision">Visión</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#pruebaManejo">Prueba de Manejo</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#servicio">Servicios</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#contacto">Contactos</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#mapaSitio">Mapa del sitio</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#footer">Acerca de Nosotros</a></li>
-                </ul>
-            </li>
-            
-            
-            <li><a routerLink="/administracion/buscar-vehiculo" class="productos-header menus-h">Vehículos</a>
-                <ul>
-                    <li><a routerLink="/administracion/buscar-vehiculo">Ver Todo</a></li>
-                    <li><a routerLink="/administracion/registrar-vehiculo">Publicar</a></li>
-                </ul>
-            </li>
-            
-            
-            <li><a routerLink="solicitud/buscar-solicitud"class="servicios-header menus-h">Servicios</a>
-                <ul>
-                    <li><a routerLink="solicitud/buscar-solicitud">Ver Todo</a></li>
-                </ul>
-            </li>
-            
-            
-            <li><a routerLink="/administracion/index-admin" class="usuario-header menus-h">Admin</a>
-                <ul>
-                <li><a routerLink="/administracion/index-admin">Administradores</a><i class="fas fa-angle-right"></i>
-                    <ul>
-                        <li><a routerLink="solicitud/buscar-solicitud">Solicitudes</a><i class="fas fa-angle-right"></i>
-                            <ul>
-                                <li><a routerLink="/administracion/buscar-solicitudes">Eliminar</a></li>
-                                <li><a routerLink="solicitud/buscar-solicitud">Ver Todos</a></li>
-                            </ul>
-                        </li>
-                        <li><a routerLink="/administracion/buscar-cliente">Clientes</a><i class="fas fa-angle-right"></i>
-                            <ul>
-                                <li><a routerLink="/administracion/registrar-cliente">Registrar</a></li>
-                                <li><a routerLink="/administracion/buscar-cliente">Actualizar</a></li>
-                                <li><a routerLink="/administracion/buscar-cliente">Eliminar</a></li>
-                                <li><a routerLink="/administracion/buscar-cliente">Ver Todos</a></li>
-                            </ul>
-                        </li>
-                        <li><a routerLink="/administracion/buscar-asesor">Asesores</a><i class="fas fa-angle-right"></i>
-                            <ul>
-                                <li><a routerLink="/administracion/registrar-asesor">Registrar</a></li>
-                                <li><a routerLink="/administracion/buscar-asesor">Actualizar</a></li>
-                                <li><a routerLink="/administracion/buscar-asesor">Eliminar</a></li>
-                                <li><a routerLink="/administracion/buscar-asesor">Ver Todos</a></li>
-                            </ul>
-                        </li>
-                        <li><a routerLink="/administracion/index-cliente/{{id}}">Mi cuenta</a><i class="fas fa-angle-right"></i>
-                            <ul>
-                                <li><a routerLink="/administracion/index-cliente/{{id}}">Mi cuenta</a></li>
-                                <li><a routerLink="/seguridad/cerrar-sesion">Cerrar sesión</a></li>
-                                <li><a routerLink="/administracion/actualizar-cliente/{{id}}">Actualizar</a></li>
-                            </ul>
-                        </li>
-                        <li><a routerLink="/administracion/buscar-vehiculo">Productos</a><i class="fas fa-angle-right"></i>
-                            <ul>
-                                <li><a routerLink="/administracion/registrar-vehiculo">Registrar</a></li>
-                                <li><a routerLink="/administracion/buscar-vehiculo">Actualizar</a></li>
-                                <li><a routerLink="/administracion/buscar-vehiculo">Eliminar</a></li>
-                                <li><a routerLink="/administracion/buscar-vehiculo">Ver Todos</a></li>
-                            </ul>
-                        </li>
-                        <li><a routerLink="/solicitud/generar-solicitud">Servicios</a><i class="fas fa-angle-right"></i>
-                            <ul>
-                                <li><a routerLink="/solicitud/generar-solicitud">Actualizar</a></li>
-                                <li><a routerLink="/solicitud/generar-solicitud">Eliminar</a></li>
-                                <li><a routerLink="/solicitud/generar-solicitud">Ver Todos</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-            </li>
-           
-        </ul>
-         <!---------modo asesor------------------------>
-         <ul class="nav" *ngIf="sesionAsesor">
-            <li><a href="https://autoluxury.herokuapp.com/inicio#inicio"class="home-header menus-h">inicio</a>
-                <ul><li><a href="https://autoluxury.herokuapp.com/inicio#vehiculos">Productos</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#mision" >Misión</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#vision">Visión</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#pruebaManejo">Prueba de Manejo</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#servicio">Servicios</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#contacto">Contactos</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#mapaSitio">Mapa del sitio</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#footer">Acerca de Nosotros</a></li>
-                </ul>
-            </li>
-            
-            <li><a routerLink="/administracion/buscar-vehiculo" class="productos-header menus-h">Vehículos</a>
-                <ul>
-                    <li><a routerLink="/administracion/buscar-vehiculo">Ver Todo</a></li>
-                </ul>
-            </li>
-            
-            <li><a routerLink="/solicitud/generar-solicitud" class="servicios-header menus-h">Servicios</a>
-                <ul>
-                    <li><a href="">Ver Todo</a></li>
-                    <li><a href="">Buscar</a></li>
-                </ul>
-            </li>
-            
-            <li><a routerLink="/administracion/index-asesor" class="usuario-header menus-h">Asesor</a>
-                <ul>
-                    <li><a routerLink="/administracion/index-asesor">Asesores</a><i class="fas fa-angle-right"></i>
-                        <ul><li><a routerLink="/solicitud/generar-solicitud">Solicitudes</a><i class="fas fa-angle-right"></i>
-                                <ul><li><a routerLink="/administracion/buscar-solicitudes">Eliminar</a></li>
-                                    <li><a routerLink="/administracion/buscar-solicitudes">Ver Todos</a></li>
-                                </ul>
-                            </li>
-                            <li><a routerLink="/administracion/buscar-cliente">Clientes</a><i class="fas fa-angle-right"></i>
-                                <ul>
-                                    <li><a routerLink="/administracion/registrar-cliente">Registrar</a></li>
-                                    <li><a routerLink="/administracion/buscar-cliente">Actualizar</a></li>
-                                    <li><a routerLink="/administracion/buscar-cliente">Ver Todos</a></li>
-                                </ul>
-                            </li>
-                            <li><a routerLink="/administracion/index-cliente/{{id}}">Mi cuenta</a><i class="fas fa-angle-right"></i>
-                                <ul>
-                                    <li><a routerLink="/administracion/index-cliente/{{id}}">Mi cuenta</a></li>
-                                    <li><a routerLink="/seguridad/cerrar-sesion">Cerrar sesión</a></li>
-                                    <li><a routerLink="/seguridad/recuperar-pasword">Cambiar Contraseña</a></li>
-                                    <li><a routerLink="/administracion/actualizar-cliente/{{id}}">Actualizar</a></li>
-                                    <li><a routerLink="/administracion/eliminar-cliente/{{id}}">Eliminar</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-           
-        </ul>
-         <!---------modo cliente------------------------>
-         <ul class="nav" *ngIf="sesionCliente">
-            <li><a href="https://autoluxury.herokuapp.com/inicio#inicio"class="home-header menus-h">inicio</a>
-                <ul><li><a href="https://autoluxury.herokuapp.com/inicio#vehiculos">Productos</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#mision" >Misión</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#vision">Visión</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#pruebaManejo">Prueba de Manejo</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#servicio">Servicios</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#contacto">Contactos</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#mapaSitio">Mapa del sitio</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#footer">Acerca de Nosotros</a></li>
-                </ul>
-            </li>
-            
-            <li><a routerLink="/administracion/buscar-vehiculo" class="productos-header menus-h">Vehículos</a>
-                <ul>
-                    <li><a routerLink="/administracion/buscar-vehiculo">Ver Todo</a></li>
-                </ul>
-            </li>
-                        
-            <li><a routerLink="/administracion/index-cliente/{{id}}" class="usuario-header menus-h">tu Cuenta</a>
-                <ul><li><a routerLink="/administracion/index-cliente/{{id}}">Clientes</a><i class="fas fa-angle-right"></i>
-                    <ul>
-                        <li><a routerLink="/administracion/index-cliente/{{id}}">Mi cuenta</a></li>
-                        <li><a routerLink="">Mi Solicitud</a></li>
-                        <li><a routerLink="/seguridad/cerrar-sesion">Cerrar sesión</a></li>
-                        <li><a routerLink="/seguridad/recuperar-pasword">Cambiar Contraseña</a></li>
-                        <li><a routerLink="/administracion/actualizar-cliente/{{id}}">Actualizar Información</a></li>
-                        <li><a routerLink="/administracion/eliminar-cliente/{{id}}">Eliminar mi Cuenta</a></li>
-                    </ul>
-                </li>
-            </ul>
-            </li>
-        </ul>
-         <!---------modo no registrado ni iniciado sesion------------------------>
-         <ul class="nav" *ngIf="!sesionIniciada">
-            <li><a href="https://autoluxury.herokuapp.com/inicio#inicio"class="home-header menus-h">inicio</a>
-                <ul><li><a href="https://autoluxury.herokuapp.com/inicio#vehiculos">Productos</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#mision" >Misión</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#vision">Visión</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#pruebaManejo">Prueba de Manejo</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#servicio">Servicios</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#contacto">Contactos</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#mapaSitio">Mapa del sitio</a></li>
-                        <li><a href="https://autoluxury.herokuapp.com/inicio#footer">Acerca de Nosotros</a></li>
-                </ul>
-            </li>
-            
-            <li><a routerLink="/administracion/buscar-vehiculo" class="productos-header menus-h">Vehículos</a>
-                <ul>
-                    <li><a routerLink="/administracion/buscar-vehiculo">Ver Todo</a></li>
-                </ul>
-            </li>
-                        
-            <li><a routerLink="/administracion/registrar-cliente" class="usuario-header menus-h">Registrarse</a>
-                <ul><li><a routerLink="/administracion/registrar-cliente">Registrarse</a>
-                    <li><a routerLink="/seguridad/login">Iniciar Sesión</a>
-                    <li><a routerLink="/seguridad/recuperar-pasword">Recuperar Contraseña</a>
-                </li>
-            </ul>
-            </li>
-        </ul>
 
-        <div class="contenedor-info-sesion-header" id="login-btn">
-            
-            
+<div class="sidebar " id="sidebar">
+    <!--div class="logo-details">
+       <img loading="lazy" src="./assets/img/logoAutoLuxuryColor.png" alt="logo">
+        <span class="logo-name">AUTOLUXURY</span>
+    </div-->
+    <ul class="nav-link">
+        <li *ngIf="!sesionIniciada" >
+            <a >
+                <i class="fas fa-sign-in-alt"></i>
+                <span class="link_name">Iniciar sesión</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a (click)="cerrarMen()" class="link_name" routerLink="/seguridad/login">Iniciar sesión</a></li>
+            </ul>
+        </li>
+        <li *ngIf="!sesionIniciada" >
+            <a>
+                <i class="fas fa-user-plus"></i>
+                <span class="link_name">Registrarse</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a (click)="cerrarMen()" class="link_name" routerLink="/administracion/registrar-cliente">Registrarse</a></li>
+            </ul>
+        </li>
+        <li class="lista0">
+            <div class="icon-link" (click)="MostrarSubmenu0()">
+                <a>
+                    <i class="fas fa-home"></i>
+                    <span class="link_name">Inicio</span>    
+                </a>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a  (click)="cerrarMen()"  class="link_name" href="http://localhost:4200/inicio#inicio">Inicio</a></li>
+                <li><a  (click)="cerrarMen()"  href="http://localhost:4200/inicio#mision">Misión</a></li>
+                <li><a  (click)="cerrarMen()" href="http://localhost:4200/inicio#vision">Visión</a></li>
+                <li><a  (click)="cerrarMen()"  href="http://localhost:4200/inicio#servicios">Servicios</a></li>
+                <li><a  (click)="cerrarMen()"  href="http://localhost:4200/inicio#contactos">Contactenos</a></li>
+                <li><a  (click)="cerrarMen()"  href="http://localhost:4200/inicio#mapa">Mapa del sitio</a></li>
+            </ul>
+        </li>
+        <li class="lista1">
+            <div class="icon-link" (click)="MostrarSubmenu1()">
+                <a >
+                    <i class="fas fa-car"></i>
+                    <span class="link_name">Vehículos</span>    
+                </a>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a (click)="cerrarMen()" class="link_name" routerLink="/administracion/buscar-vehiculo">Vehiculos</a></li>
+                <li><a (click)="cerrarMen()" routerLink="/administracion/buscar-vehiculo">Ver todos</a></li>
+                <li *ngIf="sesionAdmin"><a (click)="cerrarMen()"routerLink="/administracion/registrar-vehiculo">Publicar</a></li>
+            </ul>
+        </li>
+        <li *ngIf="sesionIniciada" class="lista2">
+            <div class="icon-link" (click)="MostrarSubmenu2()">
+                <a>
+                    <i class="fas fa-user-cog"></i>
+                    <span class="link_name">Mi Cuenta</span>    
+                </a>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a (click)="cerrarMen()" class="link_name" routerLink="/administracion/index-cliente/{{id}}">Mi Cuenta</a></li>
+                <li><a (click)="cerrarMen()" routerLink="/administracion/actualizar-cliente/{{id}}">Actualizar Información</a></li>
+                <li><a (click)="cerrarMen()" routerLink="/seguridad/cambiar-pasword/{{id}}">Cambiar contraseña</a></li>
+                <li><a (click)="cerrarMen()" routerLink="/seguridad/cerrar-sesion">Cerrar Sesion</a></li>
+            </ul>
+        </li>
+        <li *ngIf="sesionAdmin" class="lista7">
+            <div class="icon-link" (click)="MostrarSubmenu7()">
+                <a>
+                    <i class="fas fa-users-cog"></i>
+                    <span class="link_name">Administración</span>    
+                </a>
+                <i class="fas fa-chevron-down arrow" ></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a (click)="cerrarMen()" class="link_name" routerLink="/administracion/buscar-admin">Administración</a></li>
+                <li><a (click)="cerrarMen()" routerLink="/administracion/buscar-admin">Ver Administradores</a></li>
+                <li><a (click)="cerrarMen()" routerLink="/administracion/registrar-admin">Registrar Administrador</a></li>
+            </ul>
+        </li>
+        <li *ngIf="sesionAsesor" >
+            <a>
+                <i class="fas fa-user-shield"></i>
+                <span class="link_name">Página Principal</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a (click)="cerrarMen()" class="link_name" routerLink="/administracion/index-asesor">Página Principal</a></li>
+            </ul>
+        </li>
+        <li *ngIf="sesionAdmin" class="lista3">
+            <div class="icon-link" (click)="MostrarSubmenu3()">
+                <a>
+                    <i class="fas fa-user-friends"></i>
+                    <span class="link_name">Asesores</span>    
+                </a>
+                <i class="fas fa-chevron-down arrow" ></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a (click)="cerrarMen()" class="link_name" routerLink="/administracion/buscar-asesor">Asesores</a></li>
+                <li><a (click)="cerrarMen()" routerLink="/administracion/buscar-asesor">Ver todos</a></li>
+                <li><a (click)="cerrarMen()" routerLink="/administracion/registrar-asesor">Registrar</a></li>
+            </ul>
+        </li>
+        <li *ngIf="sesionAdmin || sesionAsesor" class="lista4">
+            <div class="icon-link" (click)="MostrarSubmenu4()">
+                <a>
+                    <i class="fas fa-users"></i>
+                    <span class="link_name">Clientes</span>    
+                </a>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a (click)="cerrarMen()" class="link_name" routerLink="/administracion/buscar-cliente">Clientes</a></li>
+                <li><a (click)="cerrarMen()" routerLink="/administracion/buscar-cliente">Ver todos</a></li>
+                <li><a (click)="cerrarMen()" routerLink="/administracion/registrar-cliente">Registrar</a></li>
+            </ul>
+        </li>
+        <li *ngIf="sesionAdmin || sesionAsesor" class="lista5">
+            <div class="icon-link" (click)="MostrarSubmenu5()">
+                <a> 
+                    <i class="fas fa-file-alt"></i>
+                    <span class="link_name">Solicitudes</span>    
+                </a>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a (click)="cerrarMen()" class="link_name" routerLink="solicitud/buscar-solicitud">Solicitudes</a></li>
+                <li><a (click)="cerrarMen()" routerLink="solicitud/buscar-solicitud">Ver Las Solicitudes</a></li>
+            </ul>
+        </li>
+        <li *ngIf="sesionCliente" class="lista6">
+            <div class="icon-link" (click)="MostrarSubmenu6()">
+                <a>
+                    <i class="fas fa-file-alt"></i>
+                    <span class="link_name">Solicitudes</span>    
+                </a>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a (click)="cerrarMen()" class="link_name" routerLink="solicitud/info-solicitud/{{idSolicitud}}">Solicitudes</a></li>
+                <li><a (click)="cerrarMen()" routerLink="solicitud/info-solicitud/{{idSolicitud}}">Mis solicitudes</a></li>
+            </ul>
+        </li>
+        <!--li>
+            <a href="#">
+                <i class="fas fa-user"></i>
+                <span class="link_name">Analizar</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="">Analizar</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fas fa-user"></i>
+                <span class="link_name">chart</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="">Chart</a></li>
+            </ul>
+        </li>
+        <li>
+            <div class="icon-link">
+                <a href="#">
+                    <i class="fas fa-car"></i>
+                    <span class="link_name">Plug</span>    
+                </a>
+                <i class="fas fa-chevron-down arrow"></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name" href="">Plug</a></li>
+                <li><a href="">HTML & CSS</a></li>
+                <li><a href="">javasripts</a></li>
+                <li><a href="">php & mysql</a></li>
+            </ul>
+        </li-->
+        <li >
+            <div class="profile-details" *ngIf="sesionIniciada">
+                <div class="profile-content">
+                    <a routerLink="/administracion/index-cliente/{{id}}"><img loading="lazy" src="./assets/img/use.png" alt="user"></a>
+                </div>
+                
+                <div class="name-job" >
+                    <div class="profile_name">{{nombre}}</div>
+                    <div class="job">{{rol}}</div>
+                </div>
+                <a routerLink="/seguridad/cerrar-sesion">
+                    <i class="fas fa-sign-out-alt loginIcon"></i>
+                    <p>Cerrar Sesión</p>
+                </a>
+            </div>
+            <div class="profile-details" *ngIf="!sesionIniciada">
+                <div class="profile-content">
+                    <a routerLink="/seguridad/login"><img loading="lazy" src="./assets/img/use.png" alt="user"></a>
+                </div>
+                
+                <div class="name-job" >
+                    <div class="profile_name">Bienvenido</div>
+                    <div class="job">User</div>
+                </div>
+                <a routerLink="/seguridad/login">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <p>Iniciar Sesión</p>
+                </a>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="home-section" >
+    <div class="home-content" (click)="AparecerMenu()" (click)="cambiarVar()" >
+        <!--i class="fas fa-bars"></i-->
+        <div class="barra-content">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
         </div>
+        <span class="text">Cerrar</span>
     </div>
-</header>
+</div>
 
 <button class="subirHome" id="subirHome">
     <!------boton home aparece al hacer scroll-->
