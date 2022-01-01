@@ -1019,3 +1019,12 @@ svg {
     width: 50%;
     height: 50%;
 }
+
+.fullScren{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.fullScren button{
+    margin: 20px;
+}

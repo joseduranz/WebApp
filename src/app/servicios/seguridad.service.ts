@@ -18,7 +18,8 @@ export class SeguridadService {
   /* metodos para validar el inicio y eliminacion de la informacion */
   //IDENTIFICA EL USUARIO EN LA BASE DE DATOS
   Identificar(Usuario: string, Clave: string):Observable<ModeloIdentificar>{
-    return this.http.post("http://localhost:3000//identificarPersona",{
+    //return this.http.post("http://localhost:3000/identificarPersona",
+    return this.http.post("https://autoluxuryb.herokuapp.com/identificarPersona",{
       usuario:Usuario,
       clave:Clave,
     },

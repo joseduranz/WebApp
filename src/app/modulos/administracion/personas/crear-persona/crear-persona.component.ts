@@ -73,8 +73,8 @@ export class CrearPersonaComponent implements OnInit {
     //let documentoId = this.fgValidadorRegistrar.controls['documentoId'].value;
 
     //si se guarda correctamente en la base de datos
-    //let url = `https://autoluxuryb.herokuapp.com/personas`;
-    let url = `http://localhost:3000/personas`;
+    let url = `https://autoluxuryb.herokuapp.com/personas`;
+    //let url = `http://localhost:3000/personas`;
     
     let datos = {
       nombres:nombres,

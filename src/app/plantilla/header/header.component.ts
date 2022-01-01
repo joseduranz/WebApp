@@ -24,6 +24,7 @@ export class HeaderComponent implements OnInit {
   id?:string;
   nombre?:string;
   idSolicitud?:string;
+  activado?=false;
 
   constructor(private servicioSeguridad : SeguridadService) { }
 
@@ -92,6 +93,19 @@ export class HeaderComponent implements OnInit {
   AparecerMenu(){
     let sidebar = document.querySelector(".sidebar")?.classList.toggle("close");
   }
-  
+
+  elem = document.documentElement;
+  FullScreen(){
+    if(this.elem.requestFullscreen){
+      this.elem.requestFullscreen();
+      this.activado=true;
+    }
+  }
+  CloseFullScreen(){
+    if(document.exitFullscreen){
+      document.exitFullscreen();
+      this.activado=false;
+    }
+  }
 
 }

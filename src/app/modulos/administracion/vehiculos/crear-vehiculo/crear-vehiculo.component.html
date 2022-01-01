@@ -26,7 +26,7 @@
         </div>
     </div>
 </div>
-
+<!--heroku-->
 <form action="" [formGroup]="fgValidador" (ngSubmit)="GuardarVehiculo()">
     <div class="cracionVeh">
         <div class="contenedor1" id="pag1">
@@ -39,10 +39,9 @@
                         
                     </div>
                     <div class="botones">
-                        <button class="boton" >Volver</button> <a href="http://localhost:4200/administracion/registrar-vehiculo#pag2" class="boton" >Continuar</a>
+                        <button class="boton" >Volver</button> <a href="https://autoluxury.herokuapp.com/administracion/registrar-vehiculo#pag2" class="boton" >Siguiente</a>
                     </div>
                     <br>
-                    <!--img src="{{imagenes[0]}}" alt="imagen subida"-->
                     <div class="imgCargadas">
                         <img class="imgcar" src="{{imagenes[0]}}" alt="imagen subida">
                     </div>
@@ -65,7 +64,7 @@
             
                    
                     <div class="botones">
-                        <a href="http://localhost:4200/administracion/registrar-vehiculo#pag1" class="boton" >Atras</a> <a href="http://localhost:4200/administracion/registrar-vehiculo#pag3" class="boton" >Continuar</a>
+                        <a href="https://autoluxury.herokuapp.com/administracion/registrar-vehiculo#pag1" class="boton" >Atras</a> <a href="https://autoluxury.herokuapp.com/administracion/registrar-vehiculo#pag3" class="boton" >Siguiente</a>
                     </div>
                 </div>
                 
@@ -84,7 +83,84 @@
             
                     <input class="input" formControlName="estado" type="text" id="estado" required><label class="label" for="estado"  >Estado</label>
                     <div class="botones">
-                        <a href="http://localhost:4200/administracion/registrar-vehiculo#pag2" class="boton" >Atras</a> <a href="http://localhost:4200/administracion/registrar-vehiculo#pag4" class="boton" >Continuar</a>
+                        <a href="https://autoluxury.herokuapp.com/administracion/registrar-vehiculo#pag2" class="boton" >Atras</a> <a href="https://autoluxury.herokuapp.com/administracion/registrar-vehiculo#pag4" class="boton" >Siguiente</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="contenedor1" id="pag4">
+            <div class="contenedor1">crear una nueva publicación
+                <h3 class="h3titulo"> <span>4</span> Da una breve descripción del producto</h3>
+                <div class="atributos">
+                    <textarea formControlName="video"  type="text"  id="video" required ></textarea><label class="label2" for="video">Descripción</label>
+                    <div class="botones">
+                        <a href="https://autoluxury.herokuapp.com/administracion/registrar-vehiculo#pag3" class="boton" >Volver</a> <button [disabled]="!fgValidador" [ngClass]="{'btnDisabled':!fgValidador.valid}" type="submit" class="boton" >Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </div>     
+</form>  
+
+<!--localhost-->
+<!-- <form action="" [formGroup]="fgValidador" (ngSubmit)="GuardarVehiculo()">
+    <div class="cracionVeh">
+        <div class="contenedor1" id="pag1">
+            <div class="contenedor1">crear una nueva publicación
+                <h3 class="h3titulo"> <span>1</span> Escoja las imagenes</h3>
+                <div class="input_imagenes-prueba">
+                    <div class="labelyInput">
+                        <input type="file" accept=".png, .jpg, .jpeg" multiple (change)="CargarImagen($event)" id="img" hidden> <br>
+                        <label class="labelImg" for="img"><i class="fas fa-cloud-upload-alt"></i><br>Seleciona o Arrastre las imagenes</label>
+                        
+                    </div>
+                    <div class="botones">
+                        <button class="boton" >Volver</button> <a href="http://localhost:4200/administracion/registrar-vehiculo#pag2" class="boton" >Siguiente</a>
+                    </div>
+                    <br>
+                    <div class="imgCargadas">
+                        <img class="imgcar" src="{{imagenes[0]}}" alt="imagen subida">
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="contenedor1" id="pag2">
+            <div class="contenedor1">crear una nueva publicación
+                <h3 class="h3titulo"> <span>2</span> llena los siguientes datos</h3>
+                <div class="atributos">
+                    <input class="input" formControlName="marca" type="text" id="marca" required> <label class="label" for="marca">Marca</label>
+            
+                    <input class="input" formControlName="precio" type="text" id="precio" required ><label class="label" for="precio">Precio</label>
+            
+                    <input class="input" formControlName="matricula" type="text" id="matricula" required ><label class="label" for="matricula">Matrícula</label>
+            
+                    <input class="input" formControlName="modelo" type="text" id="modelo" required ><label class="label" for="modelo">Modelo</label>
+            
+                    <input class="input" formControlName="categoria" type="text" id="categoria" required ><label class="label" for="categoria">Categoria</label>
+            
+                   
+                    <div class="botones">
+                        <a href="http://localhost:4200/administracion/registrar-vehiculo#pag1" class="boton" >Atras</a> <a href="http://localhost:4200/administracion/registrar-vehiculo#pag3" class="boton" >Siguiente</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="contenedor1" id="pag3">
+            <div class="contenedor1">crear una nueva publicación
+                <h3 class="h3titulo"> <span>3</span> llena los siguientes datos</h3>
+                <div class="atributos">
+                               
+                    <input class="input" formControlName="tipoOferta"  type="text" id="oferta" required ><label class="label" for="oferta">Oferta</label>
+            
+                    <input class="input" formControlName="encargado" type="text" id="encargado" required ><label class="label" for="encargado">Encargado</label>
+            
+                    <input class="input" formControlName="contactoEncargado" type="text" id="numeroEncargado" required ><label class="label" for="numeroEncargado">Contacto</label>
+            
+                    <input class="input" formControlName="estado" type="text" id="estado" required><label class="label" for="estado"  >Estado</label>
+                    <div class="botones">
+                        <a href="http://localhost:4200/administracion/registrar-vehiculo#pag2" class="boton" >Atras</a> <a href="http://localhost:4200/administracion/registrar-vehiculo#pag4" class="boton" >Siguiente</a>
                     </div>
                 </div>
                 
@@ -102,4 +178,4 @@
             </div>
         </div>  
     </div>     
-</form>  
+</form>   -->

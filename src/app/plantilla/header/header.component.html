@@ -34,13 +34,23 @@
                 </a>
                 <i class="fas fa-chevron-down arrow"></i>
             </div>
-            <ul class="sub-menu">
+            <!-- localhost-->
+            <!--ul class="sub-menu">
                 <li><a  (click)="cerrarMen()"  class="link_name" href="http://localhost:4200/inicio#inicio">Inicio</a></li>
                 <li><a  (click)="cerrarMen()"  href="http://localhost:4200/inicio#mision">Misión</a></li>
                 <li><a  (click)="cerrarMen()" href="http://localhost:4200/inicio#vision">Visión</a></li>
                 <li><a  (click)="cerrarMen()"  href="http://localhost:4200/inicio#servicios">Servicios</a></li>
                 <li><a  (click)="cerrarMen()"  href="http://localhost:4200/inicio#contactos">Contactenos</a></li>
                 <li><a  (click)="cerrarMen()"  href="http://localhost:4200/inicio#mapa">Mapa del sitio</a></li>
+            </ul-->
+            <!--heroku-->
+            <ul class="sub-menu">
+                <li><a  (click)="cerrarMen()"  class="link_name" href="https://autoluxury.herokuapp.com/inicio#inicio">Inicio</a></li>
+                <li><a  (click)="cerrarMen()"  href="https://autoluxury.herokuapp.com/inicio#mision">Misión</a></li>
+                <li><a  (click)="cerrarMen()" href="https://autoluxury.herokuapp.com/inicio#vision">Visión</a></li>
+                <li><a  (click)="cerrarMen()"  href="https://autoluxury.herokuapp.com/inicio#servicios">Servicios</a></li>
+                <li><a  (click)="cerrarMen()"  href="https://autoluxury.herokuapp.com/inicio#contactos">Contactenos</a></li>
+                <li><a  (click)="cerrarMen()"  href="https://autoluxury.herokuapp.com/inicio#mapa">Mapa del sitio</a></li>
             </ul>
         </li>
         <li class="lista1">
@@ -182,6 +192,25 @@
                 <li><a href="">php & mysql</a></li>
             </ul>
         </li-->
+        
+        <li *ngIf="!activado" (click)="FullScreen()">
+            <a >
+                <i class="ri-fullscreen-line"></i>
+                <span class="link_name">FullScreen</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a (click)="cerrarMen()" class="link_name" routerLink="/seguridad/login">FullScreen</a></li>
+            </ul>
+        </li>
+        <li *ngIf="activado" (click)="CloseFullScreen()">
+            <a >
+                <i class="ri-fullscreen-exit-line"></i>
+                <span class="link_name">Salir FullScreen</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a (click)="cerrarMen()" class="link_name" routerLink="/seguridad/login">Salir FullScreen</a></li>
+            </ul>
+        </li>
         <li >
             <div class="profile-details" *ngIf="sesionIniciada">
                 <div class="profile-content">
@@ -214,6 +243,7 @@
         </li>
     </ul>
 </div>
+
 <div class="home-section" >
     <div class="home-content" (click)="AparecerMenu()" (click)="cambiarVar()" >
         <!--i class="fas fa-bars"></i-->

@@ -40,7 +40,6 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
     gsapJava();
-
   }
   
   FormularioEnvio() {
@@ -62,5 +61,17 @@ export class InicioComponent implements OnInit {
     this.modal=!this.modal
   }
 
-  
+
+
+  elem = document.documentElement;
+  FullScreen(){
+    if(this.elem.requestFullscreen){
+      this.elem.requestFullscreen();
+    }
+  }
+  CloseFullScreen(){
+    if(document.exitFullscreen){
+      document.exitFullscreen();
+    }
+  }
 }
