@@ -23,6 +23,7 @@ export class IdentificacionComponent implements OnInit {
   subs: Subscription = new Subscription();
   sesionIniciada?:boolean = false;
   siteKey: string;//llave de captcha
+  modal=false;
 
 
   constructor(private fb: FormBuilder, private servicioSeguridad: SeguridadService, private router: Router) {
@@ -63,9 +64,12 @@ export class IdentificacionComponent implements OnInit {
       }else {
         this.router.navigate(["/administracion/buscar-vehiculo"]);// cliente//se inyecta en el constructor y aca se hace el llamado
       }; (error: any) => {
-        alert("el usuario o contraseña incorrecta");
+        this.modal=!this.modal;
       }
     })
+  }
+  CerrarModal(){
+    this.modal=!this.modal
   }
   
 

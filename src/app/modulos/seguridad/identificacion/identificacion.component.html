@@ -1,14 +1,15 @@
-<div class="modal">
+
+<div class="modal" *ngIf="modal">
     <div class="modal-mensaje">
         <div class="titulo-x">
-            <h1>¡Bienvenido!</h1>
-            <i class="fas fa-times"></i>
+            <h1 class="h1">¡Error!</h1>
+            <i type="button" (click)="CerrarModal()" class="fas fa-times"></i>
         </div>
         <div class="mensaje">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi iusto placeat esse delectus expedita animi sapiente nulla quis cumque earum est deserunt aperiam, recusandae cum voluptatem. Excepturi earum maxime vel.</p>
+            <p>Ingrese un usuario o contraseña validas</p>
         </div>
         <div class="boton-cerrar">
-            <button>Cerrar</button>
+            <button type="button" (click)="CerrarModal()" >Cerrar</button>
         </div>
     </div>
 </div>
