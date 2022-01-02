@@ -353,24 +353,25 @@ body{
     background-color: var(--background-color-principal);
     padding: 50px 0;
     width: 100vw;
-    height: auto;
-}
-.contenedor-cuadros{
+    height: 100%;
+  }
+  .contenedor-cuadros{
     width: 100vw;
+    margin-bottom: 50px;
     display: flex;
     flex-wrap: wrap;
-    height: auto;
+    height: 100%;
     align-items: center;
     text-align: center;
     justify-content: center;
-}
-
-.garantia-seguridad-asesoria div >div{
+  }
+  
+  .garantia-seguridad-asesoria div >div{
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 220px;
-    max-height: 500px;
+    height: 100%;
     padding: 40px;
     margin: 20px 30px;
     color: var(--color-gris-principal);
@@ -379,26 +380,26 @@ body{
     box-shadow:var(--box-shadow-cajon-principal);
     border-top: var(--border-top-cajon-principal);
     border-left:var(--border-left-cajon-principal);
-}
-.garantia-seguridad-asesoria div img{
+  }
+  
+  .garantia-seguridad-asesoria div img{
     width: 100px;
-}
-.garantia-seguridad-asesoria div h1 {
+  }
+  .garantia-seguridad-asesoria div h1 {
     margin: 20px 0;
     font-size: 2rem;
-}
-.garantia-seguridad-asesoria > p{
-    margin: 40px 0 0 0;
+  }
+  .garantia-seguridad-asesoria > p{
+    padding: 0 50px;
     text-align: center;
     color: var(--color-gris-principal);
-}
-
-
-/*-----------------------------------------------------------*/
-@media screen and (max-width: 780px) {
+  }
+  
+  
+  /*-----------------------------------------------------------*/
+  @media screen and (max-width: 780px) {
     .garantia-seguridad-asesoria{
         flex-wrap: wrap;
-        min-height: 900px;
         padding-bottom: 30px;
     }
     .garantia-seguridad-asesoria div div{
@@ -409,10 +410,6 @@ body{
     }
   }
   @media screen and (max-width: 520px) {
-      
-    .garantia-seguridad-asesoria{
-        min-height: 1400px;
-    }
     .garantia-seguridad-asesoria div div{
         margin: 0px 20px;
         background: none;
@@ -421,9 +418,22 @@ body{
         border-bottom: 1px solid gray;
         box-shadow: none;
     }
-  }
-/*==============================SESION GARANTIA SEGURIDAD END===========================*/
-
+    .garantia-seguridad-asesoria div img{
+      width: 60px;
+    }
+    .garantia-seguridad-asesoria div >div{
+      padding: 30px 5px;
+      font-size: .8rem;
+    }
+    .garantia-seguridad-asesoria div h1 {
+      font-size: 1.2rem;
+    }
+    .garantia-seguridad-asesoria > p{
+      padding: 0 30px;
+      font-size: .8rem;
+    }
+  } 
+  /*==============================SESION GARANTIA SEGURIDAD END===========================*/
 
 
 

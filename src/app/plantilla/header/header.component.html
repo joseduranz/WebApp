@@ -2,11 +2,7 @@
 <!------bara de scroll personalisada-->
 <!-- ==========================================HEADER START=============================-->
 
-<div class="sidebar " id="sidebar">
-    <!--div class="logo-details">
-       <img loading="lazy" src="./assets/img/logoAutoLuxuryColor.png" alt="logo">
-        <span class="logo-name">AUTOLUXURY</span>
-    </div-->
+<div class="sidebar admin" id="sidebar" >
     <ul class="nav-link">
         <li *ngIf="!sesionIniciada" >
             <a >
@@ -244,9 +240,8 @@
     </ul>
 </div>
 
-<div class="home-section" >
-    <div class="home-content" (click)="AparecerMenu()" (click)="cambiarVar()" >
-        <!--i class="fas fa-bars"></i-->
+<div class="home-section"  (click)="AparecerMenu()" (click)="cambiarVar()" >
+    <div class="home-content">
         <div class="barra-content">
             <div class="bar1"></div>
             <div class="bar2"></div>
