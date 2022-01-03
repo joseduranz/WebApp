@@ -4,7 +4,17 @@
 
 <div class="sidebar" id="sidebar" >
     <ul class="nav-link">
-        <li *ngIf="!sesionIniciada" >
+        <!--li *ngIf="!sesionIniciada" >
+            <a >
+                <i class="fas fa-sign-in-alt"></i>
+                <span class="link_name">Iniciar sesión</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a (click)="cerrarMen()" class="link_name" routerLink="/seguridad/login">Iniciar sesión</a></li>
+            </ul>
+        </li-->
+
+        <li *ngIf="!sesionIniciada">
             <a >
                 <i class="fas fa-sign-in-alt"></i>
                 <span class="link_name">Iniciar sesión</span>
@@ -13,6 +23,7 @@
                 <li><a (click)="cerrarMen()" class="link_name" routerLink="/seguridad/login">Iniciar sesión</a></li>
             </ul>
         </li>
+
         <li *ngIf="!sesionIniciada" >
             <a>
                 <i class="fas fa-user-plus"></i>
@@ -155,40 +166,6 @@
                 <li><a (click)="cerrarMen()" routerLink="solicitud/info-solicitud/{{idSolicitud}}">Mis solicitudes</a></li>
             </ul>
         </li>
-        <!--li>
-            <a href="#">
-                <i class="fas fa-user"></i>
-                <span class="link_name">Analizar</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="">Analizar</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">
-                <i class="fas fa-user"></i>
-                <span class="link_name">chart</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="">Chart</a></li>
-            </ul>
-        </li>
-        <li>
-            <div class="icon-link">
-                <a href="#">
-                    <i class="fas fa-car"></i>
-                    <span class="link_name">Plug</span>    
-                </a>
-                <i class="fas fa-chevron-down arrow"></i>
-            </div>
-            <ul class="sub-menu">
-                <li><a class="link_name" href="">Plug</a></li>
-                <li><a href="">HTML & CSS</a></li>
-                <li><a href="">javasripts</a></li>
-                <li><a href="">php & mysql</a></li>
-            </ul>
-        </li-->
-        
         <li *ngIf="!activado" (click)="FullScreen()">
             <a >
                 <i class="ri-fullscreen-line"></i>
@@ -204,7 +181,7 @@
                 <span class="link_name">Salir FullScreen</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a (click)="cerrarMen()" class="link_name" routerLink="/seguridad/login">Salir FullScreen</a></li>
+                <li><a (click)="cerrarMen()" class="link_name" >Salir FullScreen</a></li>
             </ul>
         </li>
         <li >
