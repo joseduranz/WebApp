@@ -404,6 +404,7 @@ body{
     }
     .garantia-seguridad-asesoria div div{
         margin: 30px 20px;
+        font-size: .8rem;
     }
     .garantia-seguridad-asesoria > p{
         margin: 20px 10px;
@@ -423,14 +424,14 @@ body{
     }
     .garantia-seguridad-asesoria div >div{
       padding: 30px 5px;
-      font-size: .8rem;
+      font-size: .6rem;
     }
     .garantia-seguridad-asesoria div h1 {
       font-size: 1.2rem;
     }
     .garantia-seguridad-asesoria > p{
       padding: 0 30px;
-      font-size: .8rem;
+      font-size: .6rem;
     }
   } 
   /*==============================SESION GARANTIA SEGURIDAD END===========================*/
@@ -602,109 +603,133 @@ body{
 
 /***********************************************************************/
 /*===============SISION  MISION y VISION START======================*/
-.sesion__mision, .sesion__vision{/*sesion*/
-        padding-top: 80px;
-        background-color: var(--background-color-principal);
-        position: relative;
-        align-items: center;
-        height: 550px;
-        z-index: -1;
-}
-.sesion__vision{/*sesion*/
-    padding-top: 0px; 
-    position: relative; 
-}
-.box{
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100vw;
-        height: 800px;
-}
-.sesion__mision h2{/* titulo h2*/
-        margin: 60px 0 10px 20vw;/*arriba derecha abajo izquierda*/
-        z-index: 1;
-        font-size: var(--medida-titulo-principal);
-        font-weight: var(--bold-titulo-principal);
-        background: var(--background-titulo-principal);
-        color: var(--color-titulo-principal);
-        -webkit-background-clip: text;
-        background-clip: text;
-}
-.sesion__vision h2{/* titulo h2*/
-        margin: 0px 15vw 20px 0;/*arriba derecha abajo izquierda*/
-        text-align: right;
-        z-index: 1;
-        font-size: var(--medida-titulo-principal);
-        font-weight: var(--bold-titulo-principal);
-        background: var(--background-titulo-principal);
-        color: var(--color-titulo-principal);
-        -webkit-background-clip: text;
-        background-clip: text;
-}
-.sesion__mision .container, 
-.sesion__vision .container{/* contenedor de el contenedor de la imagen y el contenedor del contenido del texto*/
-        position: relative;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-        z-index: -1;
-}
-.sesion__mision .container .imgBx, 
-.sesion__vision .container .imgBx{/* contenedor de la imagen*/
-        position: absolute;
-        width:500px;
-        height: 330px;
-        overflow: hidden;
-        left: 660px;
-        top: -70px;
-        border-radius: 25px;
-        box-shadow:var(--box-shadow-cajon-principal);
-        border-top: var(--border-top-cajon-principal);
-        border-left:var(--border-left-cajon-principal);
-}
-.sesion__vision .container .imgBx{/* contenedor de la imagen*/
-    left: 230px;
-    top: -70px;
-}
-.sesion__mision .container .imgBx img, 
-.sesion__vision .container .imgBx img{/* imagen*/
-        right: 0;
-        width: 100%;
-        object-fit: cover;
-        opacity: 30%;
-        object-fit: cover;/*centra la imagen **lo estaba buscando** */
-}
-.sesion__mision .content{/* contenedor del contenido del texto*/ 
-        position: absolute;   
-        padding: 20px;
-        max-width: 370px;
-        left: 250px;
-        top: 10px;
-        font-size: 1rem;
-        line-height: 25px;        
-        color: var(--color-gris-principal);
-}
-.sesion__vision .content{/* contenedor del contenido del texto*/    
-        position: absolute;   
-        padding: 20px;
-        max-width: 370px;
-        right: 10vw;
-        top: 10px;
-        font-size: 1rem;
-        line-height: 25px;
-        color: var(--color-gris-principal);
-}
-.sesion__vision > p{/* contenedor del contenido del texto*/   
-    position: absolute;
-    font-size: .9rem;
-    bottom: 100px;
+
+.mision-logo-vision{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     color: var(--color-gris-principal);
+  }
+  .mision-logo-vision >p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: justify;
+  }
+  
+  .cont-ppal{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 50px;
+  }
+  .mision,
+  .logo,
+  .vision{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: justify;
+    padding: 40px 20px;
+    font-size: 1rem;
+  }
+  .mision h1,
+  .vision h1{
     text-align: center;
-    left: 24%;
-}
+    padding-bottom: 20px;
+    font-size: 2rem;
+  }
+  .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+  }
+  .logo img{
+    width: 300px;
+  }
+  .mision h1{
+    color: white;
+  }
+  .vision h1{
+    color: #ff0000;
+  }
+  .logoblanco{
+    visibility: hidden;
+    display: none;
+  }
+  .mision-logo-vision >p{
+    font-size: .9rem;
+  }
+  
+  @media (max-width: 1000px) {
+    .mision,
+    .logo,
+    .vision{
+      font-size: .8rem;
+    }
+    .logo img{
+      width: 250px;
+    }
+  }
+  @media (max-width: 800px) {
+    .mision,
+    .logo,
+    .vision{
+      font-size: .65rem;
+    }
+    .mision h1,
+    .vision h1{
+      font-size: 1.5rem;
+    }
+    .mision-logo-vision >p{
+      font-size: .8rem;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .logocolor{
+      visibility: hidden;
+      display: none;
+    }
+    .logoblanco{
+      visibility: visible;
+      display: block;
+    }
+    .cont-ppal{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 0;
+    }
+    .mision,
+    .vision{
+      width: 80%;
+    }
+    .mision h1,
+    .vision h1{
+      font-size: 1.8rem;
+    }
+    .logo{
+      position: absolute;
+      opacity: .04;
+      width: 100vw;
+    }
+    .logo img{
+      width: 80vw;
+      margin-top: calc(50vh - 150px);
+    }
+    .mision-logo-vision >p{
+      padding: 40px;
+      font-size: .6rem;
+    }
+  }
 /*===============SISION  MISION  y VISION END======================*/
 
 /***********************************************************************/

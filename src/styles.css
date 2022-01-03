@@ -68,7 +68,7 @@ input {
 
 body {
     background-color: var(--background-color-principal);
-    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
 section {
@@ -172,9 +172,9 @@ section {
     bottom: 0px;
     right: 20px;
     padding: 5px 7px;
-    background-image: var(--background-titulo-secundario);
+    background-color: #ff0000;
     font-size: 2rem;
-    color: rgb(39, 39, 39);
+    color: #ffffff;
     border-radius: 5px;
     transform: translateY(100px);
     transition: .9s;

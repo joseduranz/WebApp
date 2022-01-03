@@ -18,7 +18,6 @@
     width: 78px;
     transition: all .8s ease;
     background: none;
-    overflow-y: scroll;
 }
 .sidebar .nav-link{
     height: 100%;

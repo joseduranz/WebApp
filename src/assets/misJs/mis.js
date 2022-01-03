@@ -243,71 +243,7 @@ function gsapJava() {
             end: "center top",
             scrub: 0
         },
-        translateY: 800
-    });
-    /*------------*/
-    gsap.to(".lamp1", {
-        scrollTrigger: {
-            end: "center top",
-            scrub: 0
-        },
-        translateY: 900,
-    });
-    /*------------*/
-    gsap.to(".lamp2", {
-        scrollTrigger: {
-            end: "center top",
-            scrub: 0
-        },
-        translateY: 870,
-    });
-    /*------------*/
-    gsap.to(".lamp3", {
-        scrollTrigger: {
-            end: "center top",
-            scrub: 0
-        },
-        translateY: 840,
-    });
-    /*------------*/
-    gsap.to(".lamp4", {
-        scrollTrigger: {
-            end: "center top",
-            scrub: 0
-        },
-        translateY: 810,
-    });
-    /*------------*/
-    gsap.to(".lamp5", {
-        scrollTrigger: {
-            end: "center top",
-            scrub: 0
-        },
-        translateY: 790,
-    });
-    /*------------*/
-    gsap.to(".lamp6", {
-        scrollTrigger: {
-            end: "center top",
-            scrub: 0
-        },
-        translateY: 760,
-    });
-    /*------------*/
-    gsap.to(".lamp7", {
-        scrollTrigger: {
-            end: "center top",
-            scrub: 0
-        },
-        translateY: 730,
-    });
-    /*------------*/
-    gsap.to(".lamp8", {
-        scrollTrigger: {
-            end: "center top",
-            scrub: 0
-        },
-        translateY: 700,
+        //translateY: 800
     });
     /*------------*/
     gsap.to(".fondo-info-carros h1", {
